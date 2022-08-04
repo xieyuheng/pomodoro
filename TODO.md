@@ -1,4 +1,4 @@
-- fix the use of `state.auth.loadUser()` -- use `cookie`
+- fix the use of `auth.loadUser()` -- use `cookie`
 
 - `hooks/useForm` validate `Invalid` type
 
