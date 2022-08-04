@@ -1,2 +1,4 @@
+- `components/Link.vue`
 - `components/`
+- fix the use of `state.auth.loadUser()`
 - `composables/useForm`
