@@ -1,7 +1,7 @@
 import { reactive } from "vue"
 import { isServer } from "./isServer"
 
-export function defineState<T>(state: T): () => T {
+export function createSingleton<T>(state: T): () => T {
   let initialized = false
 
   return () => {
