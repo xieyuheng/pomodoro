@@ -23,6 +23,7 @@
   "dependencies": {
     "@headlessui/vue": "^1.6.7",
     "@heroicons/vue": "^1.0.6",
+    "@vueuse/head": "^0.7.9",
     "@xieyuheng/ty": "^0.1.17",
     "howler": "^2.2.3",
     "lodash": "^4.17.21",

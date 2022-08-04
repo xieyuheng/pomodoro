@@ -2,6 +2,7 @@
 import { PageLayoutState as State } from "./PageLayoutState"
 import PageLayoutHeader from "./PageLayoutHeader.vue"
 import { reactive } from "vue"
+import { Head } from "@vueuse/head"
 
 const state = reactive(new State())
 // await state.auth.loadUser()
@@ -10,8 +11,8 @@ const state = reactive(new State())
 <template>
   <div>
     <Head>
-      <Title v-if="state.formatTitle()">{{ state.formatTitle() }}</Title>
-      <Meta name="theme-color" :content="state.theme.color" />
+      <title v-if="state.formatTitle()">{{ state.formatTitle() }}</title>
+      <meta name="theme-color" :content="state.theme.color" />
     </Head>
 
     <div
