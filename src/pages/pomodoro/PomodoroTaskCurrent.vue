@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { reactive } from "vue"
 import { DotsVerticalIcon } from "@heroicons/vue/outline"
+import { reactive } from "vue"
 import { Task } from "./models/Task"
+import { PomodoroState as State } from "./PomodoroState"
 import PomodoroTaskForm from "./PomodoroTaskForm.vue"
 import PomodoroTaskItemCount from "./PomodoroTaskItemCount.vue"
-import { PomodoroState as State } from "./PomodoroState"
 
 const props = defineProps<{ state: State; task: Task }>()
 

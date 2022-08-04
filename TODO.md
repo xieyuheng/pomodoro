@@ -1,6 +1,3 @@
-- `pages/register`
-- `pages/login`
-
 - setup routes for `/register` and `/login`
 
 - rename `composables/` to `hooks/`

@@ -1,6 +1,6 @@
+import { $fetch, FetchError } from "ohmyfetch"
 import { reactive } from "vue"
 import { isServer } from "../utils/isServer"
-import { FetchError, $fetch } from "ohmyfetch"
 
 type Values = Record<string, string>
 

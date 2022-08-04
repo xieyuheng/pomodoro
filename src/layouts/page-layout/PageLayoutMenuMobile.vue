@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import Lang from "../../components/Lang.vue"
-import Link from "../../components/Link.vue"
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue"
 import { MenuIcon, XIcon } from "@heroicons/vue/outline"
+import Lang from "../../components/Lang.vue"
+import Link from "../../components/Link.vue"
 import { PageLayoutState as State } from "./PageLayoutState"
 
 defineProps<{ state: State }>()

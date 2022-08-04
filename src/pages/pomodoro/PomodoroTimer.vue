@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import PomodoroModebar from "./PomodoroModebar.vue"
-import PomodoroTimerControl from "./PomodoroTimerControl.vue"
 import { PomodoroState as State } from "./PomodoroState"
+import PomodoroTimerControl from "./PomodoroTimerControl.vue"
 
 defineProps<{ state: State }>()
 </script>
