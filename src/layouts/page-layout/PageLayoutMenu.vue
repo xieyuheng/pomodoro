@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue"
-import { MenuIcon } from "@heroicons/vue/outline/index.js"
+import { MenuIcon } from "@heroicons/vue/outline"
+import Lang from "../../components/Lang.vue"
 import { PageLayoutState as State } from "./PageLayoutState"
 
 defineProps<{ state: State }>()

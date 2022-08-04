@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { PageLayoutState as State } from "./PageLayoutState"
-import PageLayoutHeader from "./PageLayoutHeader.vue"
 import { reactive } from "vue"
 import { Head } from "@vueuse/head"
+import PageLayoutHeader from "./PageLayoutHeader.vue"
+import { PageLayoutState as State } from "./PageLayoutState"
 
 const state = reactive(new State())
 // await state.auth.loadUser()
