@@ -1,3 +1,2 @@
-- use `PageLayout` in `App.vue`
 - fix the use of `state.auth.loadUser()` -- use `cookie`
 - `/login` & `/register` redirect for `guest`

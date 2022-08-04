@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { Head } from "@vueuse/head"
-import PageLayout from "../../layouts/page-layout/PageLayout.vue"
 import Lang from "../../components/Lang.vue"
 import { useLang } from "../../hooks/useLang"
+import PageLayout from "../../layouts/page-layout/PageLayout.vue"
 
 const lang = useLang()
 </script>
