@@ -3,6 +3,7 @@ import {
   ArrowCircleRightIcon,
   DotsCircleHorizontalIcon,
 } from "@heroicons/vue/outline/index.js"
+import Lang from "../../components/Lang.vue"
 import { useForm } from "../../composables/useForm"
 import { LoginState as State } from "./LoginState"
 

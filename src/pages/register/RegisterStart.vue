@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import FormButton from "../../components/FormButton.vue"
+import FormInput from "../../components/FormInput.vue"
+import Lang from "../../components/Lang.vue"
 import { useForm } from "../../composables/useForm"
 import { RegisterState as State } from "./RegisterState"
 

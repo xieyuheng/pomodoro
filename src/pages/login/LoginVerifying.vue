@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { $fetch } from "ohmyfetch"
 import { useRouter } from "vue-router"
+import Lang from "../../components/Lang.vue"
 import { useAuth } from "../../composables/useAuth"
 import { poll } from "../../utils/poll"
 import { LoginState as State, Verifying } from "./LoginState"
