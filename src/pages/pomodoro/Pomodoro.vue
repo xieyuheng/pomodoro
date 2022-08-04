@@ -1,5 +1,3 @@
 <template>
-  <div>
-    Pomodoro
-  </div>
+  <div>Pomodoro</div>
 </template>
