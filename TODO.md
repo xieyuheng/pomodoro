@@ -1,5 +1,12 @@
+- `composables/useForm`
+
 - `pages/register`
 - `pages/login`
 
+- setup routes for `/register` and `/login`
+
+- rename `composables/` to `hooks/`
+
 - fix the use of `state.auth.loadUser()`
-- `composables/useForm`
+
+- [refactor] improve `auth.loadUser`
