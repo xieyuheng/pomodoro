@@ -13,4 +13,8 @@ export const routes: Array<RouteRecordRaw> = [
     component: () =>
       import("./register/RegisterEmailConfirmationSuccessPage.vue"),
   },
+  {
+    path: "/:slugs(.*)*",
+    component: () => import("./errors/PageNotFound.vue"),
+  },
 ]
