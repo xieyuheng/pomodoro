@@ -1,7 +1,3 @@
-- fix the use of `state.auth.loadUser()`
-
-  - use `localStorage`
-
-- [refactor] improve `auth.loadUser`
-
+- use `PageLayout` in `App.vue`
+- fix the use of `state.auth.loadUser()` -- use `cookie`
 - `/login` & `/register` redirect for `guest`
