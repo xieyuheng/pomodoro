@@ -11,12 +11,7 @@ defineProps<{
 </script>
 
 <template>
-  <a
-    @click="href && $router.push({ path: href })"
-    :target="target"
-    :class="class"
-    :style="style"
-  >
+  <RouterLink :to="href" :target="target" :class="class" :style="style">
     <slot />
-  </a>
+  </RouterLink>
 </template>

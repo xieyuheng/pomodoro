@@ -6,6 +6,7 @@ import {
   ListboxOptions,
 } from "@headlessui/vue"
 import { CheckIcon, SelectorIcon } from "@heroicons/vue/outline"
+import Lang from "../../components/Lang.vue"
 import { PageLayoutState as State } from "./PageLayoutState"
 
 defineProps<{ state: State }>()

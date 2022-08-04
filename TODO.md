@@ -1,4 +1,3 @@
-- `layouts/page-layout/` -- fix imports
 - `components/`
 - fix the use of `state.auth.loadUser()`
 - `composables/useForm`
