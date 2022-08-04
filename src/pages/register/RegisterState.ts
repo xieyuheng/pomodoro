@@ -1,6 +1,6 @@
 import { useLang } from "../../hooks/useLang"
 import { useTheme } from "../../hooks/useTheme"
-import { VerifyingJson, VerifyingSchema } from "../../types/VerifyingJson"
+import { VerifyingJson, VerifyingSchema } from "../../jsons/VerifyingJson"
 
 export class RegisterState {
   lang = useLang()

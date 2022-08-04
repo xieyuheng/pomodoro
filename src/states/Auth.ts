@@ -1,4 +1,4 @@
-import { UserJson } from "../types/UserJson"
+import { UserJson } from "../jsons/UserJson"
 
 export class Auth {
   user: UserJson | null = null
