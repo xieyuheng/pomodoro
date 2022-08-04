@@ -45,6 +45,7 @@ export class Form<T extends Values> {
 
     try {
       this.response = await fetch(url, {
+        credentials: "include",
         method: "POST",
         body: JSON.stringify(this.values),
       })

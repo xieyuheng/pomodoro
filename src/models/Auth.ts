@@ -6,7 +6,9 @@ export class Auth {
   async loadUser(): Promise<void> {
     if (this.user) return
 
-    const response = await fetch("/api/user")
+    const response = await fetch("/api/user", {
+      credentials: "include",
+    })
 
     const data = await response.json()
     if (!data) return
