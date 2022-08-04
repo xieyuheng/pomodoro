@@ -1,3 +1,1 @@
-- setup tailwind
-- setup prettier
 - [migrate]
