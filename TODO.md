@@ -1,3 +1,4 @@
+- `components/Lang.vue`
 - `components/Link.vue`
 - `components/`
 - fix the use of `state.auth.loadUser()`

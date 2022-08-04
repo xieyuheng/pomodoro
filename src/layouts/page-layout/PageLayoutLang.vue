@@ -5,7 +5,7 @@ import {
   ListboxOption,
   ListboxOptions,
 } from "@headlessui/vue"
-import { CheckIcon, SelectorIcon } from "@heroicons/vue/outline/index.js"
+import { CheckIcon, SelectorIcon } from "@heroicons/vue/outline"
 import { PageLayoutState as State } from "./PageLayoutState"
 
 defineProps<{ state: State }>()
