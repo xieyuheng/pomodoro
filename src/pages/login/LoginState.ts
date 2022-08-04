@@ -1,5 +1,5 @@
-import { useLang } from "../../composables/useLang"
-import { useTheme } from "../../composables/useTheme"
+import { useLang } from "../../hooks/useLang"
+import { useTheme } from "../../hooks/useTheme"
 import { VerifyingJson, VerifyingSchema } from "../../types/VerifyingJson"
 
 export class LoginState {

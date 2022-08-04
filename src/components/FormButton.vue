@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useLang } from "../composables/useLang"
-import { useTheme } from "../composables/useTheme"
+import { useLang } from "../hooks/useLang"
+import { useTheme } from "../hooks/useTheme"
 
 const lang = useLang()
 const theme = useTheme()

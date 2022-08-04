@@ -2,7 +2,7 @@
 import { $fetch } from "ohmyfetch"
 import { useRouter } from "vue-router"
 import Lang from "../../components/Lang.vue"
-import { useAuth } from "../../composables/useAuth"
+import { useAuth } from "../../hooks/useAuth"
 import { poll } from "../../utils/poll"
 import { LoginState as State, Verifying } from "./LoginState"
 

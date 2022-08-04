@@ -1,5 +1,5 @@
-import { useLang } from "../../composables/useLang"
-import { useTheme } from "../../composables/useTheme"
+import { useLang } from "../../hooks/useLang"
+import { useTheme } from "../../hooks/useTheme"
 import { removeFirst } from "../../utils/removeFirst"
 import { Mode, ModeKind } from "./models/Mode"
 import { defaultSettings, Settings, testingSettings } from "./models/Settings"
