@@ -16,7 +16,7 @@ const form = useForm({ email: "" })
 <template>
   <form
     @submit.prevent="
-      form.post('/api/login', {
+      form.post(state.links.login, {
         then: (result) => state.verify(result),
       })
     "

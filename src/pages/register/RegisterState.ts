@@ -12,6 +12,14 @@ export class RegisterState {
     const json = VerifyingSchema.validate(input)
     this.verifying = new Verifying(json)
   }
+
+  get links() {
+    const api = import.meta.env.VITE_API_URL
+
+    return {
+      register: `${api}/register`,
+    }
+  }
 }
 
 export interface Verifying extends VerifyingJson {}

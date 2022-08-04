@@ -12,6 +12,14 @@ export class LoginState {
     const json = VerifyingSchema.validate(input)
     this.verifying = new Verifying(json)
   }
+
+  get links() {
+    const api = import.meta.env.VITE_API_URL
+
+    return {
+      login: `${api}/login`,
+    }
+  }
 }
 
 export interface Verifying extends VerifyingJson {}
