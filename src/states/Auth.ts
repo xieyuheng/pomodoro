@@ -1,4 +1,4 @@
-import { UserJson } from "../jsons/UserJson"
+import { UserJson, UserSchema } from "../jsons/UserJson"
 
 export class Auth {
   user: UserJson | null = null
@@ -6,14 +6,18 @@ export class Auth {
   async loadUser(): Promise<void> {
     if (this.user) return
 
-    // const data = await fetch("/api/user")
-    // if (!data) return
+    const response = await fetch("/api/user")
 
-    // this.user = UserSchema.validate(data)
+    const data = await response.json()
+    if (!data) return
+
+    this.user = UserSchema.validate(data)
   }
 
   logout(): void {
     // TODO
+    // const token = useCookie("token")
+    // token.value = ""
     this.user = null
   }
 }

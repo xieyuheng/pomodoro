@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { $fetch } from "ohmyfetch"
 import { useRouter } from "vue-router"
 import Lang from "../../components/Lang.vue"
 import { useAuth } from "../../hooks/useAuth"
@@ -14,9 +13,10 @@ const { state, verifying } = defineProps<{
 const router = useRouter()
 
 const { stop } = poll<boolean>({
-  target: () => {
+  target: async () => {
     console.log({ who: "LoginVerifying", message: "polling" })
-    return $fetch(verifying.links.verify)
+    const response = await fetch(verifying.links.verify)
+    return await response.json()
   },
   check: (confirmed) => confirmed,
   then: async () => {
@@ -30,7 +30,7 @@ const { stop } = poll<boolean>({
 async function revoke() {
   stop()
   state.verifying = null
-  await $fetch(verifying.links.revoke)
+  await fetch(verifying.links.revoke)
 }
 </script>
 

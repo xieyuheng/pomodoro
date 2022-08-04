@@ -1,4 +1,3 @@
-import { $fetch, FetchError } from "ohmyfetch"
 import { reactive } from "vue"
 import { isServer } from "../utils/isServer"
 
@@ -14,15 +13,15 @@ interface PostOptions {
   catch?: (error: unknown) => void | Promise<void>
 }
 
+type Invalid<T> = { [P in keyof T]?: { zh: T[P]; en: T[P] } }
+
 export class Form<T extends Values> {
   processing = false
-  error?: FetchError
+  response?: Response
+  error?: Error
+  invalid?: Invalid<T> = {}
 
   constructor(public values: T) {}
-
-  get invalid() {
-    return this.error?.data?.data?.invalid
-  }
 
   async postByEvent(
     event: Event,
@@ -39,20 +38,28 @@ export class Form<T extends Values> {
 
   async post(url: string, options?: PostOptions): Promise<void> {
     this.processing = true
+
+    this.response = undefined
     this.error = undefined
+    this.invalid = {}
 
     try {
-      const result = await $fetch(url, {
+      this.response = await fetch(url, {
         method: "POST",
-        body: this.values,
+        body: JSON.stringify(this.values),
       })
 
+      if (this.response.status === 400) {
+        const data = await this.response.json()
+        this.invalid = data.invalid
+      }
+
       if (options?.then) {
-        options.then(result)
+        const data = await this.response.json()
+        options.then(data)
       }
     } catch (error) {
-      if (!(error instanceof FetchError)) throw error
-
+      if (!(error instanceof Error)) throw error
       this.error = error
       if (options?.catch) {
         options.catch(error)
