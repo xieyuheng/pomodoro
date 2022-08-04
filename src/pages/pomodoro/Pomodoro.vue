@@ -12,10 +12,10 @@ onMounted(() => state.setupNotification())
 </script>
 
 <template>
-  <head>
+  <Head>
     <title>{{ state.formatTitle() }}</title>
     <meta name="theme-color" :content="state.theme.color" />
-  </head>
+  </Head>
 
   <PageLayout>
     <PomodoroTimer :state="state" />
