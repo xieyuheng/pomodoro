@@ -5,8 +5,8 @@ export class Auth {
 
   async loadUser(): Promise<void> {
     if (this.user) return
-
-    const response = await fetch("/api/user", {
+    const api = import.meta.env.VITE_API_URL
+    const response = await fetch(`${api}/user`, {
       credentials: "include",
     })
 
@@ -17,9 +17,11 @@ export class Auth {
   }
 
   logout(): void {
-    // TODO
-    // const token = useCookie("token")
-    // token.value = ""
+    deleteCookie("token")
     this.user = null
   }
+}
+
+function deleteCookie(name: string) {
+  document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT;"
 }

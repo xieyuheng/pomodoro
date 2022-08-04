@@ -21,9 +21,11 @@ export class Verifying {
   }
 
   get links() {
+    const api = import.meta.env.VITE_API_URL
+
     return {
-      verify: `/api/register/${this.verification_token}/verify`,
-      revoke: `/api/register/${this.verification_token}/revoke`,
+      verify: `${api}/register/${this.verification_token}/verify`,
+      revoke: `${api}/register/${this.verification_token}/revoke`,
     }
   }
 }
