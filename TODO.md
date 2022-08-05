@@ -1,5 +1,4 @@
-- fix the use of `auth.loadUser()` -- use `cookie`
-
+- quit using `import()`
+- print localhost url after dev server started
 - `/login` & `/register` redirect for `guest`
-
 - `hooks/useForm` validate `Invalid` type
