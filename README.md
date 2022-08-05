@@ -1,6 +1,6 @@
 # Pomodoro
 
-[ [VISIT](https://pomodoro-vue.vercel.app)
+[ [VISIT](https://pomodoro.readonly.link)
 | [DICTIONARY](https://en.wiktionary.org/wiki/pomodoro)
 | [WIKIPEDIA](https://en.wikipedia.org/wiki/Pomodoro_Technique) ]
 
