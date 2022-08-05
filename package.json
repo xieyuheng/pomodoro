@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vite build",
     "check": "vue-tsc --noEmit",
     "watch": "vue-tsc --noEmit --watch",
     "test": "vitest --run",
