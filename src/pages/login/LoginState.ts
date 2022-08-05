@@ -23,6 +23,7 @@ export class LoginState {
 }
 
 export interface Verifying extends VerifyingJson {}
+
 export class Verifying {
   constructor(json: VerifyingJson) {
     Object.assign(this, json)
