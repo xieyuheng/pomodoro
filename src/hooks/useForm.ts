@@ -48,6 +48,9 @@ export class Form<T extends Values> {
         credentials: "include",
         method: "POST",
         body: JSON.stringify(this.values),
+        headers: {
+          "Content-Type": "application/json",
+        },
       })
 
       if (this.response.status === 400) {
