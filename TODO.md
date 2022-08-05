@@ -1,4 +1,5 @@
 - quit using `import()`
+- extract `TaskJson`
 - print localhost url after dev server started
 - `/login` & `/register` redirect for `guest`
 - `hooks/useForm` validate `Invalid` type
