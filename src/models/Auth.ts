@@ -25,6 +25,14 @@ export class Auth {
     }
   }
 
+  redirectGuest() {
+    const router = useRouter()
+
+    if (!this.user) {
+      router.replace({ path: "/" })
+    }
+  }
+
   logout(): void {
     deleteCookie("token")
     this.user = null
