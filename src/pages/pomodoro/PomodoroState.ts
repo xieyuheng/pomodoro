@@ -99,7 +99,7 @@ export class PomodoroState {
 
     const newTask = this.createTaskFromTitle(this.inputTaskTitle)
 
-    if (this.currentTask === null) {
+    if (!this.currentTask) {
       this.currentTask = newTask
       this.inputTaskTitle = undefined
     } else {
