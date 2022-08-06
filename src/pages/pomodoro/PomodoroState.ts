@@ -1,9 +1,9 @@
 import { useLang } from "../../hooks/useLang"
 import { useTheme } from "../../hooks/useTheme"
+import { TaskJson } from "../../jsons/TaskJson"
 import { removeFirst } from "../../utils/removeFirst"
 import { Mode, ModeKind } from "./models/Mode"
 import { defaultSettings, Settings, testingSettings } from "./models/Settings"
-import { TaskJson } from "../../jsons/TaskJson"
 import { Timer, TimerJson } from "./models/Timer"
 import { emptySoundLoop } from "./utils/emptySoundLoop"
 

@@ -1,6 +1,5 @@
 TaskJson
 <script setup lang="ts">
-import { computed } from "vue"
 import { TaskJson } from "../../jsons/TaskJson"
 import { PomodoroState as State } from "./PomodoroState"
 
