@@ -12,7 +12,6 @@ export type PomodoroStateJson = {
   timer: TimerJson
   playing: boolean
   editing: boolean
-  currentTask?: TaskJson
   tasks: Array<TaskJson>
   inputTaskTitle?: string
   settings: Settings
@@ -23,7 +22,6 @@ export class PomodoroState {
   timer: Timer
   playing = false
   editing = false
-  currentTask?: TaskJson
   tasks: Array<TaskJson> = []
   inputTaskTitle?: string
   settings: Settings = import.meta.env.PROD ? defaultSettings : testingSettings
@@ -40,12 +38,14 @@ export class PomodoroState {
     this.timer = new Timer(this.mode.interval)
   }
 
+  get currentTask() {
+    return this.tasks[0]
+  }
+
   private refreshIds(): void {
     const ids: Set<number> = new Set()
 
-    const tasks = this.currentTask
-      ? [this.currentTask, ...this.tasks]
-      : this.tasks
+    const tasks = this.tasks
 
     for (const task of tasks) {
       if (ids.has(task.id)) {
@@ -63,7 +63,6 @@ export class PomodoroState {
       timer: this.timer.json(),
       playing: this.playing,
       editing: this.editing,
-      currentTask: this.currentTask,
       tasks: this.tasks,
       inputTaskTitle: this.inputTaskTitle,
       settings: this.settings,
@@ -76,7 +75,6 @@ export class PomodoroState {
     state.timer = Timer.create(json.timer)
     state.playing = json.playing
     state.editing = json.editing
-    state.currentTask = json.currentTask
     state.tasks = json.tasks
     state.inputTaskTitle = json.inputTaskTitle
     state.settings = json.settings
@@ -84,10 +82,18 @@ export class PomodoroState {
     return state
   }
 
+  async save(): Promise<void> {
+    const api = import.meta.env.VITE_API_URL
+    await fetch(`${api}/pomodoro`, {
+      credentials: "include",
+      body: JSON.stringify({
+        tasks: this.tasks,
+      }),
+    })
+  }
+
   private createTaskFromTitle(title: string = ""): TaskJson {
-    const tasks = this.currentTask
-      ? [this.currentTask, ...this.tasks]
-      : this.tasks
+    const tasks = this.tasks
 
     const ids = tasks.map((task) => task.id)
     const newId = ids.length === 0 ? 0 : Math.max(...ids) + 1
@@ -99,24 +105,12 @@ export class PomodoroState {
 
     const newTask = this.createTaskFromTitle(this.inputTaskTitle)
 
-    if (!this.currentTask) {
-      this.currentTask = newTask
-      this.inputTaskTitle = undefined
-    } else {
-      this.tasks.push(newTask)
-      this.inputTaskTitle = undefined
-    }
+    this.tasks.push(newTask)
+    this.inputTaskTitle = undefined
   }
 
   deleteTask(id: number) {
-    if (this.currentTask?.id === id) {
-      this.currentTask = undefined
-      if (this.tasks[0]) {
-        this.selectTask(this.tasks[0].id)
-      }
-    } else {
-      removeFirst(this.tasks, (task) => task.id === id)
-    }
+    removeFirst(this.tasks, (task) => task.id === id)
   }
 
   get time(): number {
@@ -191,10 +185,11 @@ export class PomodoroState {
 
     this.timer.start({
       onFinished: () => {
-        this.notify()
         if (this.currentTask && this.mode.kind === "Focus") {
           this.currentTask.trace.push(Date.now())
+          this.save()
         }
+        this.notify()
       },
     })
   }
@@ -204,12 +199,7 @@ export class PomodoroState {
     if (task === undefined) return
 
     removeFirst(this.tasks, (task) => task.id === id)
-
-    if (this.currentTask) {
-      this.tasks.unshift(this.currentTask)
-    }
-
-    this.currentTask = task
+    this.tasks.unshift(this.currentTask)
   }
 
   formatTitle(): string {
