@@ -1,2 +1,1 @@
-- extract `models/Form`
-- `hooks/useForm` validate `Invalid` type
+- `models/Form` validate `Invalid` type
