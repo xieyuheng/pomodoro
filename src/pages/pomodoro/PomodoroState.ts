@@ -85,10 +85,10 @@ export class PomodoroState {
   async save(): Promise<void> {
     const api = import.meta.env.VITE_API_URL
     await fetch(`${api}/pomodoro`, {
+      method: "PUT",
       credentials: "include",
-      body: JSON.stringify({
-        tasks: this.tasks,
-      }),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ tasks: this.tasks }),
     })
   }
 

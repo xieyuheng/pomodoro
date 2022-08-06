@@ -45,12 +45,10 @@ export class Form<T extends Values> {
 
     try {
       this.response = await fetch(url, {
-        credentials: "include",
         method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(this.values),
-        headers: {
-          "Content-Type": "application/json",
-        },
       })
 
       if (this.response.status === 400) {

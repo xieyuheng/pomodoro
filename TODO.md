@@ -1,3 +1,2 @@
-- save `pomodoro` on change
 - load `pomodoro` on start
 - `hooks/useForm` validate `Invalid` type
