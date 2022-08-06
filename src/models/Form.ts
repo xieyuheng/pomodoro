@@ -9,7 +9,7 @@ type Invalid<T> = { [P in keyof T]?: { zh: T[P]; en: T[P] } }
 
 export class Form<T extends Values> {
   processing = false
-  response?: Response
+  response: Response | undefined = undefined
   error?: Error
   invalid?: Invalid<T> = {}
 

@@ -1,6 +1,6 @@
 import { useRouter } from "vue-router"
-import { UserJson, UserSchema } from "../jsons/UserJson"
 import { PomodoroJson, PomodoroSchema } from "../jsons/PomodoroJson"
+import { UserJson, UserSchema } from "../jsons/UserJson"
 
 export class Auth {
   user: UserJson | null = null

@@ -1,6 +1,6 @@
+import { useAuth } from "../../hooks/useAuth"
 import { useLang } from "../../hooks/useLang"
 import { useTheme } from "../../hooks/useTheme"
-import { useAuth } from "../../hooks/useAuth"
 import { TaskJson } from "../../jsons/TaskJson"
 import { removeFirst } from "../../utils/removeFirst"
 import { Mode, ModeKind } from "./models/Mode"
