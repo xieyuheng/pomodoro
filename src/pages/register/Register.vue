@@ -5,6 +5,8 @@ import { RegisterState as State } from "./RegisterState"
 import RegisterVerifying from "./RegisterVerifying.vue"
 
 const state = reactive(new State())
+
+state.auth.redirectUser()
 </script>
 
 <template>

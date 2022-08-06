@@ -1,3 +1,4 @@
+import { useAuth } from "../../hooks/useAuth"
 import { useLang } from "../../hooks/useLang"
 import { useTheme } from "../../hooks/useTheme"
 import { VerifyingJson, VerifyingSchema } from "../../jsons/VerifyingJson"
@@ -5,6 +6,7 @@ import { VerifyingJson, VerifyingSchema } from "../../jsons/VerifyingJson"
 export class LoginState {
   lang = useLang()
   theme = useTheme()
+  auth = useAuth()
 
   verifying: Verifying | null = null
 

@@ -1,2 +1,1 @@
-- `/login` & `/register` redirect for `guest`
 - `hooks/useForm` validate `Invalid` type
