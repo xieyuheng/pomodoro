@@ -1,3 +1,2 @@
-- `TaskJson` use records instead of `count`
 - `/login` & `/register` redirect for `guest`
 - `hooks/useForm` validate `Invalid` type

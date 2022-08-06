@@ -91,7 +91,7 @@ export class PomodoroState {
 
     const ids = tasks.map((task) => task.id)
     const newId = ids.length === 0 ? 0 : Math.max(...ids) + 1
-    return { id: newId, title, count: 0 }
+    return { id: newId, title, trace: [] }
   }
 
   createTask() {
@@ -193,7 +193,7 @@ export class PomodoroState {
       onFinished: () => {
         this.notify()
         if (this.currentTask && this.mode.kind === "Focus") {
-          this.currentTask.count++
+          this.currentTask.trace.push(Date.now())
         }
       },
     })

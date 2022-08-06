@@ -5,17 +5,13 @@ import { TaskJson } from "../../jsons/TaskJson"
 import { PomodoroState as State } from "./PomodoroState"
 
 const props = defineProps<{ state: State; task: TaskJson }>()
-
-const records = computed(() =>
-  Array.from({ length: props.task.count }, (_, index) => ({ index }))
-)
 </script>
 
 <template>
-  <div v-if="task.count > 0" class="flex space-x-0.5 pt-2">
+  <div v-if="task.trace.length > 0" class="flex space-x-0.5 pt-2">
     <div
-      v-for="record of records"
-      :key="record.index"
+      v-for="time of task.trace"
+      :key="time"
       class="h-2.5 w-2.5 border"
       :class="[
         state.classes.transition,
