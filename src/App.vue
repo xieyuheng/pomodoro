@@ -13,7 +13,12 @@ const state = reactive({
 })
 
 onMounted(async () => {
-  await state.auth.loadUser()
+  try {
+    await state.auth.loadUser()
+  } catch (error) {
+    console.error(error)
+  }
+
   state.loading = false
 })
 </script>

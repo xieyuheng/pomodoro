@@ -11,6 +11,7 @@ export class Auth {
       credentials: "include",
     })
 
+    if (!response.ok) return
     const data = await response.json()
     if (!data) return
 
