@@ -28,8 +28,8 @@ const alert = window.alert
       :options="{
         onDelete: () => {
           state.deleteTask(task.id)
-          if (state.currentTesk) {
-            locals.inputTitle = state.currentTesk.title
+          if (state.currentTask) {
+            locals.inputTitle = state.currentTask.title
           }
           task.editing = false
         },
