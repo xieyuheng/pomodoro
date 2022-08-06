@@ -24,21 +24,13 @@ onMounted(async () => {
 </script>
 
 <template>
-  <Transition
-    enter-from-class="transform opacity-100"
-    enter-to-class="transform opacity-80"
-    leave-active-class="transition duration-700"
-    leave-from-class="transform opacity-80"
-    leave-to-class="transform opacity-100 "
-  >
-    <Loading v-if="state.loading">
-      <Lang>
-        <template #zh>加载中。。。</template>
-        <template #en>Loading...</template>
-      </Lang>
-    </Loading>
-    <PageLayout v-else>
-      <RouterView />
-    </PageLayout>
-  </Transition>
+  <Loading v-if="state.loading">
+    <Lang>
+      <template #zh>加载中。。。</template>
+      <template #en>Loading...</template>
+    </Lang>
+  </Loading>
+  <PageLayout v-else>
+    <RouterView />
+  </PageLayout>
 </template>
