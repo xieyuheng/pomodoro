@@ -1,5 +1,6 @@
 import { useLang } from "../../hooks/useLang"
 import { useTheme } from "../../hooks/useTheme"
+import { useAuth } from "../../hooks/useAuth"
 import { TaskJson } from "../../jsons/TaskJson"
 import { removeFirst } from "../../utils/removeFirst"
 import { Mode, ModeKind } from "./models/Mode"
@@ -28,6 +29,7 @@ export class PomodoroState {
 
   lang = useLang()
   theme = useTheme()
+  auth = useAuth()
 
   classes = {
     transition: "transition delay-0 duration-500 ease-out",
@@ -36,6 +38,9 @@ export class PomodoroState {
   constructor() {
     this.mode = this.settings.modes.Focus
     this.timer = new Timer(this.mode.interval)
+    if (this.auth.pomodoro) {
+      this.tasks = this.auth.pomodoro.tasks
+    }
   }
 
   get currentTask() {

@@ -1,10 +1,17 @@
 import { useRouter } from "vue-router"
 import { UserJson, UserSchema } from "../jsons/UserJson"
+import { PomodoroJson, PomodoroSchema } from "../jsons/PomodoroJson"
 
 export class Auth {
   user: UserJson | null = null
+  pomodoro: PomodoroJson | null = null
 
-  async loadUser(): Promise<void> {
+  async init() {
+    await this.loadUser()
+    await this.loadPomodoro()
+  }
+
+  async loadUser() {
     if (this.user) return
     const api = import.meta.env.VITE_API_URL
     const response = await fetch(`${api}/user`, {
@@ -16,6 +23,20 @@ export class Auth {
     if (!data) return
 
     this.user = UserSchema.validate(data)
+  }
+
+  async loadPomodoro() {
+    if (this.pomodoro) return
+    const api = import.meta.env.VITE_API_URL
+    const response = await fetch(`${api}/pomodoro`, {
+      credentials: "include",
+    })
+
+    if (!response.ok) return
+    const data = await response.json()
+    if (!data) return
+
+    this.pomodoro = PomodoroSchema.validate(data)
   }
 
   redirectUser() {

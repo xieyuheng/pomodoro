@@ -1,2 +1,2 @@
-- load `pomodoro` on start
+- extract `models/Form`
 - `hooks/useForm` validate `Invalid` type
