@@ -5,7 +5,10 @@ const theme = useTheme()
 </script>
 
 <template>
-  <div>
+  <div
+    class="flex flex-col h-screen w-screen justify-center items-center text-3xl text-white"
+    :class="`bg-${theme.name}-400`"
+  >
     <slot>Loading...</slot>
   </div>
 </template>
