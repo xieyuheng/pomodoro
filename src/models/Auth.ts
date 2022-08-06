@@ -58,6 +58,7 @@ export class Auth {
   logout(): void {
     deleteCookie("token")
     this.user = null
+    this.pomodoro = null
   }
 }
 

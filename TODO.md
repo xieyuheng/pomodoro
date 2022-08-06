@@ -1,1 +1,2 @@
+- fix logout
 - `models/Form` validate `Invalid` type
