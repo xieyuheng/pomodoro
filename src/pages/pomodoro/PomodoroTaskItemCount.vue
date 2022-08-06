@@ -1,9 +1,10 @@
+TaskJson
 <script setup lang="ts">
 import { computed } from "vue"
-import { Task } from "./models/Task"
+import { TaskJson } from "../../jsons/TaskJson"
 import { PomodoroState as State } from "./PomodoroState"
 
-const props = defineProps<{ state: State; task: Task }>()
+const props = defineProps<{ state: State; task: TaskJson }>()
 
 const records = computed(() =>
   Array.from({ length: props.task.count }, (_, index) => ({ index }))

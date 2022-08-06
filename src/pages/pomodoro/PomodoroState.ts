@@ -3,7 +3,7 @@ import { useTheme } from "../../hooks/useTheme"
 import { removeFirst } from "../../utils/removeFirst"
 import { Mode, ModeKind } from "./models/Mode"
 import { defaultSettings, Settings, testingSettings } from "./models/Settings"
-import { Task } from "./models/Task"
+import { TaskJson } from "../../jsons/TaskJson"
 import { Timer, TimerJson } from "./models/Timer"
 import { emptySoundLoop } from "./utils/emptySoundLoop"
 
@@ -12,8 +12,8 @@ export type PomodoroStateJson = {
   timer: TimerJson
   playing: boolean
   editing: boolean
-  currentTask?: Task
-  tasks: Array<Task>
+  currentTask?: TaskJson
+  tasks: Array<TaskJson>
   inputTaskTitle?: string
   settings: Settings
 }
@@ -23,8 +23,8 @@ export class PomodoroState {
   timer: Timer
   playing = false
   editing = false
-  currentTask?: Task
-  tasks: Array<Task> = []
+  currentTask?: TaskJson
+  tasks: Array<TaskJson> = []
   inputTaskTitle?: string
   settings: Settings = import.meta.env.PROD ? defaultSettings : testingSettings
 
@@ -84,7 +84,7 @@ export class PomodoroState {
     return state
   }
 
-  private createTaskFromTitle(title: string = ""): Task {
+  private createTaskFromTitle(title: string = ""): TaskJson {
     const tasks = this.currentTask
       ? [this.currentTask, ...this.tasks]
       : this.tasks
