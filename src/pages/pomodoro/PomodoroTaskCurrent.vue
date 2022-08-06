@@ -42,8 +42,10 @@ const alert = window.alert
           if (!locals.inputTitle) {
             return alert(state.lang.zh ? '输入不能为空' : 'Input required')
           }
+
           task.title = locals.inputTitle
           task.editing = false
+          state.save()
         },
       }"
     />

@@ -107,10 +107,12 @@ export class PomodoroState {
 
     this.tasks.push(newTask)
     this.inputTaskTitle = undefined
+    this.save()
   }
 
   deleteTask(id: number) {
     removeFirst(this.tasks, (task) => task.id === id)
+    this.save()
   }
 
   get time(): number {
@@ -199,7 +201,8 @@ export class PomodoroState {
     if (task === undefined) return
 
     removeFirst(this.tasks, (task) => task.id === id)
-    this.tasks.unshift(this.currentTask)
+    this.tasks.unshift(task)
+    this.save()
   }
 
   formatTitle(): string {

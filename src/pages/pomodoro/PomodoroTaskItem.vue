@@ -45,6 +45,7 @@ const alert = window.alert
 
           task.title = locals.inputTitle
           task.editing = false
+          state.save()
         },
       }"
     />
