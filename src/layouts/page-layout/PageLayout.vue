@@ -5,7 +5,6 @@ import PageLayoutHeader from "./PageLayoutHeader.vue"
 import { PageLayoutState as State } from "./PageLayoutState"
 
 const state = reactive(new State())
-// await state.auth.loadUser()
 </script>
 
 <template>
