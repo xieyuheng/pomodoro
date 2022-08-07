@@ -3,8 +3,8 @@ import { PomodoroJson, PomodoroSchema } from "../jsons/PomodoroJson"
 import { UserJson, UserSchema } from "../jsons/UserJson"
 
 export class Auth {
-  user: UserJson | null = null
-  pomodoro: PomodoroJson | null = null
+  user?: UserJson
+  pomodoro?: PomodoroJson
 
   async init() {
     await this.loadUser()
@@ -56,9 +56,10 @@ export class Auth {
   }
 
   logout(): void {
+    this.user = undefined
+    this.pomodoro = undefined
+
     deleteCookie("token")
-    this.user = null
-    this.pomodoro = null
   }
 }
 

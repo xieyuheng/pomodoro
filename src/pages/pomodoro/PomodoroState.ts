@@ -43,6 +43,10 @@ export class PomodoroState {
     }
   }
 
+  reload() {
+    this.tasks = this.auth.pomodoro.tasks
+  }
+
   get currentTask() {
     return this.tasks[0]
   }
