@@ -9,6 +9,6 @@ const theme = useTheme()
     class="flex flex-col h-screen w-screen justify-center items-center text-3xl text-white"
     :class="`bg-${theme.name}-400`"
   >
-    <slot>Loading...</slot>
+    <slot />
   </div>
 </template>
