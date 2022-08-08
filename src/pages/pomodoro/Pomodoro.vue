@@ -19,7 +19,7 @@ onMounted(() => state.setupNotification())
   <div>
     <Head>
       <title>{{ state.formatTitle() }}</title>
-      <meta name="theme-color" :content="state.theme.color" />
+      <meta name="theme-color" :content="state.theme.backgroundColor" />
     </Head>
 
     <PomodoroTimer :state="state" />
