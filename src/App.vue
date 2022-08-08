@@ -13,11 +13,7 @@ const state = reactive({
 })
 
 onMounted(async () => {
-  try {
-    await state.auth.init()
-  } catch (error) {
-    console.error(error)
-  }
+  await state.auth.init().catch((error) => {})
 
   state.loading = false
 })
