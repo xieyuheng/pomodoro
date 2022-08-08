@@ -14,7 +14,6 @@ const state = reactive({
 
 onMounted(async () => {
   await state.auth.init().catch((error) => {})
-
   state.loading = false
 })
 </script>
