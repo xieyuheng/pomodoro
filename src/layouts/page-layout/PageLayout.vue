@@ -17,7 +17,7 @@ const state = reactive(new State())
   >
     <Head>
       <title v-if="state.formatTitle()">{{ state.formatTitle() }}</title>
-      <meta name="theme-color" :content="state.theme.backgroundColor" />
+      <meta name="theme-color" :content="state.theme.color" />
     </Head>
 
     <PageLayoutHeader :state="state" />
