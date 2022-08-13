@@ -10,7 +10,6 @@ export default defineConfig({
     vue(),
     VitePWA({
       registerType: "autoUpdate",
-      devOptions: { enabled: true },
       includeAssets: [
         "/favicon.ico",
         "/apple-touch-icon.png",
@@ -23,6 +22,8 @@ export default defineConfig({
         description: "Pomodoro timer.",
         display: "standalone",
         start_url: "/",
+        theme_color: "#F87171",
+        background_color: "#F87171",
         icons: [
           {
             src: "/android-chrome-192x192.png",
