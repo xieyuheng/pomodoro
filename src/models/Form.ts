@@ -18,7 +18,7 @@ export class Form<T extends Values> {
   async postByEvent(
     event: Event,
     url: string,
-    options?: PostOptions
+    options?: PostOptions,
   ): Promise<void> {
     const target: any = event.target
     for (const key of Object.keys(this.values)) {

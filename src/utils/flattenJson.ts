@@ -17,7 +17,7 @@ function isLeafJson(json: Json): json is LeafJson {
 function flattenJsonCollect(
   json: { [x: string]: Json },
   parts: Array<string>,
-  record: Record<string, LeafJson>
+  record: Record<string, LeafJson>,
 ): void {
   for (const [part, value] of Object.entries(json)) {
     if (isLeafJson(value)) {

@@ -9,7 +9,7 @@ let state = reactive(new State()) as State
 
 watch(
   () => state.auth.pomodoro,
-  () => state.reload()
+  () => state.reload(),
 )
 
 onMounted(() => state.setupNotification())

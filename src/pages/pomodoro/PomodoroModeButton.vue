@@ -27,7 +27,7 @@ defineProps<{ state: State; kind: ModeKind }>()
               ].join('\n')
             : [
                 `A timer has been started in ${state.translateKind(
-                  state.kind
+                  state.kind,
                 )} mode,`,
                 `are you sure to change to ${state.translateKind(kind)} mode?`,
               ].join('\n'),
