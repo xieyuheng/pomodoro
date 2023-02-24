@@ -1,5 +1,5 @@
 import { Obtain, ty } from '@xieyuheng/ty'
-import { TaskSchema } from './TaskJson'
+import { TaskSchema } from './TaskSchema'
 
 export const PomodoroSchema = ty.object({
   username: ty.string(),

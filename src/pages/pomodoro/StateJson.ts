@@ -1,4 +1,4 @@
-import { TaskJson } from '../../schemas/TaskJson'
+import { TaskJson } from '../../schemas/TaskSchema'
 import { Mode } from './mode'
 import { Settings } from './settings'
 import { createState, State } from './State'

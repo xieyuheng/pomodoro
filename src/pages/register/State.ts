@@ -1,5 +1,5 @@
 import { useAuth } from '../../reactives/useAuth'
-import { VerifyingJson, VerifyingSchema } from '../../schemas/VerifyingJson'
+import { VerifyingJson, VerifyingSchema } from '../../schemas/VerifyingSchema'
 
 export class State {
   auth = useAuth()

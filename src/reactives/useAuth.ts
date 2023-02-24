@@ -1,6 +1,6 @@
 import { useRouter } from 'vue-router'
-import { PomodoroJson, PomodoroSchema } from '../schemas/PomodoroJson'
-import { UserJson, UserSchema } from '../schemas/UserJson'
+import { PomodoroJson, PomodoroSchema } from '../schemas/PomodoroSchema'
+import { UserJson, UserSchema } from '../schemas/UserSchema'
 import { createSingleton } from '../utils/createSingleton'
 
 class Auth {
