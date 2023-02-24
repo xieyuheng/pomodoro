@@ -1,4 +1,10 @@
-[pomodoro] `stateNotify`
+format use `singleQuote`
+
+[pomodoro] `stateCreateTask`
+[pomodoro] `stateDeleteTask`
+[pomodoro] `stateChangeMode`
+[pomodoro] `stateSelectTask`
+[pomodoro] `stateFormatTitle`
 
 # refactor
 

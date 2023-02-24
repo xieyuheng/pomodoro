@@ -6,6 +6,7 @@ import { removeFirst } from "../../utils/removeFirst"
 import { Mode, ModeKind } from "./models/Mode"
 import { defaultSettings, Settings, testingSettings } from "./models/Settings"
 import { Timer, TimerJson } from "./models/Timer"
+import { stateNotify } from "./stateNotify"
 import { emptySoundLoop } from "./utils/emptySoundLoop"
 
 export type StateJson = {
@@ -92,13 +93,7 @@ export class State {
   }
 
   async save(): Promise<void> {
-    const api = import.meta.env.VITE_API_URL
-    await fetch(`${api}/pomodoro`, {
-      method: "PUT",
-      credentials: "include",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ tasks: this.tasks }),
-    })
+    // TODO
   }
 
   private createTaskFromTitle(title: string = ""): TaskJson {
@@ -130,16 +125,6 @@ export class State {
 
   get appName(): string {
     return this.lang.zh ? "番茄钟" : "Pomodoro"
-  }
-
-  async notify(): Promise<void> {
-    if (Notification.permission === "granted") {
-      const registration = await navigator.serviceWorker.ready
-      const kind = this.translateKind(this.mode.kind)
-      registration.showNotification(this.appName, {
-        body: this.lang.zh ? `${kind} 结束。` : `${kind} finished.`,
-      })
-    }
   }
 
   get kind(): ModeKind {
@@ -180,12 +165,13 @@ export class State {
     }
 
     this.timer.start({
-      onFinished: () => {
+      onFinished: async () => {
         if (this.currentTask && this.mode.kind === "Focus") {
           this.currentTask.trace.push(Date.now())
           this.save()
         }
-        this.notify()
+
+        await stateNotify(this)
       },
     })
   }
