@@ -2,9 +2,9 @@ import { TaskJson } from '../../jsons/TaskJson'
 import { useAuth } from '../../reactives/useAuth'
 import { useGlobalLang } from '../../reactives/useGlobalLang'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
-import { Mode, ModeKind } from './models/Mode'
-import { defaultSettings, Settings, testingSettings } from './models/Settings'
-import { Timer, TimerJson } from './models/Timer'
+import { Mode, ModeKind } from './mode'
+import { defaultSettings, Settings, testingSettings } from './settings'
+import { Timer, TimerJson } from './timer'
 
 export type StateJson = {
   mode: Mode

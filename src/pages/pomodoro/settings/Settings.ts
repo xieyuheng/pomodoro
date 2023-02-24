@@ -1,4 +1,4 @@
-import { Mode } from './Mode'
+import { Mode } from '../mode'
 
 type ModesSetting = {
   Focus: Mode

@@ -1,5 +1,5 @@
-[pomodoro] `models/modeThemeName`
-[pomodoro] `models/modeTranslateKind`
+[pomodoro] `mode/modeThemeName`
+[pomodoro] `mode/modeTranslateKind`
 
 # refactor
 
