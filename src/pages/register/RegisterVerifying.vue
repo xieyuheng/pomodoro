@@ -3,7 +3,7 @@ import { useRouter } from 'vue-router'
 import Lang from '../../components/Lang.vue'
 import { useAuth } from '../../reactives/useAuth'
 import { poll } from '../../utils/poll'
-import { RegisterState as State, Verifying } from './RegisterState'
+import { State, Verifying } from './State'
 
 const { state, verifying } = defineProps<{
   state: State

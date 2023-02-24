@@ -6,7 +6,7 @@ import {
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
 import { useForm } from '../../reactives/useForm'
-import { LoginState as State } from './LoginState'
+import { State } from './State'
 
 const { state } = defineProps<{ state: State }>()
 

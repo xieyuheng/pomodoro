@@ -3,7 +3,7 @@ import { useAuth } from '../../reactives/useAuth'
 import { useGlobalLang } from '../../reactives/useGlobalLang'
 import { useTheme } from '../../reactives/useTheme'
 
-export class LoginState {
+export class State {
   lang = useGlobalLang()
   theme = useTheme()
   auth = useAuth()

@@ -4,7 +4,7 @@ import FormInput from '../../components/form/FormInput.vue'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
 import { useForm } from '../../reactives/useForm'
-import { RegisterState as State } from './RegisterState'
+import { State } from './State'
 
 const { state } = defineProps<{ state: State }>()
 
