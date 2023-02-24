@@ -3,6 +3,7 @@ import { useAuth } from '../../reactives/useAuth'
 import { useGlobalLang } from '../../reactives/useGlobalLang'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import { Mode, ModeKind } from './mode'
+import { modeThemeName } from './mode/modeThemeName'
 import { defaultSettings, Settings, testingSettings } from './settings'
 import { Timer, TimerJson } from './timer'
 
@@ -98,18 +99,7 @@ export class State {
 
   changeMode(kind: ModeKind): void {
     this.mode = this.settings.modes[kind]
-    this.theme.name = this.themeName
+    this.theme.name = modeThemeName(this.mode)
     this.timer.reset(this.mode.interval)
-  }
-
-  get themeName(): string {
-    switch (this.mode.kind) {
-      case 'Focus':
-        return 'red'
-      case 'Break':
-        return 'sky'
-      case 'Recess':
-        return 'violet'
-    }
   }
 }
