@@ -23,7 +23,7 @@ defineProps<{ state: State }>()
       {{ state.timer.formatTime() }}
     </div>
     <div v-else class="flex flex-col items-center pt-2">
-      <div class="text-4xl md:text-5xl">{{ state.kind }} finished</div>
+      <div class="text-4xl md:text-5xl">{{ state.mode.kind }} finished</div>
       <div class="py-2 font-mono text-3xl font-semibold md:text-4xl">
         {{ state.timer.formatInterval() }}
       </div>

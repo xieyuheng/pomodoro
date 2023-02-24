@@ -87,16 +87,8 @@ export class State {
     return state
   }
 
-  get time(): number {
-    return this.timer.time
-  }
-
   get appName(): string {
     return this.lang.zh ? '番茄钟' : 'Pomodoro'
-  }
-
-  get kind(): ModeKind {
-    return this.mode.kind
   }
 
   translateKind(kind: ModeKind): string {
@@ -117,7 +109,7 @@ export class State {
   }
 
   get themeName(): string {
-    switch (this.kind) {
+    switch (this.mode.kind) {
       case 'Focus':
         return 'red'
       case 'Break':
