@@ -1,6 +1,5 @@
-[pomodoro] `stateChangeMode`
-[pomodoro] `stateSelectTask`
 [pomodoro] `stateFormatTitle`
+[pomodoro] `stateChangeMode`
 
 # refactor
 

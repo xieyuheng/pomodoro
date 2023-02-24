@@ -7,6 +7,7 @@ import PomodoroTaskForm from './PomodoroTaskForm.vue'
 import PomodoroTaskItemCount from './PomodoroTaskItemCount.vue'
 import { State } from './State'
 import { stateDeleteTask } from './stateDeleteTask'
+import { stateSelectTask } from './stateSelectTask'
 
 const props = defineProps<{ state: State; task: TaskJson }>()
 
@@ -63,7 +64,7 @@ const alert = window.alert
             if (!locals.active) {
               locals.active = true
             } else {
-              state.selectTask(task.id)
+              stateSelectTask(state, task.id)
             }
           }
         "

@@ -2,7 +2,6 @@ import { TaskJson } from '../../jsons/TaskJson'
 import { useAuth } from '../../reactives/useAuth'
 import { useLang } from '../../reactives/useLang'
 import { useTheme } from '../../reactives/useTheme'
-import { removeFirst } from '../../utils/removeFirst'
 import { Mode, ModeKind } from './models/Mode'
 import { defaultSettings, Settings, testingSettings } from './models/Settings'
 import { Timer, TimerJson } from './models/Timer'
@@ -42,10 +41,6 @@ export class State {
     if (this.auth.pomodoro) {
       this.tasks = this.auth.pomodoro.tasks
     }
-  }
-
-  reload() {
-    this.tasks = this.auth.pomodoro?.tasks || []
   }
 
   get currentTask() {
@@ -146,14 +141,6 @@ export class State {
         await stateNotify(this)
       },
     })
-  }
-
-  selectTask(id: number): void {
-    const task = this.tasks.find((task) => task.id === id)
-    if (task === undefined) return
-
-    removeFirst(this.tasks, (task) => task.id === id)
-    this.tasks.unshift(task)
   }
 
   formatTitle(): string {
