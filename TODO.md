@@ -1,5 +1,7 @@
 [pomodoro] remove `state.classes.transition`
+
 [page-layout] remove `state.classes.transition`
+[page-layout] remove `State`
 
 # refactor
 
