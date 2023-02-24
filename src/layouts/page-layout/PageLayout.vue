@@ -2,7 +2,7 @@
 import { Head } from '@vueuse/head'
 import { reactive } from 'vue'
 import PageLayoutHeader from './PageLayoutHeader.vue'
-import { PageLayoutState as State } from './PageLayoutState'
+import { State } from './State'
 
 const state = reactive(new State())
 </script>

@@ -2,7 +2,7 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Bars3Icon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/Lang.vue'
-import { PageLayoutState as State } from './PageLayoutState'
+import { State } from './State'
 
 defineProps<{ state: State }>()
 </script>

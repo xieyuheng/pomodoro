@@ -2,7 +2,7 @@ import { useAuth } from '../../reactives/useAuth'
 import { useGlobalLang } from '../../reactives/useGlobalLang'
 import { useTheme } from '../../reactives/useTheme'
 
-export class PageLayoutState {
+export class State {
   theme = useTheme()
   auth = useAuth()
 

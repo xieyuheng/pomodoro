@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
-import { PageLayoutState as State } from './PageLayoutState'
+import { State } from './State'
 
 defineProps<{ state: State }>()
 </script>
