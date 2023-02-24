@@ -96,27 +96,8 @@ export class State {
     // TODO
   }
 
-  private createTaskFromTitle(title: string = ''): TaskJson {
-    const tasks = this.tasks
-
-    const ids = tasks.map((task) => task.id)
-    const newId = ids.length === 0 ? 0 : Math.max(...ids) + 1
-    return { id: newId, title, trace: [] }
-  }
-
-  createTask() {
-    if (!this.inputTaskTitle) return
-
-    const newTask = this.createTaskFromTitle(this.inputTaskTitle)
-
-    this.tasks.push(newTask)
-    this.inputTaskTitle = undefined
-    this.save()
-  }
-
   deleteTask(id: number) {
     removeFirst(this.tasks, (task) => task.id === id)
-    this.save()
   }
 
   get time(): number {

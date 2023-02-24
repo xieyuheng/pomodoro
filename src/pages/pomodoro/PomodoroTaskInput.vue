@@ -2,6 +2,7 @@
 import { PlusIcon } from '@heroicons/vue/24/outline'
 import PomodoroTaskForm from './PomodoroTaskForm.vue'
 import { State } from './State'
+import { stateCreateTask } from './stateCreateTask'
 
 defineProps<{ state: State }>()
 </script>
@@ -29,7 +30,7 @@ defineProps<{ state: State }>()
             if (!state.inputTaskTitle) {
               state.editing = false
             } else {
-              state.createTask()
+              stateCreateTask(state)
               state.editing = false
             }
           },
