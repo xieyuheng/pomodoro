@@ -1,8 +1,8 @@
 import { useAuth } from '../../reactives/useAuth'
-import { useTheme } from '../../reactives/useTheme'
+import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 
 export class State {
-  theme = useTheme()
+  theme = useGlobalTheme()
   auth = useAuth()
 
   classes = {

@@ -1,11 +1,11 @@
 import { VerifyingJson, VerifyingSchema } from '../../jsons/VerifyingJson'
 import { useAuth } from '../../reactives/useAuth'
 import { useGlobalLang } from '../../reactives/useGlobalLang'
-import { useTheme } from '../../reactives/useTheme'
+import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 
 export class State {
   lang = useGlobalLang()
-  theme = useTheme()
+  theme = useGlobalTheme()
   auth = useAuth()
 
   verifying: Verifying | null = null

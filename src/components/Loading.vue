@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useTheme } from '../reactives/useTheme'
+import { useGlobalTheme } from '../reactives/useGlobalTheme'
 
-const theme = useTheme()
+const theme = useGlobalTheme()
 </script>
 
 <template>

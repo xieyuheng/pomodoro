@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { useGlobalLang } from '../../reactives/useGlobalLang'
-import { useTheme } from '../../reactives/useTheme'
+import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 
 const lang = useGlobalLang()
-const theme = useTheme()
+const theme = useGlobalTheme()
 
 defineProps<{
   disabled?: boolean

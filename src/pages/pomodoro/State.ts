@@ -1,7 +1,7 @@
 import { TaskJson } from '../../jsons/TaskJson'
 import { useAuth } from '../../reactives/useAuth'
 import { useGlobalLang } from '../../reactives/useGlobalLang'
-import { useTheme } from '../../reactives/useTheme'
+import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import { Mode, ModeKind } from './models/Mode'
 import { defaultSettings, Settings, testingSettings } from './models/Settings'
 import { Timer, TimerJson } from './models/Timer'
@@ -26,7 +26,7 @@ export class State {
   settings: Settings = import.meta.env.PROD ? defaultSettings : testingSettings
 
   lang = useGlobalLang()
-  theme = useTheme()
+  theme = useGlobalTheme()
   auth = useAuth()
 
   classes = {
