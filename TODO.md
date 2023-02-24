@@ -1,5 +1,4 @@
-[pomodoro] `createState`
-[pomodoro] `stateJson`
+[pomodoro] State as a record -- instead of class
 
 # refactor
 
