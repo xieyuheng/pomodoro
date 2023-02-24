@@ -1,7 +1,5 @@
 # auth
 
-remove `createSingleton`
-
 fix `useGlobalBackend`
 
 use fidb as backend -- to test password auth

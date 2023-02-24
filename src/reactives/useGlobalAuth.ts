@@ -1,10 +1,14 @@
+import { reactive } from 'vue'
 import { UserJson } from '../schemas/UserSchema'
-import { createSingleton } from '../utils/createSingleton'
 
 type Auth = {
   user?: UserJson
 }
 
-export const useGlobalAuth = createSingleton<Auth>({
+const globalAuth: Auth = reactive({
   user: undefined,
 })
+
+export function useGlobalAuth() {
+  return globalAuth
+}
