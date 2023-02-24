@@ -1,12 +1,8 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
-import { reactive } from 'vue'
 import { useGlobalApp } from '../../reactives/useGlobalApp'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import PageLayoutHeader from './PageLayoutHeader.vue'
-import { State } from './State'
-
-const state = reactive(new State())
 
 const theme = useGlobalTheme()
 const app = useGlobalApp()
@@ -25,7 +21,7 @@ const app = useGlobalApp()
       <meta name="theme-color" :content="theme.color" />
     </Head>
 
-    <PageLayoutHeader :state="state" />
+    <PageLayoutHeader />
 
     <div class="mt-6 h-full w-full space-y-2 px-4 md:max-w-2xl">
       <slot />

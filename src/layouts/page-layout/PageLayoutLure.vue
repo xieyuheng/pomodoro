@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
-import { State } from './State'
-
-defineProps<{ state: State }>()
 </script>
 
 <template>

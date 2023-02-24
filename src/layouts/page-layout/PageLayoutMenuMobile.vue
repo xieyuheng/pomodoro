@@ -3,12 +3,12 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
+import { useAuth } from '../../reactives/useAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
-import { State } from './State'
 
 const theme = useGlobalTheme()
 
-defineProps<{ state: State }>()
+const auth = useAuth()
 </script>
 
 <template>
@@ -41,16 +41,14 @@ defineProps<{ state: State }>()
           </MenuItem>
         </div>
 
-        <div v-if="state.auth.user" class="space-y-2">
+        <div v-if="auth.user" class="space-y-2">
           <div class="space-y-1">
             <Lang>
               <template #zh>专注者</template>
               <template #en>Logged in as</template>
             </Lang>
-            <div class="font-semibold">{{ state.auth.user.name }}</div>
-            <div class="text-xl font-semibold">
-              @{{ state.auth.user.username }}
-            </div>
+            <div class="font-semibold">{{ auth.user.name }}</div>
+            <div class="text-xl font-semibold">@{{ auth.user.username }}</div>
           </div>
 
           <div class="flex flex-col justify-center py-2">
@@ -59,7 +57,7 @@ defineProps<{ state: State }>()
 
           <MenuItem v-slot="{ active }">
             <button
-              @click="state.auth.logout()"
+              @click="auth.logout()"
               class="font-semibold"
               :class="[
                 active && 'underline decoration-6',

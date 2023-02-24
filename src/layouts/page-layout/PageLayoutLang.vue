@@ -9,9 +9,6 @@ import { ArrowsUpDownIcon, CheckIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/Lang.vue'
 import { langTagName, useGlobalLang } from '../../reactives/useGlobalLang'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
-import { State } from './State'
-
-defineProps<{ state: State }>()
 
 const theme = useGlobalTheme()
 const lang = useGlobalLang()

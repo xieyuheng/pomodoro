@@ -1,5 +1,3 @@
-[page-layout] remove `State`
-
 # refactor
 
 remove `jsons/`

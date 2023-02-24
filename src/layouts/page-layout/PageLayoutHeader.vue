@@ -1,15 +1,14 @@
 <script setup lang="ts">
+import { useAuth } from '../../reactives/useAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import PageLayoutLang from './PageLayoutLang.vue'
 import PageLayoutLogo from './PageLayoutLogo.vue'
 import PageLayoutLure from './PageLayoutLure.vue'
 import PageLayoutMenu from './PageLayoutMenu.vue'
 import PageLayoutMenuMobile from './PageLayoutMenuMobile.vue'
-import { State } from './State'
-
-defineProps<{ state: State }>()
 
 const theme = useGlobalTheme()
+const auth = useAuth()
 </script>
 
 <template>
@@ -22,18 +21,18 @@ const theme = useGlobalTheme()
     ]"
   >
     <div class="mr-3">
-      <PageLayoutLogo :state="state" />
+      <PageLayoutLogo />
     </div>
 
     <div class="flex items-center space-x-2">
-      <PageLayoutLang :state="state" />
+      <PageLayoutLang />
       <div class="hidden md:block">
-        <PageLayoutMenu v-show="state.auth.user" :state="state" />
-        <PageLayoutLure v-show="!state.auth.user" :state="state" />
+        <PageLayoutMenu v-show="auth.user" />
+        <PageLayoutLure v-show="!auth.user" />
       </div>
 
       <div class="block md:hidden">
-        <PageLayoutMenuMobile :state="state" />
+        <PageLayoutMenuMobile />
       </div>
     </div>
   </div>
