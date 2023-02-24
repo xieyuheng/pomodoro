@@ -1,5 +1,3 @@
-`useGlobalApp`
-
 [pomodoro] `models/modeThemeName`
 [pomodoro] `models/modeTranslateKind`
 

@@ -85,10 +85,6 @@ export class State {
     return state
   }
 
-  get appName(): string {
-    return this.lang.isZh() ? '番茄钟' : 'Pomodoro'
-  }
-
   translateKind(kind: ModeKind): string {
     switch (kind) {
       case 'Focus':

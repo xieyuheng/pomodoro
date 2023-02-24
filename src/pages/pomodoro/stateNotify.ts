@@ -1,3 +1,4 @@
+import { useGlobalApp } from '../../reactives/useGlobalApp'
 import { State } from './State'
 
 export async function stateNotify(state: State): Promise<void> {
@@ -5,14 +6,12 @@ export async function stateNotify(state: State): Promise<void> {
 
   if (Notification.permission === 'granted') {
     console.log('[stateNotify] granted')
-
     const registration = await navigator.serviceWorker.ready
-
     console.log('[stateNotify] ready')
 
     const kind = state.translateKind(state.mode.kind)
-
-    registration.showNotification(state.appName, {
+    const app = useGlobalApp()
+    registration.showNotification(app.name, {
       body: state.lang.isZh() ? `${kind} 结束。` : `${kind} finished.`,
     })
   }

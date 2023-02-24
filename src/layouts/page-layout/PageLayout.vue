@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
 import { reactive } from 'vue'
+import { useGlobalApp } from '../../reactives/useGlobalApp'
 import PageLayoutHeader from './PageLayoutHeader.vue'
 import { State } from './State'
 
 const state = reactive(new State())
+
+const app = useGlobalApp()
 </script>
 
 <template>
@@ -16,7 +19,7 @@ const state = reactive(new State())
     ]"
   >
     <Head>
-      <title v-if="state.formatTitle()">{{ state.formatTitle() }}</title>
+      <title>{{ app.name }}</title>
       <meta name="theme-color" :content="state.theme.color" />
     </Head>
 
