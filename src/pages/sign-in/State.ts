@@ -1,8 +1,8 @@
-import { useAuth } from '../../reactives/useAuth'
+import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { VerifyingJson, VerifyingSchema } from '../../schemas/VerifyingSchema'
 
 export class State {
-  auth = useAuth()
+  auth = useGlobalAuth()
 
   verifying: Verifying | null = null
 

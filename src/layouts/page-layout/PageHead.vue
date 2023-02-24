@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useAuth } from '../../reactives/useAuth'
+import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import PageLang from './PageLang.vue'
 import PageLogo from './PageLogo.vue'
@@ -8,7 +8,7 @@ import PageMenu from './PageMenu.vue'
 import PageMenuMobile from './PageMenuMobile.vue'
 
 const theme = useGlobalTheme()
-const auth = useAuth()
+const auth = useGlobalAuth()
 </script>
 
 <template>

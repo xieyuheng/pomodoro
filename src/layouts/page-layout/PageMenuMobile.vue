@@ -3,12 +3,12 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
-import { useAuth } from '../../reactives/useAuth'
+import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 
 const theme = useGlobalTheme()
 
-const auth = useAuth()
+const auth = useGlobalAuth()
 </script>
 
 <template>

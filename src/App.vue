@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, reactive } from 'vue'
 import { RouterView } from 'vue-router'
-import { useAuth } from './reactives/useAuth'
+import { useGlobalAuth } from './reactives/useGlobalAuth'
 
 import Lang from './components/Lang.vue'
 import Loading from './components/Loading.vue'
@@ -9,7 +9,7 @@ import PageLayout from './layouts/page-layout/PageLayout.vue'
 
 const state = reactive({
   loading: true,
-  auth: useAuth(),
+  auth: useGlobalAuth(),
 })
 
 onMounted(async () => {

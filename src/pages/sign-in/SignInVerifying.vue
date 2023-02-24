@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import Lang from '../../components/Lang.vue'
-import { useAuth } from '../../reactives/useAuth'
+import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import { poll } from '../../utils/poll'
 import { State, Verifying } from './State'
@@ -25,7 +25,7 @@ const { stop } = poll<boolean>({
   },
   check: (confirmed) => confirmed,
   then: async () => {
-    const auth = useAuth()
+    const auth = useGlobalAuth()
     await auth.init()
     router.replace({ path: '/' })
   },

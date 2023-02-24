@@ -2,12 +2,8 @@
 
 use fidb as backend -- to test password auth
 
-# local
-
-can be used without local backend
-
 # later
 
-play sound only on `start`
+can switch backend server
 
-`models/Form` validate `Invalid` type
+play sound only on `start`
