@@ -7,8 +7,8 @@ export class Auth {
   pomodoro?: PomodoroJson
 
   async init() {
-    await this.loadUser()
-    await this.loadPomodoro()
+    // await this.loadUser()
+    // await this.loadPomodoro()
   }
 
   async loadUser() {
