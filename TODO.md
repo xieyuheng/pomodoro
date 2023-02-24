@@ -1,4 +1,3 @@
-[page-layout] rename `Header` postfix to `Head`
 [page-layout] drop `Layout` postfix
 
 # auth
