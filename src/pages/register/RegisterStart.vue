@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import FormButton from '../../components/form/FormButton.vue'
 import FormInput from '../../components/form/FormInput.vue'
+import { useForm } from '../../components/form/useForm'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
-import { useForm } from '../../reactives/useForm'
 import { State } from './State'
 
 const { state } = defineProps<{ state: State }>()

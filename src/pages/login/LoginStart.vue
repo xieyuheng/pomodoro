@@ -3,9 +3,9 @@ import {
   ArrowRightCircleIcon,
   EllipsisHorizontalCircleIcon,
 } from '@heroicons/vue/24/outline'
+import { useForm } from '../../components/form/useForm'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
-import { useForm } from '../../reactives/useForm'
 import { State } from './State'
 
 const { state } = defineProps<{ state: State }>()
