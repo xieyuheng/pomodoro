@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import PomodoroModebar from "./PomodoroModebar.vue"
-import { PomodoroState as State } from "./PomodoroState"
 import PomodoroTimerControl from "./PomodoroTimerControl.vue"
+import { State } from "./State"
 
 defineProps<{ state: State }>()
 </script>
 
 <template>
   <div
-    class="flex flex-col items-center justify-between border-4 py-2 px-2 md:px-6 h-64 md:h-80"
+    class="flex h-64 flex-col items-center justify-between border-4 py-2 px-2 md:h-80 md:px-6"
     :class="[
       state.classes.transition,
       `border-${state.theme.name}-600 bg-${state.theme.name}-500 bg-${state.theme.name}-400`,

@@ -1,4 +1,5 @@
-[pomodoro] [refactor] use object as state -- instead of class
+[pomodoro] `stateReactive`
+
 remove `models/`
 remove `jsons/`
 use fidb as backend -- to test password auth

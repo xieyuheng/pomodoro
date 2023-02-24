@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { Head } from "@vueuse/head"
 import { onMounted, reactive, watch } from "vue"
-import { PomodoroState as State } from "./PomodoroState"
 import PomodoroTasks from "./PomodoroTasks.vue"
 import PomodoroTimer from "./PomodoroTimer.vue"
+import { State } from "./State"
 
 let state = reactive(new State()) as State
 

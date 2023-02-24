@@ -8,7 +8,7 @@ import { defaultSettings, Settings, testingSettings } from "./models/Settings"
 import { Timer, TimerJson } from "./models/Timer"
 import { emptySoundLoop } from "./utils/emptySoundLoop"
 
-export type PomodoroStateJson = {
+export type StateJson = {
   mode: Mode
   timer: TimerJson
   playing: boolean
@@ -18,7 +18,7 @@ export type PomodoroStateJson = {
   settings: Settings
 }
 
-export class PomodoroState {
+export class State {
   mode: Mode
   timer: Timer
   playing = false
@@ -66,7 +66,7 @@ export class PomodoroState {
     }
   }
 
-  json(): PomodoroStateJson {
+  json(): StateJson {
     return {
       mode: this.mode,
       timer: this.timer.json(),
@@ -78,8 +78,8 @@ export class PomodoroState {
     }
   }
 
-  static create(json: PomodoroStateJson): PomodoroState {
-    const state = new PomodoroState()
+  static create(json: StateJson): State {
+    const state = new State()
     state.mode = json.mode
     state.timer = Timer.create(json.timer)
     state.playing = json.playing

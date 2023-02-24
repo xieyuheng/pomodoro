@@ -3,9 +3,9 @@ TaskJson
 import { EllipsisVerticalIcon } from "@heroicons/vue/24/outline"
 import { reactive } from "vue"
 import { TaskJson } from "../../jsons/TaskJson"
-import { PomodoroState as State } from "./PomodoroState"
 import PomodoroTaskForm from "./PomodoroTaskForm.vue"
 import PomodoroTaskItemCount from "./PomodoroTaskItemCount.vue"
+import { State } from "./State"
 
 const props = defineProps<{ state: State; task: TaskJson }>()
 
@@ -16,7 +16,7 @@ const alert = window.alert
 
 <template>
   <div
-    class="flex flex-col border-2 bg-white p-3 md:py-4 text-2xl font-semibold"
+    class="flex flex-col border-2 bg-white p-3 text-2xl font-semibold md:py-4"
     :class="[
       state.classes.transition,
       `border-${state.theme.name}-300 text-${state.theme.name}-900`,

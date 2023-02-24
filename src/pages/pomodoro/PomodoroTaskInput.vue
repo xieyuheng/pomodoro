@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { PlusIcon } from "@heroicons/vue/24/outline"
-import { PomodoroState as State } from "./PomodoroState"
 import PomodoroTaskForm from "./PomodoroTaskForm.vue"
+import { State } from "./State"
 
 defineProps<{ state: State }>()
 </script>
@@ -10,7 +10,7 @@ defineProps<{ state: State }>()
   <div>
     <div
       v-if="state.editing"
-      class="flex w-full flex-col border-2 p-3 md:py-4 text-xl font-semibold"
+      class="flex w-full flex-col border-2 p-3 text-xl font-semibold md:py-4"
       :class="[
         state.classes.transition,
         `border-${state.theme.name}-200 bg-${state.theme.name}-100 text-${state.theme.name}-900`,
@@ -43,7 +43,7 @@ defineProps<{ state: State }>()
           state.editing = true
         }
       "
-      class="flex w-full flex-col border-2 border-dashed p-3 md:py-4 items-center justify-center"
+      class="flex w-full flex-col items-center justify-center border-2 border-dashed p-3 md:py-4"
       :class="[
         state.classes.transition,
         `border-${state.theme.name}-300 bg-${state.theme.name}-400 hover:bg-${state.theme.name}-500`,
