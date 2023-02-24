@@ -3,8 +3,8 @@ import {
   ArrowRightCircleIcon,
   EllipsisHorizontalCircleIcon,
 } from "@heroicons/vue/24/outline"
+import Hyperlink from "../../components/Hyperlink.vue"
 import Lang from "../../components/Lang.vue"
-import Link from "../../components/Link.vue"
 import { useForm } from "../../hooks/useForm"
 import { LoginState as State } from "./LoginState"
 
@@ -20,7 +20,7 @@ const form = useForm({ email: "" })
         then: (result) => state.verify(result),
       })
     "
-    class="flex w-full flex-col pt-20 space-y-2 text-xl sm:w-auto"
+    class="flex w-full flex-col space-y-2 pt-20 text-xl sm:w-auto"
   >
     <div class="flex flex-col pb-2">
       <div class="flex items-baseline justify-between">
@@ -34,11 +34,14 @@ const form = useForm({ email: "" })
         <div class="text-xl">
           <Lang>
             <template #zh>
-              尚未<Link href="/register" class="underline">注册</Link>？
+              尚未<Hyperlink href="/register" class="underline">注册</Hyperlink
+              >？
             </template>
             <template #en>
               Not yet
-              <Link href="/register" class="underline">Registered</Link>?
+              <Hyperlink href="/register" class="underline"
+                >Registered</Hyperlink
+              >?
             </template>
           </Lang>
         </div>
@@ -84,7 +87,7 @@ const form = useForm({ email: "" })
       </div>
 
       <div v-if="form.response && !form.response.ok" class="mt-1">
-        <Lang class="font-bold text-yellow-300 text-base py-1">
+        <Lang class="py-1 text-base font-bold text-yellow-300">
           <template #zh>这个邮箱不对</template>
           <template #en>Invalid email.</template>
         </Lang>

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue"
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline"
+import Hyperlink from "../../components/Hyperlink.vue"
 import Lang from "../../components/Lang.vue"
-import Link from "../../components/Link.vue"
 import { PageLayoutState as State } from "./PageLayoutState"
 
 defineProps<{ state: State }>()
@@ -23,7 +23,7 @@ defineProps<{ state: State }>()
       leave-to-class="transform opacity-0 translate-x-6"
     >
       <MenuItems
-        class="flex flex-col pb-20 justify-center fixed top-0 right-0 h-screen w-screen border-4 px-6"
+        class="fixed top-0 right-0 flex h-screen w-screen flex-col justify-center border-4 px-6 pb-20"
         :class="[`bg-${state.theme.name}-400 border-${state.theme.name}-300`]"
       >
         <div class="fixed top-4 right-4">
@@ -50,7 +50,7 @@ defineProps<{ state: State }>()
             </div>
           </div>
 
-          <div class="py-2 flex flex-col justify-center">
+          <div class="flex flex-col justify-center py-2">
             <div class="border-b border-white"></div>
           </div>
 
@@ -73,7 +73,7 @@ defineProps<{ state: State }>()
 
         <div v-else class="space-y-2">
           <MenuItem as="div" v-slot="{ active }">
-            <Link
+            <Hyperlink
               href="/register"
               class="font-semibold"
               :class="[
@@ -85,11 +85,11 @@ defineProps<{ state: State }>()
                 <template #zh>注册</template>
                 <template #en>Register</template>
               </Lang>
-            </Link>
+            </Hyperlink>
           </MenuItem>
 
           <MenuItem as="div" v-slot="{ active }">
-            <Link
+            <Hyperlink
               href="/login"
               class="font-semibold"
               :class="[
@@ -101,7 +101,7 @@ defineProps<{ state: State }>()
                 <template #zh>登录</template>
                 <template #en>Login</template>
               </Lang>
-            </Link>
+            </Hyperlink>
           </MenuItem>
         </div>
       </MenuItems>

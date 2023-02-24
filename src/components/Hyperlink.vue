@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// We can not use <RouterLink> in headlessui:
+// We can not use <RouterHyperlink> in headlessui:
 // - https://github.com/tailwindlabs/headlessui/issues/143
 </script>
 

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import FormButton from "../../components/FormButton.vue"
 import FormInput from "../../components/FormInput.vue"
+import Hyperlink from "../../components/Hyperlink.vue"
 import Lang from "../../components/Lang.vue"
-import Link from "../../components/Link.vue"
 import { useForm } from "../../hooks/useForm"
 import { RegisterState as State } from "./RegisterState"
 
@@ -36,7 +36,7 @@ const form = useForm({ username: "", name: "", email: "" })
     </FormInput>
 
     <div v-if="form.invalid?.username">
-      <Lang class="font-bold text-yellow-300 text-base py-1">
+      <Lang class="py-1 text-base font-bold text-yellow-300">
         <template #zh>{{ form.invalid.username.zh }}</template>
         <template #en>{{ form.invalid.username.en }}</template>
       </Lang>
@@ -61,7 +61,7 @@ const form = useForm({ username: "", name: "", email: "" })
     </FormInput>
 
     <div v-if="form.invalid?.email">
-      <Lang class="font-bold text-yellow-300 text-base py-1">
+      <Lang class="py-1 text-base font-bold text-yellow-300">
         <template #zh>{{ form.invalid.email.zh }}</template>
         <template #en>{{ form.invalid.email.en }}</template>
       </Lang>
@@ -82,11 +82,11 @@ const form = useForm({ username: "", name: "", email: "" })
       <Lang class="text-xl">
         <template #zh>
           已注册？
-          <Link href="/login" class="underline"> 登录 </Link>
+          <Hyperlink href="/login" class="underline"> 登录 </Hyperlink>
         </template>
         <template #en>
           Already Registered?
-          <Link href="/login" class="underline"> Login </Link>
+          <Hyperlink href="/login" class="underline"> Login </Hyperlink>
           .
         </template>
       </Lang>
