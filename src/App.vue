@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, reactive } from "vue"
 import { RouterView } from "vue-router"
-import { useAuth } from "./hooks/useAuth"
+import { useAuth } from "./reactives/useAuth"
 
 import Lang from "./components/Lang.vue"
 import Loading from "./components/Loading.vue"

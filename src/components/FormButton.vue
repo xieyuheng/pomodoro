@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useLang } from "../hooks/useLang"
-import { useTheme } from "../hooks/useTheme"
+import { useLang } from "../reactives/useLang"
+import { useTheme } from "../reactives/useTheme"
 
 const lang = useLang()
 const theme = useTheme()

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router"
 import Lang from "../../components/Lang.vue"
-import { useAuth } from "../../hooks/useAuth"
+import { useAuth } from "../../reactives/useAuth"
 import { poll } from "../../utils/poll"
 import { LoginState as State, Verifying } from "./LoginState"
 

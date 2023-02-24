@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useLang } from "../hooks/useLang"
+import { useLang } from "../reactives/useLang"
 
 const lang = useLang()
 </script>

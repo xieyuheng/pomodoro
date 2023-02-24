@@ -1,7 +1,7 @@
-import { useAuth } from "../../hooks/useAuth"
-import { useLang } from "../../hooks/useLang"
-import { useTheme } from "../../hooks/useTheme"
 import { VerifyingJson, VerifyingSchema } from "../../jsons/VerifyingJson"
+import { useAuth } from "../../reactives/useAuth"
+import { useLang } from "../../reactives/useLang"
+import { useTheme } from "../../reactives/useTheme"
 
 export class RegisterState {
   lang = useLang()

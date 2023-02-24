@@ -1,6 +1,6 @@
-import { useAuth } from "../../hooks/useAuth"
-import { useLang } from "../../hooks/useLang"
-import { useTheme } from "../../hooks/useTheme"
+import { useAuth } from "../../reactives/useAuth"
+import { useLang } from "../../reactives/useLang"
+import { useTheme } from "../../reactives/useTheme"
 
 export class PageLayoutState {
   lang = useLang()

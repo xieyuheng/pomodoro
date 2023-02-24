@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { useTheme } from "../hooks/useTheme"
+import { useTheme } from "../reactives/useTheme"
 
 const theme = useTheme()
 </script>
 
 <template>
   <div
-    class="flex flex-col h-screen w-screen justify-center items-center text-3xl text-white"
+    class="flex h-screen w-screen flex-col items-center justify-center text-3xl text-white"
     :class="`bg-${theme.name}-400`"
   >
     <slot />
