@@ -142,20 +142,4 @@ export class State {
       },
     })
   }
-
-  formatTitle(): string {
-    const parts = []
-
-    if (this.timer.isStarted) {
-      parts.push(`${this.timer.formatTime()}`)
-    }
-
-    if (this.currentTask) {
-      parts.push(`${this.currentTask.title}`)
-    } else {
-      parts.push(`${this.appName}`)
-    }
-
-    return parts.join(' | ')
-  }
 }
