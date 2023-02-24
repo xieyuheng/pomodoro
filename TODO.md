@@ -1,5 +1,3 @@
-[pomodoro] `stateStart`
-
 [pomodoro] `stateChangeMode`
 
 # refactor

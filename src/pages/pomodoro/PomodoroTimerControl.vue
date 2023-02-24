@@ -2,6 +2,7 @@
 import { callWithConfirm } from '../../utils/callWithConfirm'
 import PomodoroTimerButton from './PomodoroTimerButton.vue'
 import { State } from './State'
+import { stateStart } from './stateStart'
 
 defineProps<{ state: State }>()
 </script>
@@ -13,7 +14,7 @@ defineProps<{ state: State }>()
         v-if="!state.timer.isRunning && !state.timer.isFinished"
         :state="state"
         :name="state.lang.zh ? '开始' : 'START'"
-        @click="() => state.start()"
+        @click="() => stateStart(state)"
       />
 
       <PomodoroTimerButton

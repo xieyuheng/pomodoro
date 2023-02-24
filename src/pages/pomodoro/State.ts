@@ -5,8 +5,6 @@ import { useTheme } from '../../reactives/useTheme'
 import { Mode, ModeKind } from './models/Mode'
 import { defaultSettings, Settings, testingSettings } from './models/Settings'
 import { Timer, TimerJson } from './models/Timer'
-import { stateNotify } from './stateNotify'
-import { emptySoundLoop } from './utils/emptySoundLoop'
 
 export type StateJson = {
   mode: Mode
@@ -117,21 +115,5 @@ export class State {
       case 'Recess':
         return 'violet'
     }
-  }
-
-  start(): void {
-    if (!this.playing) {
-      emptySoundLoop().play()
-    }
-
-    this.timer.start({
-      onFinished: async () => {
-        if (this.currentTask && this.mode.kind === 'Focus') {
-          this.currentTask.trace.push(Date.now())
-        }
-
-        await stateNotify(this)
-      },
-    })
   }
 }
