@@ -1,6 +1,6 @@
 import { TaskJson } from '../../jsons/TaskJson'
 import { useAuth } from '../../reactives/useAuth'
-import { useLang } from '../../reactives/useLang'
+import { useGlobalLang } from '../../reactives/useGlobalLang'
 import { useTheme } from '../../reactives/useTheme'
 import { Mode, ModeKind } from './models/Mode'
 import { defaultSettings, Settings, testingSettings } from './models/Settings'
@@ -25,7 +25,7 @@ export class State {
   inputTaskTitle?: string
   settings: Settings = import.meta.env.PROD ? defaultSettings : testingSettings
 
-  lang = useLang()
+  lang = useGlobalLang()
   theme = useTheme()
   auth = useAuth()
 
@@ -86,17 +86,17 @@ export class State {
   }
 
   get appName(): string {
-    return this.lang.zh ? '番茄钟' : 'Pomodoro'
+    return this.lang.isZh() ? '番茄钟' : 'Pomodoro'
   }
 
   translateKind(kind: ModeKind): string {
     switch (kind) {
       case 'Focus':
-        return this.lang.zh ? '专注' : 'Focus'
+        return this.lang.isZh() ? '专注' : 'Focus'
       case 'Break':
-        return this.lang.zh ? '短休' : 'Break'
+        return this.lang.isZh() ? '短休' : 'Break'
       case 'Recess':
-        return this.lang.zh ? '长息' : 'Recess'
+        return this.lang.isZh() ? '长息' : 'Recess'
     }
   }
 

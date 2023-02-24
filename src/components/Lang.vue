@@ -1,17 +1,12 @@
 <script setup lang="ts">
-import { useLang } from '../reactives/useLang'
+import { useGlobalLang } from '../reactives/useGlobalLang'
 
-const lang = useLang()
+const lang = useGlobalLang()
 </script>
 
 <template>
   <div>
-    <div v-show="lang.zh">
-      <slot name="zh"></slot>
-    </div>
-
-    <div v-show="lang.en">
-      <slot name="en"></slot>
-    </div>
+    <slot v-if="lang.isZh()" name="zh"></slot>
+    <slot v-if="lang.isEn()" name="en"></slot>
   </div>
 </template>

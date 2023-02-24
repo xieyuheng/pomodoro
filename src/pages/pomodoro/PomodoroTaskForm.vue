@@ -49,7 +49,7 @@ const { placeholder, onDelete, onCancel, onSave } = props.options
         ]"
         @click="onDelete"
       >
-        {{ state.lang.zh ? '删除' : 'DELETE' }}
+        {{ state.lang.isZh() ? '删除' : 'DELETE' }}
       </button>
 
       <button
@@ -61,7 +61,7 @@ const { placeholder, onDelete, onCancel, onSave } = props.options
         ]"
         @click="onCancel"
       >
-        {{ state.lang.zh ? '取消' : 'CANCEL' }}
+        {{ state.lang.isZh() ? '取消' : 'CANCEL' }}
       </button>
 
       <button
@@ -73,7 +73,7 @@ const { placeholder, onDelete, onCancel, onSave } = props.options
         ]"
         @click="onSave"
       >
-        {{ state.lang.zh ? '保存' : 'SAVE' }}
+        {{ state.lang.isZh() ? '保存' : 'SAVE' }}
       </button>
     </div>
   </div>

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
 import Lang from '../../components/Lang.vue'
-import { useLang } from '../../reactives/useLang'
+import { useGlobalLang } from '../../reactives/useGlobalLang'
 
-const lang = useLang()
+const lang = useGlobalLang()
 </script>
 
 <template>
@@ -11,7 +11,7 @@ const lang = useLang()
     class="my-20 mx-auto flex h-full max-w-md flex-col justify-center text-center"
   >
     <Head>
-      <title v-if="lang.zh">邮件登录确认 · 成功 | 只读</title>
+      <title v-if="lang.isZh()">邮件登录确认 · 成功 | 只读</title>
       <title v-else>Login Email Confirmation Success | Readonly</title>
     </Head>
 

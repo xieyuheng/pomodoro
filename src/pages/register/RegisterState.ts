@@ -1,10 +1,10 @@
 import { VerifyingJson, VerifyingSchema } from '../../jsons/VerifyingJson'
 import { useAuth } from '../../reactives/useAuth'
-import { useLang } from '../../reactives/useLang'
+import { useGlobalLang } from '../../reactives/useGlobalLang'
 import { useTheme } from '../../reactives/useTheme'
 
 export class RegisterState {
-  lang = useLang()
+  lang = useGlobalLang()
   theme = useTheme()
   auth = useAuth()
 

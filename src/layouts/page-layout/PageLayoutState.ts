@@ -1,9 +1,8 @@
 import { useAuth } from '../../reactives/useAuth'
-import { useLang } from '../../reactives/useLang'
+import { useGlobalLang } from '../../reactives/useGlobalLang'
 import { useTheme } from '../../reactives/useTheme'
 
 export class PageLayoutState {
-  lang = useLang()
   theme = useTheme()
   auth = useAuth()
 
@@ -12,7 +11,8 @@ export class PageLayoutState {
   }
 
   get appName(): string {
-    return this.lang.zh ? '番茄钟' : 'Pomodoro'
+    const lang = useGlobalLang()
+    return lang.isZh() ? '番茄钟' : 'Pomodoro'
   }
 
   formatTitle(): string {

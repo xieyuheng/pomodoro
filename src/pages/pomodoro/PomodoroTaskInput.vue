@@ -21,7 +21,7 @@ defineProps<{ state: State }>()
         :state="state"
         v-model="state.inputTaskTitle"
         :options="{
-          placeholder: state.lang.zh ? '新的任务' : 'Create a new task',
+          placeholder: state.lang.isZh() ? '新的任务' : 'Create a new task',
           onCancel: () => {
             state.inputTaskTitle = undefined
             state.editing = false

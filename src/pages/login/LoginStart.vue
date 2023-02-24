@@ -63,7 +63,7 @@ const form = useForm({ email: '' })
           ]"
           type="email"
           maxlength="100"
-          :placeholder="state.lang.zh ? '电子邮箱' : 'Email'"
+          :placeholder="state.lang.isZh() ? '电子邮箱' : 'Email'"
           spellcheck="false"
           required
         />

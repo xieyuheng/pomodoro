@@ -41,7 +41,7 @@ const alert = window.alert
         },
         onSave: () => {
           if (!locals.inputTitle) {
-            return alert(state.lang.zh ? '输入不能为空' : 'Input required')
+            return alert(state.lang.isZh() ? '输入不能为空' : 'Input required')
           }
 
           task.title = locals.inputTitle

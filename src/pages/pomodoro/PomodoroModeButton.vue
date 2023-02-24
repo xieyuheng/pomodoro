@@ -20,7 +20,7 @@ defineProps<{ state: State; kind: ModeKind }>()
       () => {
         callWithConfirm(() => state.changeMode(kind), {
           when: state.timer.isStarted && !state.timer.isFinished,
-          message: state.lang.zh
+          message: state.lang.isZh()
             ? [
                 `「${state.translateKind(
                   state.mode.kind,

@@ -13,7 +13,7 @@ export async function stateNotify(state: State): Promise<void> {
     const kind = state.translateKind(state.mode.kind)
 
     registration.showNotification(state.appName, {
-      body: state.lang.zh ? `${kind} 结束。` : `${kind} finished.`,
+      body: state.lang.isZh() ? `${kind} 结束。` : `${kind} finished.`,
     })
   }
 }

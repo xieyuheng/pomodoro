@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useLang } from '../../reactives/useLang'
+import { useGlobalLang } from '../../reactives/useGlobalLang'
 import { useTheme } from '../../reactives/useTheme'
 
-const lang = useLang()
+const lang = useGlobalLang()
 const theme = useTheme()
 
 defineProps<{
