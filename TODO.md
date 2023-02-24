@@ -1,4 +1,3 @@
-[pomodoro] `mode/modeTranslateKind`
 [pomodoro] `stateChangeMode`
 
 # refactor

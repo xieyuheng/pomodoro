@@ -2,8 +2,7 @@ import { TaskJson } from '../../jsons/TaskJson'
 import { useAuth } from '../../reactives/useAuth'
 import { useGlobalLang } from '../../reactives/useGlobalLang'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
-import { Mode, ModeKind } from './mode'
-import { modeThemeName } from './mode/modeThemeName'
+import { Mode, ModeKind, modeThemeName } from './mode'
 import { defaultSettings, Settings, testingSettings } from './settings'
 import { Timer, TimerJson } from './timer'
 
@@ -84,17 +83,6 @@ export class State {
     state.settings = json.settings
     state.refreshIds()
     return state
-  }
-
-  translateKind(kind: ModeKind): string {
-    switch (kind) {
-      case 'Focus':
-        return this.lang.isZh() ? '专注' : 'Focus'
-      case 'Break':
-        return this.lang.isZh() ? '短休' : 'Break'
-      case 'Recess':
-        return this.lang.isZh() ? '长息' : 'Recess'
-    }
   }
 
   changeMode(kind: ModeKind): void {

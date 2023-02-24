@@ -1,4 +1,5 @@
 import { useGlobalApp } from '../../reactives/useGlobalApp'
+import { modeKindTranslate } from './mode'
 import { State } from './State'
 
 export async function stateNotify(state: State): Promise<void> {
@@ -9,7 +10,7 @@ export async function stateNotify(state: State): Promise<void> {
     const registration = await navigator.serviceWorker.ready
     console.log('[stateNotify] ready')
 
-    const kind = state.translateKind(state.mode.kind)
+    const kind = modeKindTranslate(state.mode.kind)
     const app = useGlobalApp()
     registration.showNotification(app.name, {
       body: state.lang.isZh() ? `${kind} 结束。` : `${kind} finished.`,

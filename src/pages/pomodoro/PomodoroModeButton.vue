@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { callWithConfirm } from '../../utils/callWithConfirm'
-import { ModeKind } from './mode'
+import { ModeKind, modeKindTranslate } from './mode'
 import { State } from './State'
 
 defineProps<{ state: State; kind: ModeKind }>()
@@ -22,21 +22,21 @@ defineProps<{ state: State; kind: ModeKind }>()
           when: state.timer.isStarted && !state.timer.isFinished,
           message: state.lang.isZh()
             ? [
-                `「${state.translateKind(
+                `「${modeKindTranslate(
                   state.mode.kind,
                 )}」模式的计时器已经开始，`,
-                `确定要切换到「${state.translateKind(kind)}」模式吗？`,
+                `确定要切换到「${modeKindTranslate(kind)}」模式吗？`,
               ].join('\n')
             : [
-                `A timer has been started in ${state.translateKind(
+                `A timer has been started in ${modeKindTranslate(
                   state.mode.kind,
                 )} mode,`,
-                `are you sure to change to ${state.translateKind(kind)} mode?`,
+                `are you sure to change to ${modeKindTranslate(kind)} mode?`,
               ].join('\n'),
         })
       }
     "
   >
-    {{ state.translateKind(kind) }}
+    {{ modeKindTranslate(kind) }}
   </button>
 </template>
