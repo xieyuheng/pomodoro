@@ -4,6 +4,7 @@ import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import { callWithConfirm } from '../../utils/callWithConfirm'
 import { ModeKind, modeKindTranslate } from './mode'
 import { State } from './State'
+import { stateChangeMode } from './stateChangeMode'
 
 defineProps<{ state: State; kind: ModeKind }>()
 
@@ -23,7 +24,7 @@ const lang = useGlobalLang()
     ]"
     @click="
       () => {
-        callWithConfirm(() => state.changeMode(kind), {
+        callWithConfirm(() => stateChangeMode(state, kind), {
           when: state.timer.isStarted && !state.timer.isFinished,
           message: lang.isZh()
             ? [

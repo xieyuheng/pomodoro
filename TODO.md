@@ -1,5 +1,3 @@
-[pomodoro] `stateChangeMode`
-
 # refactor
 
 remove `jsons/`

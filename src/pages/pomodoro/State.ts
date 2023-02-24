@@ -1,6 +1,5 @@
 import { TaskJson } from '../../jsons/TaskJson'
-import { useGlobalTheme } from '../../reactives/useGlobalTheme'
-import { Mode, ModeKind, modeThemeName } from './mode'
+import { Mode } from './mode'
 import { defaultSettings, Settings, testingSettings } from './settings'
 import { Timer, TimerJson } from './timer'
 
@@ -74,14 +73,5 @@ export class State {
     state.settings = json.settings
     state.refreshIds()
     return state
-  }
-
-  changeMode(kind: ModeKind): void {
-    this.mode = this.settings.modes[kind]
-
-    const theme = useGlobalTheme()
-    theme.name = modeThemeName(this.mode)
-
-    this.timer.reset(this.mode.interval)
   }
 }
