@@ -1,4 +1,4 @@
-import { leftPad } from "../../../utils/leftPad"
+import { leftPad } from '../../../utils/leftPad'
 
 type TimerId = ReturnType<typeof setInterval>
 
@@ -88,8 +88,8 @@ function formatTime(time: number): string {
   const minutes = Math.floor(t / 60)
   const seconds = t % 60
 
-  const mm = leftPad(minutes.toString(), 2, "0")
-  const ss = leftPad(seconds.toString(), 2, "0")
+  const mm = leftPad(minutes.toString(), 2, '0')
+  const ss = leftPad(seconds.toString(), 2, '0')
 
   return `${mm}:${ss}`
 }

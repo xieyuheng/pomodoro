@@ -11,7 +11,7 @@ export function flattenJson(json: JsonObject): Record<string, LeafJson> {
 }
 
 function isLeafJson(json: Json): json is LeafJson {
-  return typeof json !== "object" || json instanceof Array
+  return typeof json !== 'object' || json instanceof Array
 }
 
 function flattenJsonCollect(
@@ -21,7 +21,7 @@ function flattenJsonCollect(
 ): void {
   for (const [part, value] of Object.entries(json)) {
     if (isLeafJson(value)) {
-      const key = [...parts, part].join(".")
+      const key = [...parts, part].join('.')
       record[key] = value
     } else {
       flattenJsonCollect(value, [...parts, part], record)

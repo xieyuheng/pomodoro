@@ -1,10 +1,10 @@
 export class Lang {
-  tags = ["zh", "en"]
+  tags = ['zh', 'en']
 
   constructor(public tag: string) {}
 
   get zh(): boolean {
-    return this.tag.startsWith("zh")
+    return this.tag.startsWith('zh')
   }
 
   get en(): boolean {
@@ -13,12 +13,12 @@ export class Lang {
 
   findTagName(tag: string): string {
     switch (tag) {
-      case "zh":
-        return "中文"
-      case "en":
-        return "English"
+      case 'zh':
+        return '中文'
+      case 'en':
+        return 'English'
       default:
-        return "English"
+        return 'English'
     }
   }
 

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { reactive } from "vue"
-import RegisterStart from "./RegisterStart.vue"
-import { RegisterState as State } from "./RegisterState"
-import RegisterVerifying from "./RegisterVerifying.vue"
+import { reactive } from 'vue'
+import RegisterStart from './RegisterStart.vue'
+import { RegisterState as State } from './RegisterState'
+import RegisterVerifying from './RegisterVerifying.vue'
 
 const state = reactive(new State())
 

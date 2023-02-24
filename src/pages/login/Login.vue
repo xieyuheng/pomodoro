@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { reactive } from "vue"
-import LoginStart from "./LoginStart.vue"
-import { LoginState as State } from "./LoginState"
-import LoginVerifying from "./LoginVerifying.vue"
+import { reactive } from 'vue'
+import LoginStart from './LoginStart.vue'
+import { LoginState as State } from './LoginState'
+import LoginVerifying from './LoginVerifying.vue'
 
 const state = reactive(new State())
 

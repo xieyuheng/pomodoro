@@ -4,10 +4,10 @@ import {
   ListboxButton,
   ListboxOption,
   ListboxOptions,
-} from "@headlessui/vue"
-import { ArrowsUpDownIcon, CheckIcon } from "@heroicons/vue/24/outline"
-import Lang from "../../components/Lang.vue"
-import { PageLayoutState as State } from "./PageLayoutState"
+} from '@headlessui/vue'
+import { ArrowsUpDownIcon, CheckIcon } from '@heroicons/vue/24/outline'
+import Lang from '../../components/Lang.vue'
+import { PageLayoutState as State } from './PageLayoutState'
 
 defineProps<{ state: State }>()
 </script>

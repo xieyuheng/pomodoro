@@ -1,11 +1,11 @@
 TaskJson
 <script setup lang="ts">
-import { EllipsisVerticalIcon } from "@heroicons/vue/24/outline"
-import { reactive } from "vue"
-import { TaskJson } from "../../jsons/TaskJson"
-import PomodoroTaskForm from "./PomodoroTaskForm.vue"
-import PomodoroTaskItemCount from "./PomodoroTaskItemCount.vue"
-import { State } from "./State"
+import { EllipsisVerticalIcon } from '@heroicons/vue/24/outline'
+import { reactive } from 'vue'
+import { TaskJson } from '../../jsons/TaskJson'
+import PomodoroTaskForm from './PomodoroTaskForm.vue'
+import PomodoroTaskItemCount from './PomodoroTaskItemCount.vue'
+import { State } from './State'
 
 const props = defineProps<{ state: State; task: TaskJson }>()
 

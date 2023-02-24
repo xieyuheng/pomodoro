@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { callWithConfirm } from "../../utils/callWithConfirm"
-import { ModeKind } from "./models/Mode"
-import { State } from "./State"
+import { callWithConfirm } from '../../utils/callWithConfirm'
+import { ModeKind } from './models/Mode'
+import { State } from './State'
 
 defineProps<{ state: State; kind: ModeKind }>()
 </script>

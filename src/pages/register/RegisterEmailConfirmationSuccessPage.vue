@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Head } from "@vueuse/head"
-import Lang from "../../components/Lang.vue"
-import { useLang } from "../../reactives/useLang"
+import { Head } from '@vueuse/head'
+import Lang from '../../components/Lang.vue'
+import { useLang } from '../../reactives/useLang'
 
 const lang = useLang()
 </script>

@@ -1,5 +1,3 @@
-format use `singleQuote`
-
 [pomodoro] `stateCreateTask`
 [pomodoro] `stateDeleteTask`
 [pomodoro] `stateChangeMode`

@@ -1,8 +1,8 @@
-import { createHead } from "@vueuse/head"
-import { createApp } from "vue"
-import App from "./App.vue"
-import "./assets/styles/index.css"
-import router from "./router"
+import { createHead } from '@vueuse/head'
+import { createApp } from 'vue'
+import App from './App.vue'
+import './assets/styles/index.css'
+import router from './router'
 
 const app = createApp(App)
 const head = createHead()
@@ -10,4 +10,4 @@ const head = createHead()
 app.use(router)
 app.use(head)
 
-app.mount("#app")
+app.mount('#app')

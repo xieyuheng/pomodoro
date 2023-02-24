@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { Head } from "@vueuse/head"
-import { onMounted, watch } from "vue"
-import PomodoroTasks from "./PomodoroTasks.vue"
-import PomodoroTimer from "./PomodoroTimer.vue"
-import { State } from "./State"
-import { stateReactive } from "./stateReactive"
-import { setupNotification } from "./utils/setupNotification"
+import { Head } from '@vueuse/head'
+import { onMounted, watch } from 'vue'
+import PomodoroTasks from './PomodoroTasks.vue'
+import PomodoroTimer from './PomodoroTimer.vue'
+import { State } from './State'
+import { stateReactive } from './stateReactive'
+import { setupNotification } from './utils/setupNotification'
 
 const state = stateReactive(new State())
 

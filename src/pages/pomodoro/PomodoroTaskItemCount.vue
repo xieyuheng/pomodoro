@@ -1,7 +1,7 @@
 TaskJson
 <script setup lang="ts">
-import { TaskJson } from "../../jsons/TaskJson"
-import { State } from "./State"
+import { TaskJson } from '../../jsons/TaskJson'
+import { State } from './State'
 
 const props = defineProps<{ state: State; task: TaskJson }>()
 </script>

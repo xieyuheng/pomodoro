@@ -2,15 +2,15 @@
 import {
   ArrowRightCircleIcon,
   EllipsisHorizontalCircleIcon,
-} from "@heroicons/vue/24/outline"
-import Hyperlink from "../../components/Hyperlink.vue"
-import Lang from "../../components/Lang.vue"
-import { useForm } from "../../reactives/useForm"
-import { LoginState as State } from "./LoginState"
+} from '@heroicons/vue/24/outline'
+import Hyperlink from '../../components/Hyperlink.vue'
+import Lang from '../../components/Lang.vue'
+import { useForm } from '../../reactives/useForm'
+import { LoginState as State } from './LoginState'
 
 const { state } = defineProps<{ state: State }>()
 
-const form = useForm({ email: "" })
+const form = useForm({ email: '' })
 </script>
 
 <template>

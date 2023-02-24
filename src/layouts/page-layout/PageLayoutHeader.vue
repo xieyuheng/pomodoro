@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import PageLayoutLang from "./PageLayoutLang.vue"
-import PageLayoutLogo from "./PageLayoutLogo.vue"
-import PageLayoutLure from "./PageLayoutLure.vue"
-import PageLayoutMenu from "./PageLayoutMenu.vue"
-import PageLayoutMenuMobile from "./PageLayoutMenuMobile.vue"
-import { PageLayoutState as State } from "./PageLayoutState"
+import PageLayoutLang from './PageLayoutLang.vue'
+import PageLayoutLogo from './PageLayoutLogo.vue'
+import PageLayoutLure from './PageLayoutLure.vue'
+import PageLayoutMenu from './PageLayoutMenu.vue'
+import PageLayoutMenuMobile from './PageLayoutMenuMobile.vue'
+import { PageLayoutState as State } from './PageLayoutState'
 
 defineProps<{ state: State }>()
 </script>

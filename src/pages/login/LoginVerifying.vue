@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { useRouter } from "vue-router"
-import Lang from "../../components/Lang.vue"
-import { useAuth } from "../../reactives/useAuth"
-import { poll } from "../../utils/poll"
-import { LoginState as State, Verifying } from "./LoginState"
+import { useRouter } from 'vue-router'
+import Lang from '../../components/Lang.vue'
+import { useAuth } from '../../reactives/useAuth'
+import { poll } from '../../utils/poll'
+import { LoginState as State, Verifying } from './LoginState'
 
 const { state, verifying } = defineProps<{
   state: State
@@ -14,9 +14,9 @@ const router = useRouter()
 
 const { stop } = poll<boolean>({
   target: async () => {
-    console.log({ who: "LoginVerifying", message: "polling" })
+    console.log({ who: 'LoginVerifying', message: 'polling' })
     const response = await fetch(verifying.links.verify, {
-      credentials: "include",
+      credentials: 'include',
     })
     return await response.json()
   },
@@ -24,7 +24,7 @@ const { stop } = poll<boolean>({
   then: async () => {
     const auth = useAuth()
     await auth.init()
-    router.replace({ path: "/" })
+    router.replace({ path: '/' })
   },
   interval: 3000,
 })

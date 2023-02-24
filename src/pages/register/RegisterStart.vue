@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import FormButton from "../../components/form/FormButton.vue"
-import FormInput from "../../components/form/FormInput.vue"
-import Hyperlink from "../../components/Hyperlink.vue"
-import Lang from "../../components/Lang.vue"
-import { useForm } from "../../reactives/useForm"
-import { RegisterState as State } from "./RegisterState"
+import FormButton from '../../components/form/FormButton.vue'
+import FormInput from '../../components/form/FormInput.vue'
+import Hyperlink from '../../components/Hyperlink.vue'
+import Lang from '../../components/Lang.vue'
+import { useForm } from '../../reactives/useForm'
+import { RegisterState as State } from './RegisterState'
 
 const { state } = defineProps<{ state: State }>()
 
-const form = useForm({ username: "", name: "", email: "" })
+const form = useForm({ username: '', name: '', email: '' })
 </script>
 
 <template>

@@ -1,4 +1,4 @@
-import { Obtain, ty } from "@xieyuheng/ty"
+import { Obtain, ty } from '@xieyuheng/ty'
 
 export const UserSchema = ty.object({
   username: ty.string(),

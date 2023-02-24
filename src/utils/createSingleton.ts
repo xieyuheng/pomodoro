@@ -1,4 +1,4 @@
-import { reactive } from "vue"
+import { reactive } from 'vue'
 
 export function createSingleton<T>(state: T): () => T {
   let initialized = false

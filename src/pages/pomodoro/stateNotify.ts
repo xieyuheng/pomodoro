@@ -1,14 +1,14 @@
-import { State } from "./State"
+import { State } from './State'
 
 export async function stateNotify(state: State): Promise<void> {
-  console.log("[stateNotify]")
+  console.log('[stateNotify]')
 
-  if (Notification.permission === "granted") {
-    console.log("[stateNotify] granted")
+  if (Notification.permission === 'granted') {
+    console.log('[stateNotify] granted')
 
     const registration = await navigator.serviceWorker.ready
 
-    console.log("[stateNotify] ready")
+    console.log('[stateNotify] ready')
 
     const kind = state.translateKind(state.mode.kind)
 

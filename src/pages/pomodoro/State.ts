@@ -1,13 +1,13 @@
-import { TaskJson } from "../../jsons/TaskJson"
-import { useAuth } from "../../reactives/useAuth"
-import { useLang } from "../../reactives/useLang"
-import { useTheme } from "../../reactives/useTheme"
-import { removeFirst } from "../../utils/removeFirst"
-import { Mode, ModeKind } from "./models/Mode"
-import { defaultSettings, Settings, testingSettings } from "./models/Settings"
-import { Timer, TimerJson } from "./models/Timer"
-import { stateNotify } from "./stateNotify"
-import { emptySoundLoop } from "./utils/emptySoundLoop"
+import { TaskJson } from '../../jsons/TaskJson'
+import { useAuth } from '../../reactives/useAuth'
+import { useLang } from '../../reactives/useLang'
+import { useTheme } from '../../reactives/useTheme'
+import { removeFirst } from '../../utils/removeFirst'
+import { Mode, ModeKind } from './models/Mode'
+import { defaultSettings, Settings, testingSettings } from './models/Settings'
+import { Timer, TimerJson } from './models/Timer'
+import { stateNotify } from './stateNotify'
+import { emptySoundLoop } from './utils/emptySoundLoop'
 
 export type StateJson = {
   mode: Mode
@@ -33,7 +33,7 @@ export class State {
   auth = useAuth()
 
   classes = {
-    transition: "transition delay-0 duration-500 ease-out",
+    transition: 'transition delay-0 duration-500 ease-out',
   }
 
   constructor() {
@@ -96,7 +96,7 @@ export class State {
     // TODO
   }
 
-  private createTaskFromTitle(title: string = ""): TaskJson {
+  private createTaskFromTitle(title: string = ''): TaskJson {
     const tasks = this.tasks
 
     const ids = tasks.map((task) => task.id)
@@ -124,7 +124,7 @@ export class State {
   }
 
   get appName(): string {
-    return this.lang.zh ? "番茄钟" : "Pomodoro"
+    return this.lang.zh ? '番茄钟' : 'Pomodoro'
   }
 
   get kind(): ModeKind {
@@ -133,12 +133,12 @@ export class State {
 
   translateKind(kind: ModeKind): string {
     switch (kind) {
-      case "Focus":
-        return this.lang.zh ? "专注" : "Focus"
-      case "Break":
-        return this.lang.zh ? "短休" : "Break"
-      case "Recess":
-        return this.lang.zh ? "长息" : "Recess"
+      case 'Focus':
+        return this.lang.zh ? '专注' : 'Focus'
+      case 'Break':
+        return this.lang.zh ? '短休' : 'Break'
+      case 'Recess':
+        return this.lang.zh ? '长息' : 'Recess'
     }
   }
 
@@ -150,12 +150,12 @@ export class State {
 
   get themeName(): string {
     switch (this.kind) {
-      case "Focus":
-        return "red"
-      case "Break":
-        return "sky"
-      case "Recess":
-        return "violet"
+      case 'Focus':
+        return 'red'
+      case 'Break':
+        return 'sky'
+      case 'Recess':
+        return 'violet'
     }
   }
 
@@ -166,7 +166,7 @@ export class State {
 
     this.timer.start({
       onFinished: async () => {
-        if (this.currentTask && this.mode.kind === "Focus") {
+        if (this.currentTask && this.mode.kind === 'Focus') {
           this.currentTask.trace.push(Date.now())
           this.save()
         }
@@ -198,6 +198,6 @@ export class State {
       parts.push(`${this.appName}`)
     }
 
-    return parts.join(" | ")
+    return parts.join(' | ')
   }
 }

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { Head } from "@vueuse/head"
-import { reactive } from "vue"
-import PageLayoutHeader from "./PageLayoutHeader.vue"
-import { PageLayoutState as State } from "./PageLayoutState"
+import { Head } from '@vueuse/head'
+import { reactive } from 'vue'
+import PageLayoutHeader from './PageLayoutHeader.vue'
+import { PageLayoutState as State } from './PageLayoutState'
 
 const state = reactive(new State())
 </script>

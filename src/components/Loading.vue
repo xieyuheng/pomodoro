@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useTheme } from "../reactives/useTheme"
+import { useTheme } from '../reactives/useTheme'
 
 const theme = useTheme()
 </script>

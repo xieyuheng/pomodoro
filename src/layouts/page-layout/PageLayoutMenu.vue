@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue"
-import { Bars3Icon } from "@heroicons/vue/24/outline"
-import Lang from "../../components/Lang.vue"
-import { PageLayoutState as State } from "./PageLayoutState"
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+import { Bars3Icon } from '@heroicons/vue/24/outline'
+import Lang from '../../components/Lang.vue'
+import { PageLayoutState as State } from './PageLayoutState'
 
 defineProps<{ state: State }>()
 </script>
@@ -22,11 +22,11 @@ defineProps<{ state: State }>()
       leave-to-class="transform scale-95 opacity-0"
     >
       <MenuItems
-        class="absolute w-52 top-8 right-0 min-w-max border-2"
+        class="absolute top-8 right-0 w-52 min-w-max border-2"
         :class="[`bg-${state.theme.name}-400 border-${state.theme.name}-300`]"
       >
         <div v-if="state.auth.user">
-          <div class="flex flex-col w-full px-4 py-2">
+          <div class="flex w-full flex-col px-4 py-2">
             <Lang>
               <template #zh>专注者</template>
               <template #en>Logged in as</template>

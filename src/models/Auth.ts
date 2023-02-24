@@ -1,6 +1,6 @@
-import { useRouter } from "vue-router"
-import { PomodoroJson, PomodoroSchema } from "../jsons/PomodoroJson"
-import { UserJson, UserSchema } from "../jsons/UserJson"
+import { useRouter } from 'vue-router'
+import { PomodoroJson, PomodoroSchema } from '../jsons/PomodoroJson'
+import { UserJson, UserSchema } from '../jsons/UserJson'
 
 export class Auth {
   user?: UserJson
@@ -15,7 +15,7 @@ export class Auth {
     if (this.user) return
     const api = import.meta.env.VITE_API_URL
     const response = await fetch(`${api}/user`, {
-      credentials: "include",
+      credentials: 'include',
     })
 
     if (!response.ok) return
@@ -29,7 +29,7 @@ export class Auth {
     if (this.pomodoro) return
     const api = import.meta.env.VITE_API_URL
     const response = await fetch(`${api}/pomodoro`, {
-      credentials: "include",
+      credentials: 'include',
     })
 
     if (!response.ok) return
@@ -43,7 +43,7 @@ export class Auth {
     const router = useRouter()
 
     if (this.user) {
-      router.replace({ path: "/" })
+      router.replace({ path: '/' })
     }
   }
 
@@ -51,7 +51,7 @@ export class Auth {
     const router = useRouter()
 
     if (!this.user) {
-      router.replace({ path: "/" })
+      router.replace({ path: '/' })
     }
   }
 
@@ -59,10 +59,10 @@ export class Auth {
     this.user = undefined
     this.pomodoro = undefined
 
-    deleteCookie("token")
+    deleteCookie('token')
   }
 }
 
 function deleteCookie(name: string) {
-  document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+  document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;'
 }

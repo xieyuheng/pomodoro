@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue"
-import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline"
-import Hyperlink from "../../components/Hyperlink.vue"
-import Lang from "../../components/Lang.vue"
-import { PageLayoutState as State } from "./PageLayoutState"
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
+import Hyperlink from '../../components/Hyperlink.vue'
+import Lang from '../../components/Lang.vue'
+import { PageLayoutState as State } from './PageLayoutState'
 
 defineProps<{ state: State }>()
 </script>
