@@ -12,7 +12,7 @@ const lang = useGlobalLang()
   >
     <Head>
       <title v-if="lang.isZh()">邮件注册确认 · 成功 | 只读</title>
-      <title v-else>Register Email Confirmation Success | Readonly</title>
+      <title v-else>SignUp Email Confirmation Success | Readonly</title>
     </Head>
 
     <Lang>
@@ -27,11 +27,11 @@ const lang = useGlobalLang()
       <template #en>
         <div class="flex h-full flex-col items-center justify-center">
           <h1 class="py-4 text-xl font-bold">
-            Register Email Confirmation Success
+            SignUp Email Confirmation Success
           </h1>
           <p class="p-1 text-lg">The story begins ~</p>
           <p class="p-1 text-lg">
-            You may close this page, and go back to the original registering
+            You may close this page, and go back to the original sign-uping
             page.
           </p>
           <p class="p-3 text-lg font-bold">(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</p>

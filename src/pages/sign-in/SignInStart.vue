@@ -39,14 +39,12 @@ const form = useForm({ email: '' })
         <div class="text-xl">
           <Lang>
             <template #zh>
-              尚未<Hyperlink href="/register" class="underline">注册</Hyperlink
+              尚未<Hyperlink href="/sign-up" class="underline">注册</Hyperlink
               >？
             </template>
             <template #en>
               Not yet
-              <Hyperlink href="/register" class="underline"
-                >Registered</Hyperlink
-              >?
+              <Hyperlink href="/sign-up" class="underline">SignUped</Hyperlink>?
             </template>
           </Lang>
         </div>

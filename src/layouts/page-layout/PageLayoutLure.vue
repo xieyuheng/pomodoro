@@ -5,10 +5,10 @@ import Lang from '../../components/Lang.vue'
 
 <template>
   <div class="flex space-x-1 text-xl font-semibold">
-    <Hyperlink href="/register" class="hover:underline">
+    <Hyperlink href="/sign-up" class="hover:underline">
       <Lang>
         <template #zh>注册</template>
-        <template #en>Register</template>
+        <template #en>SignUp</template>
       </Lang>
     </Hyperlink>
     <div>/</div>

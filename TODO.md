@@ -1,5 +1,3 @@
-ambr Register SignUp
-
 # auth
 
 use fidb as backend -- to test password auth

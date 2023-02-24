@@ -31,7 +31,7 @@ const lang = useGlobalLang()
           </h1>
           <p class="p-1 text-lg">The story begins ~</p>
           <p class="p-1 text-lg">
-            You may close this page, and go back to the original registering
+            You may close this page, and go back to the original sign-uping
             page.
           </p>
           <p class="p-3 text-lg font-bold">(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</p>

@@ -75,7 +75,7 @@ const auth = useAuth()
         <div v-else class="space-y-2">
           <MenuItem as="div" v-slot="{ active }">
             <Hyperlink
-              href="/register"
+              href="/sign-up"
               class="font-semibold"
               :class="[
                 active && 'underline decoration-6',
@@ -84,7 +84,7 @@ const auth = useAuth()
             >
               <Lang>
                 <template #zh>注册</template>
-                <template #en>Register</template>
+                <template #en>SignUp</template>
               </Lang>
             </Hyperlink>
           </MenuItem>

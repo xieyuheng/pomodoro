@@ -17,7 +17,7 @@ const theme = useGlobalTheme()
 
 const { stop } = poll<boolean>({
   target: async () => {
-    console.log({ who: 'RegisterVerifying', message: 'polling' })
+    console.log({ who: 'SignUpVerifying', message: 'polling' })
     const response = await fetch(verifying.links.verify, {
       credentials: 'include',
     })
@@ -44,7 +44,7 @@ async function revoke() {
     <div class="flex flex-col items-center text-center">
       <Lang class="py-2 text-xl font-bold">
         <template #zh> 等待邮件注册确认 </template>
-        <template #en> Awaiting Register Email Confirmation </template>
+        <template #en> Awaiting SignUp Email Confirmation </template>
       </Lang>
 
       <Lang class="py-1 text-lg">

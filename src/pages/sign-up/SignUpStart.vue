@@ -15,7 +15,7 @@ const form = useForm({ username: '', name: '', email: '' })
   <form
     @submit.prevent="
       (event) =>
-        form.postByEvent(event, state.links.register, {
+        form.postByEvent(event, state.links['sign-up'], {
           then: (result) => state.verify(result),
         })
     "
@@ -23,7 +23,7 @@ const form = useForm({ username: '', name: '', email: '' })
   >
     <Lang class="font-logo text-3xl font-semibold">
       <template #zh>注册</template>
-      <template #en>Register</template>
+      <template #en>SignUp</template>
     </Lang>
 
     <FormInput name="username" required>
@@ -74,7 +74,7 @@ const form = useForm({ username: '', name: '', email: '' })
     <FormButton :disabled="form.processing">
       <Lang>
         <template #zh>注册</template>
-        <template #en>Register</template>
+        <template #en>SignUp</template>
       </Lang>
     </FormButton>
 
@@ -85,7 +85,7 @@ const form = useForm({ username: '', name: '', email: '' })
           <Hyperlink href="/sign-in" class="underline"> 登录 </Hyperlink>
         </template>
         <template #en>
-          Already Registered?
+          Already SignUped?
           <Hyperlink href="/sign-in" class="underline"> SignIn </Hyperlink>
           .
         </template>
