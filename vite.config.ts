@@ -6,6 +6,7 @@ import { VitePWA } from "vite-plugin-pwa"
 export default defineConfig({
   server: { host: "0.0.0.0" },
   test: { environment: "jsdom" },
+  build: { sourcemap: true },
   plugins: [
     vue(),
     VitePWA({
