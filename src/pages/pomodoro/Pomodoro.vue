@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
 import { onMounted } from 'vue'
+import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import PomodoroTasks from './PomodoroTasks.vue'
 import PomodoroTimer from './PomodoroTimer.vue'
@@ -17,13 +18,13 @@ onMounted(async () => await setupNotification())
 </script>
 
 <template>
-  <div>
+  <PageLayout>
     <Head>
       <title>{{ stateFormatTitle(state) }}</title>
       <meta name="theme-color" :content="theme.color" />
     </Head>
 
     <PomodoroTimer :state="state" />
-    <PomodoroTasks :state="state" />
-  </div>
+    <PomodoroTasks :state="state"
+  /></PageLayout>
 </template>
