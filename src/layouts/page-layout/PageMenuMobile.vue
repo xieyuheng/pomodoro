@@ -57,7 +57,11 @@ const auth = useGlobalAuth()
 
           <MenuItem v-slot="{ active }">
             <button
-              @click="auth.logout()"
+              @click="
+                () => {
+                  // TODO
+                }
+              "
               class="font-semibold"
               :class="[
                 active && 'underline decoration-6',

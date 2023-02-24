@@ -43,7 +43,11 @@ const auth = useGlobalAuth()
             <button
               class="flex w-full px-4 py-2"
               :class="[active && `bg-${theme.name}-500`]"
-              @click="auth.logout()"
+              @click="
+                () => {
+                  // TODO
+                }
+              "
             >
               <Lang>
                 <template #zh>退出</template>
