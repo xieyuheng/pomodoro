@@ -11,8 +11,6 @@ export type State = {
   tasks: Array<TaskJson>
   inputTaskTitle?: string
   settings: Settings
-
-  classes: Record<string, string>
 }
 
 export function createState(): State {
@@ -27,9 +25,5 @@ export function createState(): State {
     settings,
     mode,
     timer,
-
-    classes: {
-      transition: 'transition delay-0 duration-500 ease-out',
-    },
   }
 }

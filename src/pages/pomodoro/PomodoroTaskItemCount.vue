@@ -19,7 +19,7 @@ const theme = useGlobalTheme()
       :key="time"
       class="h-2.5 w-2.5 border"
       :class="[
-        state.classes.transition,
+        'transition-tender',
         `border-${theme.name}-400 bg-${theme.name}-600`,
       ]"
     ></div>

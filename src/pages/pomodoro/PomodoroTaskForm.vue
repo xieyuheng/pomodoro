@@ -26,7 +26,7 @@ const { placeholder, onDelete, onCancel, onSave } = props.options
       autofocus
       class="flex w-full flex-col border-b-2 bg-inherit p-3 focus:outline-none focus:ring"
       :class="[
-        state.classes.transition,
+        'transition-tender',
         `border-${theme.name}-200 text-${theme.name}-900 focus:ring-${theme.name}-200`,
         `placeholder-${theme.name}-400`,
       ]"
@@ -49,7 +49,7 @@ const { placeholder, onDelete, onCancel, onSave } = props.options
         v-if="onDelete"
         class="border-2 py-1 px-2 text-lg font-semibold md:text-xl"
         :class="[
-          state.classes.transition,
+          'transition-tender',
           `border-${theme.name}-300 bg-${theme.name}-200 text-${theme.name}-600`,
         ]"
         @click="onDelete"
@@ -61,7 +61,7 @@ const { placeholder, onDelete, onCancel, onSave } = props.options
         v-if="onCancel"
         class="border-2 py-1 px-2 text-lg font-semibold md:text-xl"
         :class="[
-          state.classes.transition,
+          'transition-tender',
           `border-${theme.name}-300 bg-${theme.name}-200 text-${theme.name}-600`,
         ]"
         @click="onCancel"
@@ -73,7 +73,7 @@ const { placeholder, onDelete, onCancel, onSave } = props.options
         v-if="onSave"
         class="border-2 py-1 px-2 text-lg font-semibold md:text-xl"
         :class="[
-          state.classes.transition,
+          'transition-tender',
           `border-${theme.name}-300 bg-${theme.name}-200 text-${theme.name}-600`,
         ]"
         @click="onSave"

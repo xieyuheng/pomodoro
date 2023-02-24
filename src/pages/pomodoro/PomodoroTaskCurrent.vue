@@ -24,7 +24,7 @@ const alert = window.alert
   <div
     class="flex flex-col border-2 bg-white p-3 text-2xl font-semibold md:py-4"
     :class="[
-      state.classes.transition,
+      'transition-tender',
       `border-${theme.name}-300 text-${theme.name}-900`,
     ]"
   >

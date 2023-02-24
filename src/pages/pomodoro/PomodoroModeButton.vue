@@ -17,7 +17,7 @@ const lang = useGlobalLang()
     :disabled="state.mode.kind === kind"
     class="border-2 py-1 px-2"
     :class="[
-      state.classes.transition,
+      'transition-tender',
       state.mode.kind === kind
         ? `border-${theme.name}-400 bg-${theme.name}-600 text-${theme.name}-200`
         : `border-${theme.name}-500 bg-${theme.name}-500 text-${theme.name}-300`,

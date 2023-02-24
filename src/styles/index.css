@@ -1,6 +1,4 @@
-@import './fonts.css';
-@import './tailwind.css';
+/* The order matters. */
 
-input {
-  font-family: inherit;
-}
+@import './tailwind.css';
+@import './transition.css';

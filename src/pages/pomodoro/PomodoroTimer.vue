@@ -13,7 +13,7 @@ const theme = useGlobalTheme()
   <div
     class="flex h-64 flex-col items-center justify-between border-4 py-2 px-2 md:h-80 md:px-6"
     :class="[
-      state.classes.transition,
+      'transition-tender',
       `border-${theme.name}-600 bg-${theme.name}-500 bg-${theme.name}-400`,
     ]"
   >

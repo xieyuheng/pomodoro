@@ -18,7 +18,7 @@ const theme = useGlobalTheme()
       v-if="state.editing"
       class="flex w-full flex-col border-2 p-3 text-xl font-semibold md:py-4"
       :class="[
-        state.classes.transition,
+        'transition-tender',
         `border-${theme.name}-200 bg-${theme.name}-100 text-${theme.name}-900`,
       ]"
     >
@@ -51,13 +51,13 @@ const theme = useGlobalTheme()
       "
       class="flex w-full flex-col items-center justify-center border-2 border-dashed p-3 md:py-4"
       :class="[
-        state.classes.transition,
+        'transition-tender',
         `border-${theme.name}-300 bg-${theme.name}-400 hover:bg-${theme.name}-500`,
       ]"
     >
       <PlusIcon
         class="h-10 w-10"
-        :class="[state.classes.transition, `text-${theme.name}-300`]"
+        :class="['transition-tender', `text-${theme.name}-300`]"
       />
     </button>
   </div>

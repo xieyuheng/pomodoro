@@ -17,7 +17,7 @@ const theme = useGlobalTheme()
     class="flex w-full items-center border-b px-4 pt-3 pb-2 md:py-4"
     :class="[
       'justify-between',
-      state.classes.transition,
+      'transition-tender',
       `border-${theme.name}-500`,
     ]"
   >

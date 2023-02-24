@@ -16,7 +16,7 @@ const app = useGlobalApp()
   <div
     class="flex min-h-screen flex-col items-center"
     :class="[
-      state.classes.transition,
+      'transition-tender',
       `bg-${theme.name}-400 text-${theme.name}-100`,
     ]"
   >
