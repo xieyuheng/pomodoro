@@ -6,6 +6,7 @@ import { TaskJson } from '../../jsons/TaskJson'
 import PomodoroTaskForm from './PomodoroTaskForm.vue'
 import PomodoroTaskItemCount from './PomodoroTaskItemCount.vue'
 import { State } from './State'
+import { stateDeleteTask } from './stateDeleteTask'
 
 const props = defineProps<{ state: State; task: TaskJson }>()
 
@@ -28,7 +29,7 @@ const alert = window.alert
       v-model="locals.inputTitle"
       :options="{
         onDelete: () => {
-          state.deleteTask(task.id)
+          stateDeleteTask(state, task.id)
           if (state.currentTask) {
             locals.inputTitle = state.currentTask.title
           }
@@ -45,7 +46,6 @@ const alert = window.alert
 
           task.title = locals.inputTitle
           task.editing = false
-          state.save()
         },
       }"
     />

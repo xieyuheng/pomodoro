@@ -1,4 +1,3 @@
-[pomodoro] `stateDeleteTask`
 [pomodoro] `stateChangeMode`
 [pomodoro] `stateSelectTask`
 [pomodoro] `stateFormatTitle`

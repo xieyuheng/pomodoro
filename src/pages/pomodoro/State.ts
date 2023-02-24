@@ -92,14 +92,6 @@ export class State {
     return state
   }
 
-  async save(): Promise<void> {
-    // TODO
-  }
-
-  deleteTask(id: number) {
-    removeFirst(this.tasks, (task) => task.id === id)
-  }
-
   get time(): number {
     return this.timer.time
   }
@@ -149,7 +141,6 @@ export class State {
       onFinished: async () => {
         if (this.currentTask && this.mode.kind === 'Focus') {
           this.currentTask.trace.push(Date.now())
-          this.save()
         }
 
         await stateNotify(this)
@@ -163,7 +154,6 @@ export class State {
 
     removeFirst(this.tasks, (task) => task.id === id)
     this.tasks.unshift(task)
-    this.save()
   }
 
   formatTitle(): string {
