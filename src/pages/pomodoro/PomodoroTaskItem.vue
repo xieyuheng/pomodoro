@@ -1,6 +1,6 @@
 TaskJson
 <script setup lang="ts">
-import { DotsVerticalIcon } from "@heroicons/vue/outline"
+import { EllipsisVerticalIcon } from "@heroicons/vue/24/outline"
 import { reactive } from "vue"
 import { TaskJson } from "../../jsons/TaskJson"
 import { PomodoroState as State } from "./PomodoroState"
@@ -79,7 +79,7 @@ const alert = window.alert
           }
         "
       >
-        <DotsVerticalIcon class="h-6 w-6" />
+        <EllipsisVerticalIcon class="h-6 w-6" />
       </button>
     </div>
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue"
-import { MenuIcon } from "@heroicons/vue/outline"
+import { Bars3Icon } from "@heroicons/vue/24/outline"
 import Lang from "../../components/Lang.vue"
 import { PageLayoutState as State } from "./PageLayoutState"
 
@@ -10,7 +10,7 @@ defineProps<{ state: State }>()
 <template>
   <Menu as="div" class="relative flex text-xl">
     <MenuButton>
-      <MenuIcon class="h-5 w-5" />
+      <Bars3Icon class="h-5 w-5" />
     </MenuButton>
 
     <Transition

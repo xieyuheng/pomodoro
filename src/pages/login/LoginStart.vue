@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import {
-  ArrowCircleRightIcon,
-  DotsCircleHorizontalIcon,
-} from "@heroicons/vue/outline/index.js"
+  ArrowRightCircleIcon,
+  EllipsisHorizontalCircleIcon,
+} from "@heroicons/vue/24/outline"
 import Lang from "../../components/Lang.vue"
 import Link from "../../components/Link.vue"
 import { useForm } from "../../hooks/useForm"
@@ -75,8 +75,11 @@ const form = useForm({ email: "" })
           type="submit"
           :disabled="form.processing"
         >
-          <ArrowCircleRightIcon v-if="!form.processing" class="h-8 w-8" />
-          <DotsCircleHorizontalIcon v-if="form.processing" class="h-8 w-8" />
+          <ArrowRightCircleIcon v-if="!form.processing" class="h-8 w-8" />
+          <EllipsisHorizontalCircleIcon
+            v-if="form.processing"
+            class="h-8 w-8"
+          />
         </button>
       </div>
 
