@@ -5,6 +5,7 @@ import PomodoroTasks from "./PomodoroTasks.vue"
 import PomodoroTimer from "./PomodoroTimer.vue"
 import { State } from "./State"
 import { stateReactive } from "./stateReactive"
+import { setupNotification } from "./utils/setupNotification"
 
 const state = stateReactive(new State())
 
@@ -13,7 +14,7 @@ watch(
   () => state.reload(),
 )
 
-onMounted(() => state.setupNotification())
+onMounted(async () => await setupNotification())
 </script>
 
 <template>

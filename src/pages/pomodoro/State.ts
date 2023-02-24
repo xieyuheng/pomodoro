@@ -128,21 +128,6 @@ export class State {
     return this.timer.time
   }
 
-  async setupNotification(): Promise<void> {
-    switch (Notification.permission) {
-      case "default": {
-        await Notification.requestPermission()
-        return
-      }
-      case "granted": {
-        return
-      }
-      case "denied": {
-        return
-      }
-    }
-  }
-
   get appName(): string {
     return this.lang.zh ? "番茄钟" : "Pomodoro"
   }

@@ -4,5 +4,5 @@ import { State } from "./State"
 export function stateReactive(inputState: State): State {
   const state = reactive(inputState)
 
-  return state
+  return state as State
 }

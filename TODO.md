@@ -1,4 +1,4 @@
-[pomodoro] `utils/setupNotification`
+[pomodoro] `stateNotify`
 
 # refactor
 
