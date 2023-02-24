@@ -1,27 +1,24 @@
 <script setup lang="ts">
-import { reactive } from 'vue'
 import FormButton from '../../components/form/FormButton.vue'
 import FormInput from '../../components/form/FormInput.vue'
 import { useForm } from '../../components/form/useForm'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
-import { State } from './State'
 
-const state = reactive(new State())
-
-const form = useForm({ username: '', name: '', email: '' })
-
-state.auth.redirectUser()
+const form = useForm({
+  username: '',
+  name: '',
+  password: '',
+})
 </script>
 
 <template>
   <div class="mt-4 flex h-full flex-col items-center md:mt-10">
     <form
       @submit.prevent="
-        (event) =>
-          form.postByEvent(event, state.links['sign-up'], {
-            then: (result) => state.verify(result),
-          })
+        () => {
+          // TODO
+        }
       "
       class="flex w-full flex-col space-y-2 text-xl sm:w-auto"
     >
@@ -55,19 +52,19 @@ state.auth.redirectUser()
         </template>
       </FormInput>
 
-      <FormInput name="email" type="email" required>
+      <FormInput name="password" type="password" required>
         <template #label>
           <Lang>
-            <template #zh>电子邮箱</template>
-            <template #en>Email</template>
+            <template #zh>密码</template>
+            <template #en>Password</template>
           </Lang>
         </template>
       </FormInput>
 
-      <div v-if="form.invalid?.email">
+      <div v-if="form.invalid?.password">
         <Lang class="py-1 text-base font-bold text-yellow-300">
-          <template #zh>{{ form.invalid.email.zh }}</template>
-          <template #en>{{ form.invalid.email.en }}</template>
+          <template #zh>{{ form.invalid.password.zh }}</template>
+          <template #en>{{ form.invalid.password.en }}</template>
         </Lang>
       </div>
 
