@@ -1,18 +1,18 @@
 import type { RouteRecordRaw } from 'vue-router'
 import PageNotFound from './errors/PageNotFound.vue'
-import Login from './login/Login.vue'
-import LoginEmailConfirmationSuccessPage from './login/LoginEmailConfirmationSuccessPage.vue'
 import Pomodoro from './pomodoro/Pomodoro.vue'
 import Register from './register/Register.vue'
 import RegisterEmailConfirmationSuccessPage from './register/RegisterEmailConfirmationSuccessPage.vue'
+import SignIn from './sign-in/SignIn.vue'
+import SignInEmailConfirmationSuccessPage from './sign-in/SignInEmailConfirmationSuccessPage.vue'
 
 export const routes: Array<RouteRecordRaw> = [
   { path: '/', component: Pomodoro },
-  { path: '/login', component: Login },
+  { path: '/sign-in', component: SignIn },
   { path: '/register', component: Register },
   {
-    path: '/notifications/login-email-confirmation-success',
-    component: LoginEmailConfirmationSuccessPage,
+    path: '/notifications/sign-in-email-confirmation-success',
+    component: SignInEmailConfirmationSuccessPage,
   },
   {
     path: '/notifications/register-email-confirmation-success',

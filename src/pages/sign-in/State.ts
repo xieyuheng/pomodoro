@@ -15,7 +15,7 @@ export class State {
     const api = import.meta.env.VITE_API_URL
 
     return {
-      login: `${api}/login`,
+      'sign-in': `${api}/sign-in`,
     }
   }
 }
@@ -31,8 +31,8 @@ export class Verifying {
     const api = import.meta.env.VITE_API_URL
 
     return {
-      verify: `${api}/login/${this.verification_token}/verify`,
-      revoke: `${api}/login/${this.verification_token}/revoke`,
+      verify: `${api}/sign-in/${this.verification_token}/verify`,
+      revoke: `${api}/sign-in/${this.verification_token}/revoke`,
     }
   }
 }

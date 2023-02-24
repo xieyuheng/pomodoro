@@ -21,7 +21,7 @@ const form = useForm({ email: '' })
 <template>
   <form
     @submit.prevent="
-      form.post(state.links.login, {
+      form.post(state.links['sign-in'], {
         then: (result) => state.verify(result),
       })
     "
@@ -32,7 +32,7 @@ const form = useForm({ email: '' })
         <div class="font-logo text-3xl font-semibold">
           <Lang>
             <template #zh> 登录 </template>
-            <template #en> Login </template>
+            <template #en> SignIn </template>
           </Lang>
         </div>
 

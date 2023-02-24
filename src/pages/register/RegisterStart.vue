@@ -82,11 +82,11 @@ const form = useForm({ username: '', name: '', email: '' })
       <Lang class="text-xl">
         <template #zh>
           已注册？
-          <Hyperlink href="/login" class="underline"> 登录 </Hyperlink>
+          <Hyperlink href="/sign-in" class="underline"> 登录 </Hyperlink>
         </template>
         <template #en>
           Already Registered?
-          <Hyperlink href="/login" class="underline"> Login </Hyperlink>
+          <Hyperlink href="/sign-in" class="underline"> SignIn </Hyperlink>
           .
         </template>
       </Lang>

@@ -13,10 +13,10 @@ import Lang from '../../components/Lang.vue'
     </Hyperlink>
     <div>/</div>
 
-    <Hyperlink href="/login" class="hover:underline">
+    <Hyperlink href="/sign-in" class="hover:underline">
       <Lang>
         <template #zh>登录</template>
-        <template #en>Login</template>
+        <template #en>SignIn</template>
       </Lang>
     </Hyperlink>
   </div>

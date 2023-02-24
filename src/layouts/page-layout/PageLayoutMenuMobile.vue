@@ -91,7 +91,7 @@ const auth = useAuth()
 
           <MenuItem as="div" v-slot="{ active }">
             <Hyperlink
-              href="/login"
+              href="/sign-in"
               class="font-semibold"
               :class="[
                 active && 'underline decoration-6',
@@ -100,7 +100,7 @@ const auth = useAuth()
             >
               <Lang>
                 <template #zh>登录</template>
-                <template #en>Login</template>
+                <template #en>SignIn</template>
               </Lang>
             </Hyperlink>
           </MenuItem>

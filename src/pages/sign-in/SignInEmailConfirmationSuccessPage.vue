@@ -12,7 +12,7 @@ const lang = useGlobalLang()
   >
     <Head>
       <title v-if="lang.isZh()">邮件登录确认 · 成功 | 只读</title>
-      <title v-else>Login Email Confirmation Success | Readonly</title>
+      <title v-else>SignIn Email Confirmation Success | Readonly</title>
     </Head>
 
     <Lang>
@@ -27,7 +27,7 @@ const lang = useGlobalLang()
       <template #en>
         <div class="flex h-full flex-col items-center justify-center">
           <h1 class="py-4 text-xl font-bold">
-            Login Email Confirmation Success
+            SignIn Email Confirmation Success
           </h1>
           <p class="p-1 text-lg">The story begins ~</p>
           <p class="p-1 text-lg">
