@@ -8,7 +8,7 @@ import Lang from '../../components/Lang.vue'
     <Hyperlink href="/sign-up" class="hover:underline">
       <Lang>
         <template #zh>注册</template>
-        <template #en>SignUp</template>
+        <template #en>Sign up</template>
       </Lang>
     </Hyperlink>
     <div>/</div>
@@ -16,7 +16,7 @@ import Lang from '../../components/Lang.vue'
     <Hyperlink href="/sign-in" class="hover:underline">
       <Lang>
         <template #zh>登录</template>
-        <template #en>SignIn</template>
+        <template #en>Sign in</template>
       </Lang>
     </Hyperlink>
   </div>

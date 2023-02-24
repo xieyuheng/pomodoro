@@ -32,7 +32,7 @@ const form = useForm({ email: '' })
         <div class="font-logo text-3xl font-semibold">
           <Lang>
             <template #zh> 登录 </template>
-            <template #en> SignIn </template>
+            <template #en> Sign in </template>
           </Lang>
         </div>
 
@@ -43,8 +43,9 @@ const form = useForm({ email: '' })
               >？
             </template>
             <template #en>
-              Not yet
-              <Hyperlink href="/sign-up" class="underline">SignUped</Hyperlink>?
+              Not
+              <Hyperlink href="/sign-up" class="underline">signed up</Hyperlink>
+              yet?
             </template>
           </Lang>
         </div>

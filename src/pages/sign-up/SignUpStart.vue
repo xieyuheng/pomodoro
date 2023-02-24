@@ -23,7 +23,7 @@ const form = useForm({ username: '', name: '', email: '' })
   >
     <Lang class="font-logo text-3xl font-semibold">
       <template #zh>注册</template>
-      <template #en>SignUp</template>
+      <template #en>Sign up</template>
     </Lang>
 
     <FormInput name="username" required>
@@ -74,7 +74,7 @@ const form = useForm({ username: '', name: '', email: '' })
     <FormButton :disabled="form.processing">
       <Lang>
         <template #zh>注册</template>
-        <template #en>SignUp</template>
+        <template #en>Sign up</template>
       </Lang>
     </FormButton>
 
@@ -85,8 +85,8 @@ const form = useForm({ username: '', name: '', email: '' })
           <Hyperlink href="/sign-in" class="underline"> 登录 </Hyperlink>
         </template>
         <template #en>
-          Already SignUped?
-          <Hyperlink href="/sign-in" class="underline"> SignIn </Hyperlink>
+          Already signed up?
+          <Hyperlink href="/sign-in" class="underline"> Sign in </Hyperlink>
           .
         </template>
       </Lang>
