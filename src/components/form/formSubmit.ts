@@ -1,16 +1,17 @@
 import { Form, FormValues } from './Form'
 
-type Action<T extends FormValues, R> = (values: T) => Promise<R>
+type Action<R> = () => Promise<R>
 
 export async function formSubmit<T extends FormValues, R>(
   form: Form<T>,
   event: Event,
-  action: Action<T, R>,
+  action: Action<R>,
 ): Promise<R> {
   form.processing = true
 
   assignValuesFromEvent(event, form.values)
-  const result = await action(form.values)
+
+  const result = await action()
 
   form.processing = false
 
