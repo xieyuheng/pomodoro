@@ -1,5 +1,3 @@
-[page-layout] drop `Layout` postfix
-
 # auth
 
 use fidb as backend -- to test password auth

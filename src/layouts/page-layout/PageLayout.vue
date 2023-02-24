@@ -2,7 +2,7 @@
 import { Head } from '@vueuse/head'
 import { useGlobalApp } from '../../reactives/useGlobalApp'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
-import PageLayoutHead from './PageLayoutHead.vue'
+import PageHead from './PageHead.vue'
 
 const theme = useGlobalTheme()
 const app = useGlobalApp()
@@ -21,7 +21,7 @@ const app = useGlobalApp()
       <meta name="theme-color" :content="theme.color" />
     </Head>
 
-    <PageLayoutHead />
+    <PageHead />
 
     <div class="mt-6 h-full w-full space-y-2 px-4 md:max-w-2xl">
       <slot />

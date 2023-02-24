@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { useAuth } from '../../reactives/useAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
-import PageLayoutLang from './PageLayoutLang.vue'
-import PageLayoutLogo from './PageLayoutLogo.vue'
-import PageLayoutLure from './PageLayoutLure.vue'
-import PageLayoutMenu from './PageLayoutMenu.vue'
-import PageLayoutMenuMobile from './PageLayoutMenuMobile.vue'
+import PageLang from './PageLang.vue'
+import PageLogo from './PageLogo.vue'
+import PageLure from './PageLure.vue'
+import PageMenu from './PageMenu.vue'
+import PageMenuMobile from './PageMenuMobile.vue'
 
 const theme = useGlobalTheme()
 const auth = useAuth()
@@ -21,18 +21,18 @@ const auth = useAuth()
     ]"
   >
     <div class="mr-3">
-      <PageLayoutLogo />
+      <PageLogo />
     </div>
 
     <div class="flex items-center space-x-2">
-      <PageLayoutLang />
+      <PageLang />
       <div class="hidden md:block">
-        <PageLayoutMenu v-show="auth.user" />
-        <PageLayoutLure v-show="!auth.user" />
+        <PageMenu v-show="auth.user" />
+        <PageLure v-show="!auth.user" />
       </div>
 
       <div class="block md:hidden">
-        <PageLayoutMenuMobile />
+        <PageMenuMobile />
       </div>
     </div>
   </div>
