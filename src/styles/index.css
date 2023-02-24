@@ -1,4 +1,2 @@
-/* The order matters. */
-
-@import './tailwind.css';
 @import './transition.css';
+@import './tailwind.css';
