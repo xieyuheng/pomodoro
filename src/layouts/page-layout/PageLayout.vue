@@ -2,11 +2,13 @@
 import { Head } from '@vueuse/head'
 import { reactive } from 'vue'
 import { useGlobalApp } from '../../reactives/useGlobalApp'
+import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import PageLayoutHeader from './PageLayoutHeader.vue'
 import { State } from './State'
 
 const state = reactive(new State())
 
+const theme = useGlobalTheme()
 const app = useGlobalApp()
 </script>
 
@@ -15,12 +17,12 @@ const app = useGlobalApp()
     class="flex min-h-screen flex-col items-center"
     :class="[
       state.classes.transition,
-      `bg-${state.theme.name}-400 text-${state.theme.name}-100`,
+      `bg-${theme.name}-400 text-${theme.name}-100`,
     ]"
   >
     <Head>
       <title>{{ app.name }}</title>
-      <meta name="theme-color" :content="state.theme.color" />
+      <meta name="theme-color" :content="theme.color" />
     </Head>
 
     <PageLayoutHeader :state="state" />

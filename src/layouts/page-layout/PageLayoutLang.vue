@@ -8,11 +8,13 @@ import {
 import { ArrowsUpDownIcon, CheckIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/Lang.vue'
 import { langTagName, useGlobalLang } from '../../reactives/useGlobalLang'
+import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import { State } from './State'
 
-const lang = useGlobalLang()
-
 defineProps<{ state: State }>()
+
+const theme = useGlobalTheme()
+const lang = useGlobalLang()
 </script>
 
 <template>
@@ -36,7 +38,7 @@ defineProps<{ state: State }>()
     >
       <ListboxOptions
         class="absolute top-8 right-0 min-w-max border-2"
-        :class="[`bg-${state.theme.name}-400 border-${state.theme.name}-300`]"
+        :class="[`bg-${theme.name}-400 border-${theme.name}-300`]"
       >
         <ListboxOption
           v-slot="{ active, selected }"
@@ -46,7 +48,7 @@ defineProps<{ state: State }>()
         >
           <div
             class="flex min-w-max items-center p-2"
-            :class="[active && `bg-${state.theme.name}-500`]"
+            :class="[active && `bg-${theme.name}-500`]"
           >
             {{ langTagName(tag) }}
             <CheckIcon v-if="selected" class="ml-2 h-5 w-5" />

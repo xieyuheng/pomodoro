@@ -3,7 +3,10 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
+import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import { State } from './State'
+
+const theme = useGlobalTheme()
 
 defineProps<{ state: State }>()
 </script>
@@ -24,15 +27,15 @@ defineProps<{ state: State }>()
     >
       <MenuItems
         class="fixed top-0 right-0 flex h-screen w-screen flex-col justify-center border-4 px-6 pb-20"
-        :class="[`bg-${state.theme.name}-400 border-${state.theme.name}-300`]"
+        :class="[`bg-${theme.name}-400 border-${theme.name}-300`]"
       >
         <div class="fixed top-4 right-4">
           <MenuItem v-slot="{ active }">
             <XMarkIcon
               class="h-10 w-10 text-right"
               :class="[
-                active && `border-4 border-${state.theme.name}-200`,
-                active && `text-${state.theme.name}-200`,
+                active && `border-4 border-${theme.name}-200`,
+                active && `text-${theme.name}-200`,
               ]"
             />
           </MenuItem>
@@ -60,7 +63,7 @@ defineProps<{ state: State }>()
               class="font-semibold"
               :class="[
                 active && 'underline decoration-6',
-                active && `text-${state.theme.name}-200`,
+                active && `text-${theme.name}-200`,
               ]"
             >
               <Lang>
@@ -78,7 +81,7 @@ defineProps<{ state: State }>()
               class="font-semibold"
               :class="[
                 active && 'underline decoration-6',
-                active && `text-${state.theme.name}-200`,
+                active && `text-${theme.name}-200`,
               ]"
             >
               <Lang>
@@ -94,7 +97,7 @@ defineProps<{ state: State }>()
               class="font-semibold"
               :class="[
                 active && 'underline decoration-6',
-                active && `text-${state.theme.name}-200`,
+                active && `text-${theme.name}-200`,
               ]"
             >
               <Lang>

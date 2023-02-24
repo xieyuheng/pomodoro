@@ -3,12 +3,17 @@ TaskJson
 import { EllipsisVerticalIcon } from '@heroicons/vue/24/outline'
 import { reactive } from 'vue'
 import { TaskJson } from '../../jsons/TaskJson'
+import { useGlobalLang } from '../../reactives/useGlobalLang'
+import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import PomodoroTaskForm from './PomodoroTaskForm.vue'
 import PomodoroTaskItemCount from './PomodoroTaskItemCount.vue'
 import { State } from './State'
 import { stateDeleteTask } from './stateDeleteTask'
 
 const props = defineProps<{ state: State; task: TaskJson }>()
+
+const theme = useGlobalTheme()
+const lang = useGlobalLang()
 
 const locals = reactive({ inputTitle: props.task.title })
 
@@ -20,7 +25,7 @@ const alert = window.alert
     class="flex flex-col border-2 bg-white p-3 text-2xl font-semibold md:py-4"
     :class="[
       state.classes.transition,
-      `border-${state.theme.name}-300 text-${state.theme.name}-900`,
+      `border-${theme.name}-300 text-${theme.name}-900`,
     ]"
   >
     <PomodoroTaskForm
@@ -41,7 +46,7 @@ const alert = window.alert
         },
         onSave: () => {
           if (!locals.inputTitle) {
-            return alert(state.lang.isZh() ? '输入不能为空' : 'Input required')
+            return alert(lang.isZh() ? '输入不能为空' : 'Input required')
           }
 
           task.title = locals.inputTitle

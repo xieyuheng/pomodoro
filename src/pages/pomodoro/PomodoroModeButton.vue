@@ -1,9 +1,14 @@
 <script setup lang="ts">
+import { useGlobalLang } from '../../reactives/useGlobalLang'
+import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import { callWithConfirm } from '../../utils/callWithConfirm'
 import { ModeKind, modeKindTranslate } from './mode'
 import { State } from './State'
 
 defineProps<{ state: State; kind: ModeKind }>()
+
+const theme = useGlobalTheme()
+const lang = useGlobalLang()
 </script>
 
 <template>
@@ -13,14 +18,14 @@ defineProps<{ state: State; kind: ModeKind }>()
     :class="[
       state.classes.transition,
       state.mode.kind === kind
-        ? `border-${state.theme.name}-400 bg-${state.theme.name}-600 text-${state.theme.name}-200`
-        : `border-${state.theme.name}-500 bg-${state.theme.name}-500 text-${state.theme.name}-300`,
+        ? `border-${theme.name}-400 bg-${theme.name}-600 text-${theme.name}-200`
+        : `border-${theme.name}-500 bg-${theme.name}-500 text-${theme.name}-300`,
     ]"
     @click="
       () => {
         callWithConfirm(() => state.changeMode(kind), {
           when: state.timer.isStarted && !state.timer.isFinished,
-          message: state.lang.isZh()
+          message: lang.isZh()
             ? [
                 `「${modeKindTranslate(
                   state.mode.kind,

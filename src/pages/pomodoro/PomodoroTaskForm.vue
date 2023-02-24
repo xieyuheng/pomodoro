@@ -1,5 +1,10 @@
 <script setup lang="ts">
+import { useGlobalLang } from '../../reactives/useGlobalLang'
+import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import { State } from './State'
+
+const lang = useGlobalLang()
+const theme = useGlobalTheme()
 
 const props = defineProps<{
   state: State
@@ -22,8 +27,8 @@ const { placeholder, onDelete, onCancel, onSave } = props.options
       class="flex w-full flex-col border-b-2 bg-inherit p-3 focus:outline-none focus:ring"
       :class="[
         state.classes.transition,
-        `border-${state.theme.name}-200 text-${state.theme.name}-900 focus:ring-${state.theme.name}-200`,
-        `placeholder-${state.theme.name}-400`,
+        `border-${theme.name}-200 text-${theme.name}-900 focus:ring-${theme.name}-200`,
+        `placeholder-${theme.name}-400`,
       ]"
       type="text"
       :value="modelValue"
@@ -45,11 +50,11 @@ const { placeholder, onDelete, onCancel, onSave } = props.options
         class="border-2 py-1 px-2 text-lg font-semibold md:text-xl"
         :class="[
           state.classes.transition,
-          `border-${state.theme.name}-300 bg-${state.theme.name}-200 text-${state.theme.name}-600`,
+          `border-${theme.name}-300 bg-${theme.name}-200 text-${theme.name}-600`,
         ]"
         @click="onDelete"
       >
-        {{ state.lang.isZh() ? '删除' : 'DELETE' }}
+        {{ lang.isZh() ? '删除' : 'DELETE' }}
       </button>
 
       <button
@@ -57,11 +62,11 @@ const { placeholder, onDelete, onCancel, onSave } = props.options
         class="border-2 py-1 px-2 text-lg font-semibold md:text-xl"
         :class="[
           state.classes.transition,
-          `border-${state.theme.name}-300 bg-${state.theme.name}-200 text-${state.theme.name}-600`,
+          `border-${theme.name}-300 bg-${theme.name}-200 text-${theme.name}-600`,
         ]"
         @click="onCancel"
       >
-        {{ state.lang.isZh() ? '取消' : 'CANCEL' }}
+        {{ lang.isZh() ? '取消' : 'CANCEL' }}
       </button>
 
       <button
@@ -69,11 +74,11 @@ const { placeholder, onDelete, onCancel, onSave } = props.options
         class="border-2 py-1 px-2 text-lg font-semibold md:text-xl"
         :class="[
           state.classes.transition,
-          `border-${state.theme.name}-300 bg-${state.theme.name}-200 text-${state.theme.name}-600`,
+          `border-${theme.name}-300 bg-${theme.name}-200 text-${theme.name}-600`,
         ]"
         @click="onSave"
       >
-        {{ state.lang.isZh() ? '保存' : 'SAVE' }}
+        {{ lang.isZh() ? '保存' : 'SAVE' }}
       </button>
     </div>
   </div>

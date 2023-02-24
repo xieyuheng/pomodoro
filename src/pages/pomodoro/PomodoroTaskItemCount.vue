@@ -1,9 +1,15 @@
 TaskJson
 <script setup lang="ts">
 import { TaskJson } from '../../jsons/TaskJson'
+import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import { State } from './State'
 
-const props = defineProps<{ state: State; task: TaskJson }>()
+defineProps<{
+  state: State
+  task: TaskJson
+}>()
+
+const theme = useGlobalTheme()
 </script>
 
 <template>
@@ -14,7 +20,7 @@ const props = defineProps<{ state: State; task: TaskJson }>()
       class="h-2.5 w-2.5 border"
       :class="[
         state.classes.transition,
-        `border-${state.theme.name}-400 bg-${state.theme.name}-600`,
+        `border-${theme.name}-400 bg-${theme.name}-600`,
       ]"
     ></div>
   </div>

@@ -6,9 +6,14 @@ import {
 import { useForm } from '../../components/form/useForm'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
+import { useGlobalLang } from '../../reactives/useGlobalLang'
+import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import { State } from './State'
 
 const { state } = defineProps<{ state: State }>()
+
+const theme = useGlobalTheme()
+const lang = useGlobalLang()
 
 const form = useForm({ email: '' })
 </script>
@@ -57,13 +62,13 @@ const form = useForm({ email: '' })
           autocomplete="email"
           class="w-full rounded-sm border px-3 py-4 font-bold placeholder-opacity-60"
           :class="[
-            `text-${state.theme.name}-700`,
-            `border-${state.theme.name}-600`,
-            `placeholder-${state.theme.name}-800`,
+            `text-${theme.name}-700`,
+            `border-${theme.name}-600`,
+            `placeholder-${theme.name}-800`,
           ]"
           type="email"
           maxlength="100"
-          :placeholder="state.lang.isZh() ? '电子邮箱' : 'Email'"
+          :placeholder="lang.isZh() ? '电子邮箱' : 'Email'"
           spellcheck="false"
           required
         />
@@ -72,8 +77,8 @@ const form = useForm({ email: '' })
           class="pl-2"
           :class="[
             form.processing
-              ? `text-${state.theme.name}-300`
-              : `text-${state.theme.name}-100`,
+              ? `text-${theme.name}-300`
+              : `text-${theme.name}-100`,
           ]"
           type="submit"
           :disabled="form.processing"

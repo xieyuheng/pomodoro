@@ -2,9 +2,12 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Bars3Icon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/Lang.vue'
+import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import { State } from './State'
 
 defineProps<{ state: State }>()
+
+const theme = useGlobalTheme()
 </script>
 
 <template>
@@ -23,7 +26,7 @@ defineProps<{ state: State }>()
     >
       <MenuItems
         class="absolute top-8 right-0 w-52 min-w-max border-2"
-        :class="[`bg-${state.theme.name}-400 border-${state.theme.name}-300`]"
+        :class="[`bg-${theme.name}-400 border-${theme.name}-300`]"
       >
         <div v-if="state.auth.user">
           <div class="flex w-full flex-col px-4 py-2">
@@ -42,7 +45,7 @@ defineProps<{ state: State }>()
           <MenuItem v-slot="{ active }">
             <button
               class="flex w-full px-4 py-2"
-              :class="[active && `bg-${state.theme.name}-500`]"
+              :class="[active && `bg-${theme.name}-500`]"
               @click="state.auth.logout()"
             >
               <Lang>

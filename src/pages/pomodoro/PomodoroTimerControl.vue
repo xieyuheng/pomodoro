@@ -1,10 +1,13 @@
 <script setup lang="ts">
+import { useGlobalLang } from '../../reactives/useGlobalLang'
 import { callWithConfirm } from '../../utils/callWithConfirm'
 import PomodoroTimerButton from './PomodoroTimerButton.vue'
 import { State } from './State'
 import { stateStart } from './stateStart'
 
 defineProps<{ state: State }>()
+
+const lang = useGlobalLang()
 </script>
 
 <template>
@@ -13,26 +16,26 @@ defineProps<{ state: State }>()
       <PomodoroTimerButton
         v-if="!state.timer.isRunning && !state.timer.isFinished"
         :state="state"
-        :name="state.lang.isZh() ? '开始' : 'START'"
+        :name="lang.isZh() ? '开始' : 'START'"
         @click="() => stateStart(state)"
       />
 
       <PomodoroTimerButton
         v-if="state.timer.isRunning"
         :state="state"
-        :name="state.lang.isZh() ? '暂停' : 'STOP'"
+        :name="lang.isZh() ? '暂停' : 'STOP'"
         @click="() => state.timer.stop()"
       />
 
       <PomodoroTimerButton
         v-if="state.timer.isStarted"
         :state="state"
-        :name="state.lang.isZh() ? '重置' : 'RESET'"
+        :name="lang.isZh() ? '重置' : 'RESET'"
         @click="
           () => {
             callWithConfirm(() => state.timer.reset(), {
               when: !state.timer.isFinished,
-              message: state.lang.isZh()
+              message: lang.isZh()
                 ? '计时器已经开始了，确定要重置吗？'
                 : 'A timer has been started, are you sure to reset it?',
             })

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import PageLayoutLang from './PageLayoutLang.vue'
 import PageLayoutLogo from './PageLayoutLogo.vue'
 import PageLayoutLure from './PageLayoutLure.vue'
@@ -7,6 +8,8 @@ import PageLayoutMenuMobile from './PageLayoutMenuMobile.vue'
 import { State } from './State'
 
 defineProps<{ state: State }>()
+
+const theme = useGlobalTheme()
 </script>
 
 <template>
@@ -15,7 +18,7 @@ defineProps<{ state: State }>()
     :class="[
       'justify-between',
       state.classes.transition,
-      `border-${state.theme.name}-500`,
+      `border-${theme.name}-500`,
     ]"
   >
     <div class="mr-3">

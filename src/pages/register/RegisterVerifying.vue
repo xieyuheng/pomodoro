@@ -2,6 +2,7 @@
 import { useRouter } from 'vue-router'
 import Lang from '../../components/Lang.vue'
 import { useAuth } from '../../reactives/useAuth'
+import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import { poll } from '../../utils/poll'
 import { State, Verifying } from './State'
 
@@ -11,6 +12,8 @@ const { state, verifying } = defineProps<{
 }>()
 
 const router = useRouter()
+
+const theme = useGlobalTheme()
 
 const { stop } = poll<boolean>({
   target: async () => {
@@ -63,7 +66,7 @@ async function revoke() {
       <div class="py-2 text-lg">
         <p
           class="border-4 py-1 px-2 font-black"
-          :class="[`border-${state.theme.name}-300 bg-${state.theme.name}-500`]"
+          :class="[`border-${theme.name}-300 bg-${theme.name}-500`]"
         >
           {{ verifying.confirmation_code }}
         </p>
@@ -71,9 +74,7 @@ async function revoke() {
 
       <button
         class="my-2 font-sans font-bold"
-        :class="[
-          `text-${state.theme.name}-50 hover:text-${state.theme.name}-200`,
-        ]"
+        :class="[`text-${theme.name}-50 hover:text-${theme.name}-200`]"
         @click="revoke()"
       >
         <Lang class="py-1 text-lg">

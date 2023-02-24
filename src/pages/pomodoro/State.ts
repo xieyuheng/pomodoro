@@ -1,6 +1,4 @@
 import { TaskJson } from '../../jsons/TaskJson'
-import { useAuth } from '../../reactives/useAuth'
-import { useGlobalLang } from '../../reactives/useGlobalLang'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import { Mode, ModeKind, modeThemeName } from './mode'
 import { defaultSettings, Settings, testingSettings } from './settings'
@@ -25,10 +23,6 @@ export class State {
   inputTaskTitle?: string
   settings: Settings = import.meta.env.PROD ? defaultSettings : testingSettings
 
-  lang = useGlobalLang()
-  theme = useGlobalTheme()
-  auth = useAuth()
-
   classes = {
     transition: 'transition delay-0 duration-500 ease-out',
   }
@@ -36,9 +30,6 @@ export class State {
   constructor() {
     this.mode = this.settings.modes.Focus
     this.timer = new Timer(this.mode.interval)
-    if (this.auth.pomodoro) {
-      this.tasks = this.auth.pomodoro.tasks
-    }
   }
 
   get currentTask() {
@@ -87,7 +78,10 @@ export class State {
 
   changeMode(kind: ModeKind): void {
     this.mode = this.settings.modes[kind]
-    this.theme.name = modeThemeName(this.mode)
+
+    const theme = useGlobalTheme()
+    theme.name = modeThemeName(this.mode)
+
     this.timer.reset(this.mode.interval)
   }
 }
