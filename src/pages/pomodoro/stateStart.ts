@@ -9,8 +9,8 @@ export function stateStart(state: State): void {
 
   state.timer.start({
     onFinished: async () => {
-      if (state.currentTask && state.mode.kind === 'Focus') {
-        state.currentTask.trace.push(Date.now())
+      if (state.tasks[0] && state.mode.kind === 'Focus') {
+        state.tasks[0].trace.push(Date.now())
       }
 
       await stateNotify(state)

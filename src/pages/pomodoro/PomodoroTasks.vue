@@ -9,8 +9,8 @@ defineProps<{ state: State }>()
 
 <template>
   <div class="flex flex-col py-2">
-    <div v-if="state.currentTask" class="py-3">
-      <PomodoroTaskCurrent :state="state" :task="state.currentTask" />
+    <div v-if="state.tasks[0]" class="py-3">
+      <PomodoroTaskCurrent :state="state" :task="state.tasks[0]" />
     </div>
 
     <ul>

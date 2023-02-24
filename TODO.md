@@ -1,3 +1,6 @@
+[pomodoro] `createState`
+[pomodoro] `stateJson`
+
 # refactor
 
 remove `jsons/`

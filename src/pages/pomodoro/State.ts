@@ -31,25 +31,6 @@ export class State {
     this.timer = new Timer(this.mode.interval)
   }
 
-  get currentTask() {
-    return this.tasks[0]
-  }
-
-  private refreshIds(): void {
-    const ids: Set<number> = new Set()
-
-    const tasks = this.tasks
-
-    for (const task of tasks) {
-      if (ids.has(task.id)) {
-        const newId = Math.max(...Array.from(ids)) + 1
-        task.id = newId
-      }
-
-      ids.add(task.id)
-    }
-  }
-
   json(): StateJson {
     return {
       mode: this.mode,
@@ -71,7 +52,20 @@ export class State {
     state.tasks = json.tasks
     state.inputTaskTitle = json.inputTaskTitle
     state.settings = json.settings
-    state.refreshIds()
+    refreshIds(state.tasks)
     return state
+  }
+}
+
+function refreshIds(tasks: Array<TaskJson>): void {
+  const ids: Set<number> = new Set()
+
+  for (const task of tasks) {
+    if (ids.has(task.id)) {
+      const newId = Math.max(...Array.from(ids)) + 1
+      task.id = newId
+    }
+
+    ids.add(task.id)
   }
 }

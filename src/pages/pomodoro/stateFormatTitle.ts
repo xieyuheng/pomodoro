@@ -10,8 +10,8 @@ export function stateFormatTitle(state: State): string {
     parts.push(`${state.timer.formatTime()}`)
   }
 
-  if (state.currentTask) {
-    parts.push(`${state.currentTask.title}`)
+  if (state.tasks[0]) {
+    parts.push(`${state.tasks[0].title}`)
   } else {
     parts.push(`${app.name}`)
   }

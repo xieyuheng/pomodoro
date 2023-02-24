@@ -35,8 +35,8 @@ const alert = window.alert
       :options="{
         onDelete: () => {
           stateDeleteTask(state, task.id)
-          if (state.currentTask) {
-            locals.inputTitle = state.currentTask.title
+          if (state.tasks[0]) {
+            locals.inputTitle = state.tasks[0].title
           }
           task.editing = false
         },
