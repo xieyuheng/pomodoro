@@ -1,4 +1,4 @@
-import { TaskJson } from '../../jsons/TaskJson'
+import { TaskJson } from '../../schemas/TaskJson'
 import { Mode } from './mode'
 import { defaultSettings, Settings, testingSettings } from './settings'
 import { Timer } from './timer'

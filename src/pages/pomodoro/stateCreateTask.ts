@@ -1,4 +1,4 @@
-import { TaskJson } from '../../jsons/TaskJson'
+import { TaskJson } from '../../schemas/TaskJson'
 import { State } from './State'
 
 export function stateCreateTask(state: State) {

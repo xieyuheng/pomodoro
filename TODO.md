@@ -1,7 +1,3 @@
-# refactor
-
-remove `jsons/`
-
 # auth
 
 use fidb as backend -- to test password auth

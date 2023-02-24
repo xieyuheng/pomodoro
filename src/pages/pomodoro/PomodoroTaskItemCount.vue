@@ -1,7 +1,7 @@
 TaskJson
 <script setup lang="ts">
-import { TaskJson } from '../../jsons/TaskJson'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
+import { TaskJson } from '../../schemas/TaskJson'
 import { State } from './State'
 
 defineProps<{
