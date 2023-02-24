@@ -42,13 +42,6 @@ const form = useForm({
           </template>
         </FormInput>
 
-        <div v-if="form.invalid?.username">
-          <Lang class="py-1 text-base font-bold text-yellow-300">
-            <template #zh>{{ form.invalid.username.zh }}</template>
-            <template #en>{{ form.invalid.username.en }}</template>
-          </Lang>
-        </div>
-
         <FormInput name="password" type="password" required>
           <template #label>
             <Lang>
@@ -57,13 +50,6 @@ const form = useForm({
             </Lang>
           </template>
         </FormInput>
-
-        <div v-if="form.invalid?.password">
-          <Lang class="py-1 text-base font-bold text-yellow-300">
-            <template #zh>{{ form.invalid.password.zh }}</template>
-            <template #en>{{ form.invalid.password.en }}</template>
-          </Lang>
-        </div>
 
         <div class="flex flex-col justify-center py-4">
           <hr class="border-t border-white" />

@@ -1,6 +1,9 @@
 import { reactive } from 'vue'
-import { Form, Values } from './Form'
+import { Form, FormValues } from './Form'
 
-export function useForm<T extends Values>(values: T) {
-  return reactive(new Form(values))
+export function useForm<T extends FormValues>(values: T): Form<T> {
+  return reactive({
+    values,
+    processing: false,
+  }) as Form<T>
 }
