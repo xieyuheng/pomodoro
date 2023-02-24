@@ -1,9 +1,20 @@
-[pomodoro] `stateReactive`
+[pomodoro] `utils/setupNotification`
+
+# refactor
 
 remove `models/`
 remove `jsons/`
+
+# auth
+
 use fidb as backend -- to test password auth
+
+# local
+
 can be used without local backend
-use localStorage to avoid CSRF
+
+# later
+
 play sound only on `start`
+
 `models/Form` validate `Invalid` type

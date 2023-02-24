@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { Head } from "@vueuse/head"
-import { onMounted, reactive, watch } from "vue"
+import { onMounted, watch } from "vue"
 import PomodoroTasks from "./PomodoroTasks.vue"
 import PomodoroTimer from "./PomodoroTimer.vue"
 import { State } from "./State"
+import { stateReactive } from "./stateReactive"
 
-let state = reactive(new State()) as State
+const state = stateReactive(new State())
 
 watch(
   () => state.auth.pomodoro,
