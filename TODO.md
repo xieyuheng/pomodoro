@@ -3,7 +3,6 @@
 
 # refactor
 
-remove `models/`
 remove `jsons/`
 
 # auth
