@@ -3,21 +3,33 @@ import { Mode } from './mode'
 import { defaultSettings, Settings, testingSettings } from './settings'
 import { Timer } from './timer'
 
-export class State {
+export type State = {
   mode: Mode
   timer: Timer
-  playing = false
-  editing = false
-  tasks: Array<TaskJson> = []
+  playing: boolean
+  editing: boolean
+  tasks: Array<TaskJson>
   inputTaskTitle?: string
-  settings: Settings = import.meta.env.PROD ? defaultSettings : testingSettings
+  settings: Settings
 
-  classes = {
-    transition: 'transition delay-0 duration-500 ease-out',
-  }
+  classes: Record<string, string>
+}
 
-  constructor() {
-    this.mode = this.settings.modes.Focus
-    this.timer = new Timer(this.mode.interval)
+export function createState(): State {
+  const settings = import.meta.env.PROD ? defaultSettings : testingSettings
+  const mode = settings.modes.Focus
+  const timer = new Timer(mode.interval)
+
+  return {
+    playing: false,
+    editing: false,
+    tasks: [],
+    settings,
+    mode,
+    timer,
+
+    classes: {
+      transition: 'transition delay-0 duration-500 ease-out',
+    },
   }
 }

@@ -1,7 +1,7 @@
 import { TaskJson } from '../../jsons/TaskJson'
 import { Mode } from './mode'
 import { Settings } from './settings'
-import { State } from './State'
+import { createState, State } from './State'
 import { Timer, TimerJson } from './timer'
 
 export type StateJson = {
@@ -27,7 +27,7 @@ export function stateToJson(state: State): StateJson {
 }
 
 export function stateFromJson(json: StateJson): State {
-  const state = new State()
+  const state = createState()
   state.mode = json.mode
   state.timer = Timer.create(json.timer)
   state.playing = json.playing
