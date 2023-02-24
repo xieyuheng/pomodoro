@@ -1,4 +1,9 @@
-[pomodoro] `stateChangeMode`
+`Lang` use `useGlobalLang`
+
+`useGlobalApp`
+
+[pomodoro] `models/modeThemeName`
+[pomodoro] `models/modeTranslateKind`
 
 # refactor
 
