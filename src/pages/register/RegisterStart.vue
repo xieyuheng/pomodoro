@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import FormButton from "../../components/FormButton.vue"
-import FormInput from "../../components/FormInput.vue"
+import FormButton from "../../components/form/FormButton.vue"
+import FormInput from "../../components/form/FormInput.vue"
 import Hyperlink from "../../components/Hyperlink.vue"
 import Lang from "../../components/Lang.vue"
 import { useForm } from "../../reactives/useForm"

@@ -1,7 +1,6 @@
-add `components/form`
+[pomodoro] [refactor] use object as state -- instead of class
 remove `models/`
 remove `jsons/`
-[pomodoro] [refactor] use object as state -- instead of class
 use fidb as backend -- to test password auth
 can be used without local backend
 use localStorage to avoid CSRF
