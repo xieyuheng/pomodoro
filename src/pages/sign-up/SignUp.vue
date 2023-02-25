@@ -1,11 +1,17 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { formSubmit, useForm } from '../../components/form'
 import FormButton from '../../components/form/FormButton.vue'
 import FormInput from '../../components/form/FormInput.vue'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
+import { useGlobalToken } from '../../reactives/useGlobalToken'
+
+const router = useRouter()
 
 const form = useForm({
   username: '',
@@ -13,10 +19,14 @@ const form = useForm({
   password: '',
 })
 
+const errorMessage = ref('')
+
 async function submit(event: Event) {
   const { url } = useGlobalBackend()
 
   formSubmit(form, event, async () => {
+    errorMessage.value = ''
+
     const response = await fetch(
       `${url}/users/${form.values.username}?kind=password-sign-up`,
       {
@@ -39,8 +49,30 @@ async function submit(event: Event) {
 
     if (response.ok) {
       const created = await response.json()
+      const auth = useGlobalAuth()
+      auth.user = created
+
+      {
+        const response = await fetch(
+          `${url}/users/${form.values.username}?kind=password-sign-in`,
+          {
+            method: 'POST',
+            body: JSON.stringify({
+              password: form.values.password,
+            }),
+          },
+        )
+
+        if (response.ok) {
+          const token = useGlobalToken()
+          token.name = await response.json()
+          router.replace({ path: `/` })
+        } else {
+          errorMessage.value = response.statusText
+        }
+      }
     } else {
-      //
+      errorMessage.value = response.statusText
     }
   })
 }
@@ -51,7 +83,7 @@ async function submit(event: Event) {
     <div class="mt-4 flex h-full flex-col items-center md:mt-10">
       <form
         @submit.prevent="submit"
-        class="flex w-full flex-col space-y-2 text-xl sm:w-auto"
+        class="flex w-auto flex-col space-y-2 text-xl md:w-[24rem]"
       >
         <Lang class="font-logo text-3xl font-semibold">
           <template #zh>注册</template>
@@ -85,7 +117,13 @@ async function submit(event: Event) {
           </template>
         </FormInput>
 
-        <div class="flex flex-col justify-center py-4">
+        <div v-if="errorMessage">
+          <div class="mt-3 border-2 border-red-300 p-2 text-base">
+            {{ errorMessage }}
+          </div>
+        </div>
+
+        <div class="flex flex-col justify-center py-3">
           <hr class="border-t border-white" />
         </div>
 
@@ -104,8 +142,7 @@ async function submit(event: Event) {
             </template>
             <template #en>
               Already signed up?
-              <Hyperlink href="/sign-in" class="underline"> Sign in </Hyperlink>
-              .
+              <Hyperlink href="/sign-in" class="underline"> Sign in</Hyperlink>
             </template>
           </Lang>
         </div>

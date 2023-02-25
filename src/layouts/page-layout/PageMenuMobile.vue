@@ -45,7 +45,7 @@ const auth = useGlobalAuth()
           <div class="space-y-1">
             <Lang>
               <template #zh>专注者</template>
-              <template #en>Logged in as</template>
+              <template #en>Signed in as</template>
             </Lang>
             <div class="font-semibold">{{ auth.user.name }}</div>
             <div class="text-xl font-semibold">@{{ auth.user.username }}</div>
@@ -70,7 +70,7 @@ const auth = useGlobalAuth()
             >
               <Lang>
                 <template #zh>退出</template>
-                <template #en>Logout</template>
+                <template #en>Sign out</template>
               </Lang>
             </button>
           </MenuItem>

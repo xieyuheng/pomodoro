@@ -1,8 +1,10 @@
 # auth
 
+`SignIn` -- `submit`
+
 fix `useGlobalBackend`
 
-use fidb as backend -- to test password auth
+`PageMenu` & `PageMenuMobile` -- try to fetch user
 
 `PageMenu` & `PageMenuMobile` -- support `signOut`
 
