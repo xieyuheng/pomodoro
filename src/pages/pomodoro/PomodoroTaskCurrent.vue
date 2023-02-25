@@ -34,7 +34,7 @@ const alert = window.alert
       v-model="locals.inputTitle"
       :options="{
         onDelete: () => {
-          stateDeleteTask(state, task.id)
+          stateDeleteTask(state, task['@path'])
           if (state.tasks[0]) {
             locals.inputTitle = state.tasks[0].title
           }

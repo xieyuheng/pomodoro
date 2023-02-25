@@ -1,7 +1,4 @@
-[pomodoro] fix `Task` type -- use fidb data
-
-[pomodoro] `task/saveUserTask`
-[pomodoro] `task/deleteUserTask`
+[pomodoro] inline `createUserTask` to `stateCreateTask`
 
 [pomodoro] `stateReactivelySaveTask` -- watch `state.tasks`
 [pomodoro] `stateReactivelyLoadTasks` -- watch `auth.user`

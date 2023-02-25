@@ -1,7 +1,7 @@
 import { Obtain, ty } from '@xieyuheng/ty'
 
 export const TaskSchema = ty.object({
-  id: ty.number(),
+  '@path': ty.string(),
   trace: ty.array(ty.number()),
   title: ty.string(),
   editing: ty.optional(ty.boolean()),
