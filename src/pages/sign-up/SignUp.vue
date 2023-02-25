@@ -23,10 +23,9 @@ const errorMessage = ref('')
 
 async function submit(event: Event) {
   const { url } = useGlobalBackend()
+  errorMessage.value = ''
 
   formSubmit(form, event, async () => {
-    errorMessage.value = ''
-
     const response = await fetch(
       `${url}/users/${form.values.username}?kind=password-sign-up`,
       {
@@ -47,32 +46,32 @@ async function submit(event: Event) {
       },
     )
 
-    if (response.ok) {
-      const created = await response.json()
-      const auth = useGlobalAuth()
-      auth.user = created
-
-      {
-        const response = await fetch(
-          `${url}/users/${form.values.username}?kind=password-sign-in`,
-          {
-            method: 'POST',
-            body: JSON.stringify({
-              password: form.values.password,
-            }),
-          },
-        )
-
-        if (response.ok) {
-          const token = useGlobalToken()
-          token.name = await response.json()
-          router.replace({ path: `/` })
-        } else {
-          errorMessage.value = response.statusText
-        }
-      }
-    } else {
+    if (!response.ok) {
       errorMessage.value = response.statusText
+    }
+
+    const auth = useGlobalAuth()
+    auth.user = await response.json()
+
+    {
+      const response = await fetch(
+        `${url}/users/${form.values.username}?kind=password-sign-in`,
+        {
+          method: 'POST',
+          body: JSON.stringify({
+            password: form.values.password,
+          }),
+        },
+      )
+
+      if (!response.ok) {
+        errorMessage.value = response.statusText
+      }
+
+      const token = useGlobalToken()
+      token.name = await response.json()
+
+      router.replace({ path: `/` })
     }
   })
 }

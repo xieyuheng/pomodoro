@@ -1,7 +1,5 @@
 # auth
 
-`SignIn` -- `submit`
-
 fix `useGlobalBackend`
 
 `PageMenu` & `PageMenuMobile` -- try to fetch user
