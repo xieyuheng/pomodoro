@@ -18,7 +18,7 @@ export async function stateSaveTasks(state: State): Promise<void> {
       authorization: useGlobalToken().authorization,
     },
     body: JSON.stringify({
-      // '@revision': auth.user['@revision'],
+      '@revision': auth.user['@revision'],
       tasks: state.tasks,
     }),
   })

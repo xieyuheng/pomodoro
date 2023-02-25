@@ -1,4 +1,3 @@
-user has `@revision` -- fix `stateSaveTasks`
 [pomodoro] `stateReactivelySaveTasks` -- watch `state.tasks`
 [pomodoro] `stateReactivelyLoadTasks` -- watch `auth.user`
 
