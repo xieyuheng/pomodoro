@@ -14,11 +14,7 @@ defineProps<{ state: State }>()
     </div>
 
     <ul>
-      <li
-        v-for="task of state.tasks.slice(1)"
-        class="py-2"
-        :key="task['@path']"
-      >
+      <li v-for="task of state.tasks.slice(1)" class="py-2" :key="task.id">
         <PomodoroTaskItem :state="state" :task="task" />
       </li>
 

@@ -1,14 +1,19 @@
 import { State } from './State'
+import { Task } from './task'
 
 export function stateCreateTask(state: State) {
   if (!state.inputTaskTitle) return
 
-  const newTask = {
-    '@path': state.tasks.length.toString(),
-    title: state.inputTaskTitle,
-    trace: [],
-  }
+  const newTask = stateCreateTaskFromTitle(state, state.inputTaskTitle)
 
   state.tasks.push(newTask)
   state.inputTaskTitle = undefined
+}
+
+function stateCreateTaskFromTitle(state: State, title: string): Task {
+  const tasks = state.tasks
+
+  const ids = tasks.map((task) => task.id)
+  const newId = ids.length === 0 ? 0 : Math.max(...ids) + 1
+  return { id: newId, title, trace: [] }
 }

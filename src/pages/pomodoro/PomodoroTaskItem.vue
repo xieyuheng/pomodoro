@@ -36,7 +36,7 @@ const alert = window.alert
       v-model="locals.inputTitle"
       :options="{
         onDelete: () => {
-          stateDeleteTask(state, task['@path'])
+          stateDeleteTask(state, task.id)
           task.editing = false
         },
         onCancel: () => {
@@ -67,7 +67,7 @@ const alert = window.alert
             if (!locals.active) {
               locals.active = true
             } else {
-              stateSelectTask(state, task['@path'])
+              stateSelectTask(state, task.id)
             }
           }
         "
