@@ -1,9 +1,5 @@
-[pomodoro] fix `Task` type -- use fidb data
-
-[pomodoro] `task/saveUserTask`
-[pomodoro] `task/deleteUserTask`
-
-[pomodoro] `stateReactivelySaveTask` -- watch `state.tasks`
+user has `@revision` -- fix `stateSaveTasks`
+[pomodoro] `stateReactivelySaveTasks` -- watch `state.tasks`
 [pomodoro] `stateReactivelyLoadTasks` -- watch `auth.user`
 
 [pomodoro] `task/createUserTask` -- report response error
