@@ -25,6 +25,10 @@ export async function stateSaveTasks(state: State): Promise<void> {
   })
 
   if (response.ok) {
+    console.log({
+      who: 'stateSaveTasks',
+      message: `tasks saved`,
+    })
     return
   } else {
     console.error({
