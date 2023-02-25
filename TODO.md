@@ -1,4 +1,3 @@
-[pomodoro] remove unused code
 [pomodoro] fix `Task` type -- use fidb data
 
 [pomodoro] `task/saveUserTask`
