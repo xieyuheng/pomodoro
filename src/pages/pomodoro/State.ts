@@ -1,6 +1,6 @@
+import { Task } from '../../schemas/Task'
 import { Mode } from './mode'
 import { defaultSettings, Settings, testingSettings } from './settings'
-import { Task } from './task'
 import { Timer } from './timer'
 
 export type State = {

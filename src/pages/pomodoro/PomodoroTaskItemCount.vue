@@ -1,8 +1,8 @@
 Task
 <script setup lang="ts">
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
+import { Task } from '../../schemas/Task'
 import { State } from './State'
-import { Task } from './task'
 
 defineProps<{
   state: State

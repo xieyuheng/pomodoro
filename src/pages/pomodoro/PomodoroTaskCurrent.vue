@@ -4,11 +4,11 @@ import { EllipsisVerticalIcon } from '@heroicons/vue/24/outline'
 import { reactive } from 'vue'
 import { useGlobalLang } from '../../reactives/useGlobalLang'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
+import { Task } from '../../schemas/Task'
 import PomodoroTaskForm from './PomodoroTaskForm.vue'
 import PomodoroTaskItemCount from './PomodoroTaskItemCount.vue'
 import { State } from './State'
 import { stateDeleteTask } from './stateDeleteTask'
-import { Task } from './task'
 
 const props = defineProps<{ state: State; task: Task }>()
 

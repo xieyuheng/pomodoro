@@ -1,5 +1,5 @@
+import { Task } from '../../schemas/Task'
 import { State } from './State'
-import { Task } from './task'
 
 export function stateCreateTask(state: State) {
   if (!state.inputTaskTitle) return
