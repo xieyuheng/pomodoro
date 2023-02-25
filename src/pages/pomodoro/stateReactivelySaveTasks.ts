@@ -6,8 +6,8 @@ export function stateReactivelySaveTasks(state: State): void {
   watch(
     () => state.tasks,
     () => {
-      if (state.initialTasksUpdate) {
-        state.initialTasksUpdate = false
+      if (state.isRightAfterLoadTasks) {
+        state.isRightAfterLoadTasks = false
       } else {
         stateSaveTasks(state)
       }

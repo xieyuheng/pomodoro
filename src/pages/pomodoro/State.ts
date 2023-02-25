@@ -9,7 +9,7 @@ export type State = {
   playing: boolean
   editing: boolean
   tasks: Array<Task>
-  initialTasksUpdate: boolean
+  isRightAfterLoadTasks: boolean
   inputTaskTitle?: string
   settings: Settings
 }
@@ -23,7 +23,7 @@ export function createState(): State {
     playing: false,
     editing: false,
     tasks: [],
-    initialTasksUpdate: false,
+    isRightAfterLoadTasks: false,
     settings,
     mode,
     timer,

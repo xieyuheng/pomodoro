@@ -12,7 +12,7 @@ export function stateReactivelyLoadTasks(state: State): void {
         state.tasks = []
       } else {
         state.tasks = value.tasks
-        state.initialTasksUpdate = true
+        state.isRightAfterLoadTasks = true
       }
     },
     {
