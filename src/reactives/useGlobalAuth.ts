@@ -1,9 +1,9 @@
 import { reactive, watch } from 'vue'
-import { UserJson } from '../schemas/UserSchema'
+import { User } from '../schemas/UserSchema'
 
 type Auth = {
   username?: string
-  user?: UserJson
+  user?: User
   isLoadingUser: boolean
 }
 

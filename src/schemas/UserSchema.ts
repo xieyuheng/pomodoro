@@ -6,4 +6,4 @@ export const UserSchema = ty.object({
   email: ty.string(),
 })
 
-export type UserJson = Obtain<typeof UserSchema>
+export type User = Obtain<typeof UserSchema>
