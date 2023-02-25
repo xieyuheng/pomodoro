@@ -1,7 +1,5 @@
 # auth
 
-`PageMenu` & `PageMenuMobile` -- try to fetch user
-
 fix `useGlobalBackend`
 
 # later

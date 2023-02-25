@@ -1,14 +1,35 @@
-import { reactive } from 'vue'
+import { reactive, watch } from 'vue'
 import { UserJson } from '../schemas/UserSchema'
 
 type Auth = {
+  username?: string
   user?: UserJson
+  isLoadingUser: boolean
 }
 
 const globalAuth: Auth = reactive({
-  user: undefined,
+  username: window.localStorage.getItem('username') || undefined,
+  isLoadingUser: false,
 })
 
 export function useGlobalAuth() {
   return globalAuth
 }
+
+watch(
+  () => globalAuth.user?.username,
+  (value) => {
+    if (value) {
+      globalAuth.username = value
+    }
+  },
+)
+
+watch(
+  () => globalAuth.username,
+  (value) => {
+    if (value) {
+      window.localStorage.setItem('username', value)
+    }
+  },
+)

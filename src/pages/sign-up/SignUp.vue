@@ -15,7 +15,9 @@ const form = useForm({
   password: '',
 })
 
-const report = reactive({ errorMessage: '' })
+const report = reactive({
+  errorMessage: '',
+})
 </script>
 
 <template>
@@ -38,7 +40,7 @@ const report = reactive({ errorMessage: '' })
           <template #en>Sign up</template>
         </Lang>
 
-        <FormInput name="username" required>
+        <FormInput name="username" autocomplete="username" required>
           <template #label>
             <Lang>
               <template #zh>用户名</template>
@@ -47,7 +49,7 @@ const report = reactive({ errorMessage: '' })
           </template>
         </FormInput>
 
-        <FormInput name="name" required>
+        <FormInput name="name" autocomplete="username" required>
           <template #label>
             <Lang>
               <template #zh>名字</template>
@@ -56,7 +58,12 @@ const report = reactive({ errorMessage: '' })
           </template>
         </FormInput>
 
-        <FormInput name="password" type="password" required>
+        <FormInput
+          name="password"
+          type="password"
+          autocomplete="new-password"
+          required
+        >
           <template #label>
             <Lang>
               <template #zh>密码</template>

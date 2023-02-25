@@ -19,6 +19,7 @@ defineProps<{
       !disabled && `hover:bg-${theme.name}-500`,
     ]"
     type="submit"
+    v-bind="$attrs"
   >
     <slot />
   </button>

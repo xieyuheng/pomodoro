@@ -25,6 +25,7 @@ defineProps<{
       :maxlength="32"
       :spellcheck="false"
       :required="required"
+      v-bind="$attrs"
     />
 
     <slot name="footer"></slot>
