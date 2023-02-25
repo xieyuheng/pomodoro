@@ -1,6 +1,6 @@
 import { basename } from 'path-browserify'
 import { reactive, watch } from 'vue'
-import { User } from '../schemas/User'
+import { User } from '../models/User'
 
 type Auth = {
   username?: string

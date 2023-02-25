@@ -1,4 +1,4 @@
-import { Task } from '../../schemas/Task'
+import { Task } from '../../models/Task'
 import { State } from './State'
 
 export function stateCreateTask(state: State) {

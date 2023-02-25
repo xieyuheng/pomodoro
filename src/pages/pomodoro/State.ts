@@ -1,4 +1,4 @@
-import { Task } from '../../schemas/Task'
+import { Task } from '../../models/Task'
 import { Mode } from './mode'
 import { defaultSettings, Settings, testingSettings } from './settings'
 import { Timer } from './timer'
