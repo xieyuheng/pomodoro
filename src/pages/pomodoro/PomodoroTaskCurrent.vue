@@ -1,16 +1,16 @@
-TaskJson
+Task
 <script setup lang="ts">
 import { EllipsisVerticalIcon } from '@heroicons/vue/24/outline'
 import { reactive } from 'vue'
 import { useGlobalLang } from '../../reactives/useGlobalLang'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
-import { TaskJson } from '../../schemas/TaskSchema'
 import PomodoroTaskForm from './PomodoroTaskForm.vue'
 import PomodoroTaskItemCount from './PomodoroTaskItemCount.vue'
 import { State } from './State'
 import { stateDeleteTask } from './stateDeleteTask'
+import { Task } from './task'
 
-const props = defineProps<{ state: State; task: TaskJson }>()
+const props = defineProps<{ state: State; task: Task }>()
 
 const theme = useGlobalTheme()
 const lang = useGlobalLang()

@@ -1,6 +1,6 @@
-import { TaskJson } from '../../schemas/TaskSchema'
 import { Mode } from './mode'
 import { defaultSettings, Settings, testingSettings } from './settings'
+import { Task } from './task'
 import { Timer } from './timer'
 
 export type State = {
@@ -8,7 +8,7 @@ export type State = {
   timer: Timer
   playing: boolean
   editing: boolean
-  tasks: Array<TaskJson>
+  tasks: Array<Task>
   inputTaskTitle?: string
   settings: Settings
 }

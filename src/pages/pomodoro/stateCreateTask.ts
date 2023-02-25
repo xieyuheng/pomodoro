@@ -1,5 +1,5 @@
-import { TaskJson } from '../../schemas/TaskSchema'
 import { State } from './State'
+import { Task } from './task'
 
 export function stateCreateTask(state: State) {
   if (!state.inputTaskTitle) return
@@ -10,7 +10,7 @@ export function stateCreateTask(state: State) {
   state.inputTaskTitle = undefined
 }
 
-function stateCreateTaskFromTitle(state: State, title: string): TaskJson {
+function stateCreateTaskFromTitle(state: State, title: string): Task {
   const tasks = state.tasks
 
   const ids = tasks.map((task) => task.id)

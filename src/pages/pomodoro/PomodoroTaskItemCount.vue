@@ -1,12 +1,12 @@
-TaskJson
+Task
 <script setup lang="ts">
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
-import { TaskJson } from '../../schemas/TaskSchema'
 import { State } from './State'
+import { Task } from './task'
 
 defineProps<{
   state: State
-  task: TaskJson
+  task: Task
 }>()
 
 const theme = useGlobalTheme()

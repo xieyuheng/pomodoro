@@ -7,4 +7,4 @@ export const TaskSchema = ty.object({
   editing: ty.optional(ty.boolean()),
 })
 
-export type TaskJson = Obtain<typeof TaskSchema>
+export type Task = Obtain<typeof TaskSchema>

@@ -1,7 +1,7 @@
-import { TaskJson } from '../../schemas/TaskSchema'
 import { Mode } from './mode'
 import { Settings } from './settings'
 import { createState, State } from './State'
+import { Task } from './task'
 import { Timer, TimerJson } from './timer'
 
 export type StateJson = {
@@ -9,7 +9,7 @@ export type StateJson = {
   timer: TimerJson
   playing: boolean
   editing: boolean
-  tasks: Array<TaskJson>
+  tasks: Array<Task>
   inputTaskTitle?: string
   settings: Settings
 }
@@ -39,7 +39,7 @@ export function stateFromJson(json: StateJson): State {
   return state
 }
 
-function refreshIds(tasks: Array<TaskJson>): void {
+function refreshIds(tasks: Array<Task>): void {
   const ids: Set<number> = new Set()
 
   for (const task of tasks) {
