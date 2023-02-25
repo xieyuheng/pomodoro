@@ -1,4 +1,3 @@
-[pomodoro] `stateReactivelySaveTasks` -- watch `state.tasks`
 [pomodoro] `stateReactivelyLoadTasks` -- watch `auth.user`
 
 [pomodoro] `task/createUserTask` -- report response error
