@@ -19,9 +19,7 @@ export function useGlobalAuth() {
 watch(
   () => globalAuth.user?.username,
   (value) => {
-    if (value) {
-      globalAuth.username = value
-    }
+    globalAuth.username = value
   },
 )
 
@@ -30,6 +28,8 @@ watch(
   (value) => {
     if (value) {
       window.localStorage.setItem('username', value)
+    } else {
+      window.localStorage.removeItem('username')
     }
   },
 )

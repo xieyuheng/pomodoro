@@ -2,6 +2,8 @@
 
 fix `useGlobalBackend`
 
+[pomodoro] `stateSave`
+
 # later
 
 can switch backend server
