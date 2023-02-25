@@ -7,7 +7,6 @@ import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 
 const theme = useGlobalTheme()
-
 const auth = useGlobalAuth()
 </script>
 
@@ -69,8 +68,8 @@ const auth = useGlobalAuth()
               ]"
             >
               <Lang>
-                <template #zh>退出</template>
-                <template #en>Sign out</template>
+                <template #zh> 退出 </template>
+                <template #en> Sign out </template>
               </Lang>
             </button>
           </MenuItem>
@@ -87,8 +86,8 @@ const auth = useGlobalAuth()
               ]"
             >
               <Lang>
-                <template #zh>注册</template>
-                <template #en>SignUp</template>
+                <template #zh> 注册 </template>
+                <template #en> Sign up </template>
               </Lang>
             </Hyperlink>
           </MenuItem>
@@ -103,8 +102,8 @@ const auth = useGlobalAuth()
               ]"
             >
               <Lang>
-                <template #zh>登录</template>
-                <template #en>SignIn</template>
+                <template #zh> 登录 </template>
+                <template #en> Sign in </template>
               </Lang>
             </Hyperlink>
           </MenuItem>

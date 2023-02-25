@@ -1,10 +1,10 @@
 # auth
 
-fix `useGlobalBackend`
+`PageMenu` & `PageMenuMobile` -- support `signOut`
 
 `PageMenu` & `PageMenuMobile` -- try to fetch user
 
-`PageMenu` & `PageMenuMobile` -- support `signOut`
+fix `useGlobalBackend`
 
 # later
 
