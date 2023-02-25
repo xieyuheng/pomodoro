@@ -1,5 +1,5 @@
 import { reactive, watch } from 'vue'
-import { User } from '../schemas/UserSchema'
+import { User } from '../schemas/User'
 
 type Auth = {
   username?: string
