@@ -3,6 +3,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
+import { signOut } from '../../reactives/signOut'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 
@@ -56,11 +57,7 @@ const auth = useGlobalAuth()
 
           <MenuItem v-slot="{ active }">
             <button
-              @click="
-                () => {
-                  // TODO
-                }
-              "
+              @click="signOut()"
               class="font-semibold"
               :class="[
                 active && 'underline decoration-6',

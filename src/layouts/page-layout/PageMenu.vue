@@ -2,6 +2,7 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Bars3Icon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/Lang.vue'
+import { signOut } from '../../reactives/signOut'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 
@@ -43,11 +44,7 @@ const auth = useGlobalAuth()
             <button
               class="flex w-full px-4 py-2"
               :class="[active && `bg-${theme.name}-500`]"
-              @click="
-                () => {
-                  // TODO
-                }
-              "
+              @click="signOut()"
             >
               <Lang>
                 <template #zh>退出</template>

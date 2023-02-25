@@ -1,9 +1,5 @@
 # auth
 
-`signOut`
-
-`PageMenu` & `PageMenuMobile` -- support `signOut`
-
 `PageMenu` & `PageMenuMobile` -- try to fetch user
 
 fix `useGlobalBackend`
