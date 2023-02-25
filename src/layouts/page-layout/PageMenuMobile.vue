@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { basename } from 'path-browserify'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
 import { signOut } from '../../reactives/signOut'
@@ -48,7 +49,9 @@ const auth = useGlobalAuth()
               <template #en>Signed in as</template>
             </Lang>
             <div class="font-semibold">{{ auth.user.name }}</div>
-            <div class="text-xl font-semibold">@{{ auth.user.username }}</div>
+            <div class="text-xl font-semibold">
+              @{{ basename(auth.user['@path']) }}
+            </div>
           </div>
 
           <div class="flex flex-col justify-center py-2">

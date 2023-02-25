@@ -1,3 +1,4 @@
+import { basename } from 'path-browserify'
 import { reactive, watch } from 'vue'
 import { User } from '../schemas/User'
 
@@ -17,9 +18,13 @@ export function useGlobalAuth() {
 }
 
 watch(
-  () => globalAuth.user?.username,
+  () => globalAuth.user,
   (value) => {
-    globalAuth.username = value
+    if (value) {
+      globalAuth.username = basename(value['@path'])
+    } else {
+      globalAuth.username = undefined
+    }
   },
 )
 

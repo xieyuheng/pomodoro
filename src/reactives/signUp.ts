@@ -24,7 +24,6 @@ export async function signUp(
       },
       body: JSON.stringify({
         data: {
-          username: options.username,
           name: options.name,
         },
         options: {

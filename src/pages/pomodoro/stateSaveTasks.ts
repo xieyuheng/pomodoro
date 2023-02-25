@@ -1,3 +1,4 @@
+import { basename } from 'path-browserify'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
@@ -11,7 +12,7 @@ export async function stateSaveTasks(state: State): Promise<void> {
     return
   }
 
-  const response = await fetch(`${url}/users/${auth.user.username}`, {
+  const response = await fetch(`${url}/users/${basename(auth.user['@path'])}`, {
     method: 'PATCH',
     headers: {
       'content-type': 'application/json',
