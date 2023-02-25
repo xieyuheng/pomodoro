@@ -8,8 +8,11 @@ export function stateReactivelyLoadTasks(state: State): void {
   watch(
     () => auth.user,
     async (value) => {
-      if (value !== undefined) {
+      if (value === undefined) {
+        state.tasks = []
+      } else {
         state.tasks = value.tasks
+        state.initialTasksUpdate = true
       }
     },
     {

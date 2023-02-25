@@ -25,6 +25,9 @@ export async function stateSaveTasks(state: State): Promise<void> {
   })
 
   if (response.ok) {
+    const patched = await response.json()
+    auth.user = patched
+
     console.log({
       who: 'stateSaveTasks',
       message: `tasks saved`,

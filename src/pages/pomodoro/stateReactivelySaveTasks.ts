@@ -5,7 +5,13 @@ import { stateSaveTasks } from './stateSaveTasks'
 export function stateReactivelySaveTasks(state: State): void {
   watch(
     () => state.tasks,
-    () => stateSaveTasks(state),
+    () => {
+      if (state.initialTasksUpdate) {
+        state.initialTasksUpdate = false
+      } else {
+        stateSaveTasks(state)
+      }
+    },
     {
       deep: true,
     },
