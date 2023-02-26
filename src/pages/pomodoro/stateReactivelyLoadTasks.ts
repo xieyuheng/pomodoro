@@ -11,7 +11,7 @@ export function stateReactivelyLoadTasks(state: State): void {
       if (value === undefined) {
         state.tasks = []
       } else {
-        state.tasks = value.tasks
+        state.tasks = value.tasks || []
         state.isRightAfterLoadTasks = true
       }
     },

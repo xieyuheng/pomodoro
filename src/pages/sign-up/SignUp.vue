@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { reactive } from 'vue'
+import { reactive, watch } from 'vue'
+import { useRouter } from 'vue-router'
 import { formSubmit, useForm } from '../../components/form'
 import FormButton from '../../components/form/FormButton.vue'
 import FormInput from '../../components/form/FormInput.vue'
@@ -8,6 +9,21 @@ import Lang from '../../components/Lang.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { signIn } from '../../reactives/signIn'
 import { signUp } from '../../reactives/signUp'
+import { useGlobalAuth } from '../../reactives/useGlobalAuth'
+
+const router = useRouter()
+
+const auth = useGlobalAuth()
+
+watch(
+  () => auth.user,
+  (value) => {
+    if (value !== undefined) {
+      router.replace({ path: '/' })
+    }
+  },
+  { immediate: true },
+)
 
 const form = useForm({
   username: '',
