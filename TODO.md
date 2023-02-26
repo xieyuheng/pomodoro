@@ -1,3 +1,3 @@
-fix default backend -- deploy a https fidb on my server
+redirect auth page for authed user
 `SignUp` and `SignIn` -- can choice backend server
 show backend info in `PageMenu`
