@@ -5,7 +5,8 @@ type Backend = {
 }
 
 const globalBackend: Backend = reactive({
-  url: 'http://localhost:3000',
+  url: 'https://pomodoro.database.fidb.app',
+  // url: 'http://localhost:3000',
 })
 
 export function useGlobalBackend() {
