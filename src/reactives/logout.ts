@@ -1,7 +1,7 @@
 import { useGlobalAuth } from './useGlobalAuth'
 import { useGlobalToken } from './useGlobalToken'
 
-export async function signOut(): Promise<void> {
+export async function logout(): Promise<void> {
   const token = useGlobalToken()
   token.name = ''
 

@@ -3,7 +3,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Bars3Icon } from '@heroicons/vue/24/outline'
 import { basename } from 'path-browserify'
 import Lang from '../../components/Lang.vue'
-import { signOut } from '../../reactives/signOut'
+import { logout } from '../../reactives/logout'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 
@@ -33,7 +33,7 @@ const auth = useGlobalAuth()
           <div class="flex w-full flex-col px-4 py-2">
             <Lang>
               <template #zh>专注者</template>
-              <template #en>Signed in as</template>
+              <template #en>Logged in as</template>
             </Lang>
             <div class="font-semibold">{{ auth.user.name }}</div>
             <div class="text-lg font-semibold">
@@ -47,11 +47,11 @@ const auth = useGlobalAuth()
             <button
               class="flex w-full px-4 py-2"
               :class="[active && `bg-${theme.name}-500`]"
-              @click="signOut()"
+              @click="logout()"
             >
               <Lang>
                 <template #zh>退出</template>
-                <template #en>Sign out</template>
+                <template #en>Logout</template>
               </Lang>
             </button>
           </MenuItem>

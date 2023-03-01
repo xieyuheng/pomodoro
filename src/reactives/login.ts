@@ -1,7 +1,7 @@
 import { useGlobalBackend } from './useGlobalBackend'
 import { useGlobalToken } from './useGlobalToken'
 
-export async function signIn(
+export async function login(
   options: {
     username: string
     password: string
@@ -15,7 +15,7 @@ export async function signIn(
   report.errorMessage = ''
 
   const response = await fetch(
-    `${url}/users/${options.username}?kind=password-sign-in`,
+    `${url}/users/${options.username}?kind=password-login`,
     {
       method: 'POST',
       body: JSON.stringify({

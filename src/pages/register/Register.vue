@@ -7,11 +7,9 @@ import FormInput from '../../components/form/FormInput.vue'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
-import { loadAuthUser } from '../../reactives/loadAuthUser'
-import { signIn } from '../../reactives/signIn'
+import { login } from '../../reactives/login'
+import { register } from '../../reactives/register'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
-import { useGlobalLang } from '../../reactives/useGlobalLang'
-import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 
 const router = useRouter()
 
@@ -27,11 +25,9 @@ watch(
   { immediate: true },
 )
 
-const theme = useGlobalTheme()
-const lang = useGlobalLang()
-
 const form = useForm({
   username: '',
+  name: '',
   password: '',
 })
 
@@ -46,9 +42,9 @@ const report = reactive({
       <form
         @submit.prevent="
           formSubmit(form, $event, async () => {
-            await signIn(form.values, report)
+            await register(form.values, report)
             if (report.errorMessage) return
-            await loadAuthUser(form.values, report)
+            await login(form.values, report)
             if (report.errorMessage) return
             $router.replace({ path: `/` })
           })
@@ -56,8 +52,8 @@ const report = reactive({
         class="flex w-auto flex-col space-y-2 text-xl md:w-[24rem]"
       >
         <Lang class="font-logo text-3xl font-semibold">
-          <template #zh>登录</template>
-          <template #en>Sign in</template>
+          <template #zh>注册</template>
+          <template #en>Register</template>
         </Lang>
 
         <FormInput name="username" autocomplete="username" required>
@@ -65,6 +61,15 @@ const report = reactive({
             <Lang>
               <template #zh>用户名</template>
               <template #en>Username</template>
+            </Lang>
+          </template>
+        </FormInput>
+
+        <FormInput name="name" autocomplete="username" required>
+          <template #label>
+            <Lang>
+              <template #zh>名字</template>
+              <template #en>Name</template>
             </Lang>
           </template>
         </FormInput>
@@ -89,34 +94,28 @@ const report = reactive({
           </div>
         </div>
 
-        <div class="flex flex-col justify-center py-4">
+        <div class="flex flex-col justify-center py-3">
           <hr class="border-t border-white" />
         </div>
 
         <FormButton :disabled="form.processing">
           <Lang>
-            <template #zh>登录</template>
-            <template #en>Sign in</template>
+            <template #zh>注册</template>
+            <template #en>Register</template>
           </Lang>
         </FormButton>
 
         <div class="flex justify-end">
-          <div class="text-xl">
-            <Lang>
-              <template #zh>
-                尚未
-                <Hyperlink href="/sign-up" class="underline"> 注册 </Hyperlink
-                >？
-              </template>
-              <template #en>
-                Not yet
-                <Hyperlink href="/sign-up" class="underline">
-                  signed up
-                </Hyperlink>
-                ?
-              </template>
-            </Lang>
-          </div>
+          <Lang class="text-xl">
+            <template #zh>
+              已注册？
+              <Hyperlink href="/login" class="underline"> 登录 </Hyperlink>
+            </template>
+            <template #en>
+              Already registered?
+              <Hyperlink href="/login" class="underline"> Login</Hyperlink>
+            </template>
+          </Lang>
         </div>
       </form>
     </div>

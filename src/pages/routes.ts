@@ -1,12 +1,12 @@
 import type { RouteRecordRaw } from 'vue-router'
 import PageNotFound from './errors/PageNotFound.vue'
+import Login from './login/Login.vue'
 import Pomodoro from './pomodoro/Pomodoro.vue'
-import SignIn from './sign-in/SignIn.vue'
-import SignUp from './sign-up/SignUp.vue'
+import Register from './register/Register.vue'
 
 export const routes: Array<RouteRecordRaw> = [
   { path: '/', component: Pomodoro },
-  { path: '/sign-in', component: SignIn },
-  { path: '/sign-up', component: SignUp },
+  { path: '/login', component: Login },
+  { path: '/register', component: Register },
   { path: '/:slugs(.*)*', component: PageNotFound },
 ]

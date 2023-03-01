@@ -1,7 +1,7 @@
 import { useGlobalAuth } from './useGlobalAuth'
 import { useGlobalBackend } from './useGlobalBackend'
 
-export async function signUp(
+export async function register(
   options: {
     username: string
     name: string
@@ -16,7 +16,7 @@ export async function signUp(
   report.errorMessage = ''
 
   const response = await fetch(
-    `${url}/users/${options.username}?kind=password-sign-up`,
+    `${url}/users/${options.username}?kind=password-register`,
     {
       method: 'POST',
       headers: {
@@ -27,7 +27,7 @@ export async function signUp(
           name: options.name,
         },
         options: {
-          memo: 'SignUp',
+          memo: 'Register',
           password: options.password,
         },
       }),

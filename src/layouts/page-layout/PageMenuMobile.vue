@@ -4,7 +4,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { basename } from 'path-browserify'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
-import { signOut } from '../../reactives/signOut'
+import { logout } from '../../reactives/logout'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 
@@ -46,7 +46,7 @@ const auth = useGlobalAuth()
           <div class="space-y-1">
             <Lang>
               <template #zh>专注者</template>
-              <template #en>Signed in as</template>
+              <template #en>Logged in as</template>
             </Lang>
             <div class="font-semibold">{{ auth.user.name }}</div>
             <div class="text-xl font-semibold">
@@ -60,7 +60,7 @@ const auth = useGlobalAuth()
 
           <MenuItem v-slot="{ active }">
             <button
-              @click="signOut()"
+              @click="logout()"
               class="font-semibold"
               :class="[
                 active && 'underline decoration-6',
@@ -69,7 +69,7 @@ const auth = useGlobalAuth()
             >
               <Lang>
                 <template #zh> 退出 </template>
-                <template #en> Sign out </template>
+                <template #en> Logout </template>
               </Lang>
             </button>
           </MenuItem>
@@ -78,7 +78,7 @@ const auth = useGlobalAuth()
         <div v-else class="space-y-2">
           <MenuItem as="div" v-slot="{ active }">
             <Hyperlink
-              href="/sign-up"
+              href="/register"
               class="font-semibold"
               :class="[
                 active && 'underline decoration-6',
@@ -87,14 +87,14 @@ const auth = useGlobalAuth()
             >
               <Lang>
                 <template #zh> 注册 </template>
-                <template #en> Sign up </template>
+                <template #en> Register </template>
               </Lang>
             </Hyperlink>
           </MenuItem>
 
           <MenuItem as="div" v-slot="{ active }">
             <Hyperlink
-              href="/sign-in"
+              href="/login"
               class="font-semibold"
               :class="[
                 active && 'underline decoration-6',
@@ -103,7 +103,7 @@ const auth = useGlobalAuth()
             >
               <Lang>
                 <template #zh> 登录 </template>
-                <template #en> Sign in </template>
+                <template #en> Login </template>
               </Lang>
             </Hyperlink>
           </MenuItem>
