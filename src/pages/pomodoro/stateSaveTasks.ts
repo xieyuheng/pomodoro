@@ -12,17 +12,20 @@ export async function stateSaveTasks(state: State): Promise<void> {
     return
   }
 
-  const response = await fetch(`${url}/users/${basename(auth.user['@path'])}`, {
-    method: 'PATCH',
-    headers: {
-      'content-type': 'application/json',
-      authorization: useGlobalToken().authorization,
+  const response = await fetch(
+    new URL(`/users/${basename(auth.user['@path'])}`, url),
+    {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+        authorization: useGlobalToken().authorization,
+      },
+      body: JSON.stringify({
+        '@revision': auth.user['@revision'],
+        tasks: state.tasks,
+      }),
     },
-    body: JSON.stringify({
-      '@revision': auth.user['@revision'],
-      tasks: state.tasks,
-    }),
-  })
+  )
 
   if (response.ok) {
     const patched = await response.json()

@@ -16,7 +16,7 @@ export async function register(
   report.errorMessage = ''
 
   const response = await fetch(
-    `${url}/users/${options.username}?kind=password-register`,
+    new URL(`/users/${options.username}?kind=password-register`, url),
     {
       method: 'POST',
       headers: {

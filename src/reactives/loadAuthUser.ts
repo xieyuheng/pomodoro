@@ -14,12 +14,15 @@ export async function loadAuthUser(
 
   report.errorMessage = ''
 
-  const response = await fetch(`${url}/users/${options.username}?kind=data`, {
-    method: 'GET',
-    headers: {
-      authorization: useGlobalToken().authorization,
+  const response = await fetch(
+    new URL(`/users/${options.username}?kind=data`, url),
+    {
+      method: 'GET',
+      headers: {
+        authorization: useGlobalToken().authorization,
+      },
     },
-  })
+  )
 
   if (response.ok) {
     const auth = useGlobalAuth()

@@ -15,7 +15,7 @@ export async function login(
   report.errorMessage = ''
 
   const response = await fetch(
-    `${url}/users/${options.username}?kind=password-login`,
+    new URL(`/users/${options.username}?kind=password-login`, url),
     {
       method: 'POST',
       body: JSON.stringify({
