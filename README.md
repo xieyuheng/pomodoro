@@ -6,6 +6,15 @@
 
 🍅 A Pomodoro timer.
 
+## Development
+
+```sh
+pnpm install     # Install dependencies
+pnpm run dev     # Start the dev server
+pnpm run check   # Type check
+pnpm run format  # Format the code
+```
+
 ## Contributions
 
 > Be polite, do not bring negative emotion to others.
