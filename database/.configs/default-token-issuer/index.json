@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "users/*/public/**": [
+      "data:get",
+      "data-find:get",
+      "file:get",
+      "file-metadata:get",
+      "directory:get"
+    ]
+  }
+}
