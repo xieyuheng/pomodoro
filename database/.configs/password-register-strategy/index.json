@@ -27,5 +27,9 @@
         ]
       }
     }
-  }
+  },
+  "@path": ".configs/password-register-strategy",
+  "@revision": "034cfa6959ac0b44287e755e49bc3268",
+  "@createdAt": 1681390784332,
+  "@updatedAt": 1681390784332
 }

@@ -1,3 +1,7 @@
 {
-  "issuer": ".configs/default-token-issuer"
+  "issuer": ".configs/default-token-issuer",
+  "@path": ".tokens/default",
+  "@revision": "e7debf5bec23e116ff19b3430dd0a992",
+  "@createdAt": 1681390714075,
+  "@updatedAt": 1681390714075
 }
