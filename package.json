@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "api:dev": "fidb serve database",
+    "api": "fidb serve database",
     "build": "vite build",
     "check": "vue-tsc --noEmit",
     "check:watch": "while true; do vue-tsc --noEmit --watch && break; done",
