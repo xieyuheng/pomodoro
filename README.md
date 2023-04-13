@@ -20,11 +20,13 @@ We use [FiDB](https://github.com/fidb-official/fidb) for our backend API.
 To start the HTTP API server using the example [`database`](database),
 run:
 
+- The example username is `xieyuheng`, and the example password is `123456`.
+
 ```sh
 npx fidb serve database
 ```
 
-To work with the frontend dev server,
+Note that, to work with the frontend dev server,
 the backend API port should be `5108`
 (the default port of FiDB).
 
