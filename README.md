@@ -17,7 +17,8 @@ npm run format  # Format the code
 
 We use [FiDB](https://github.com/fidb-official/fidb) for our backend API.
 
-To start the HTTP API server using the example [`database`](database):
+To start the HTTP API server using the example [`database`](database),
+run:
 
 ```sh
 npx fidb serve database
