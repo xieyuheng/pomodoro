@@ -1,9 +1,4 @@
 {
   "name": "pomodoro",
-  "description": "Database of about Pomodoro app.",
-  "authDirectories": {
-    "users": {
-      "permissions": ["create", "read", "update", "delete"]
-    }
-  }
+  "description": "Database of about Pomodoro app."
 }

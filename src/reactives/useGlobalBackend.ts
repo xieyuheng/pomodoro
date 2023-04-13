@@ -5,6 +5,7 @@ type Backend = {
 }
 
 const globalBackend: Backend = reactive({
+  // url: 'https://pomodoro.fidb.app:5108',
   url: 'https://pomodoro.fidb.app:5108',
 })
 
