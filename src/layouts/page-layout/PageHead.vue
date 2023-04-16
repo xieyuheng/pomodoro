@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { CogIcon } from '@heroicons/vue/24/outline'
+import Hyperlink from '../../components/Hyperlink.vue'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import PageLang from './PageLang.vue'
@@ -13,7 +15,7 @@ const auth = useGlobalAuth()
 
 <template>
   <div
-    class="flex w-full items-center border-b px-4 pt-3 pb-2 md:py-4"
+    class="flex w-full items-center border-b px-4 pb-2 pt-3 md:py-4"
     :class="[
       'justify-between',
       'transition-tender',
@@ -34,6 +36,10 @@ const auth = useGlobalAuth()
       <div class="block md:hidden">
         <PageMenuMobile />
       </div>
+
+      <Hyperlink href="/settings">
+        <button class="flex items-center"><CogIcon class="h-5 w-5" /></button>
+      </Hyperlink>
     </div>
   </div>
 </template>
