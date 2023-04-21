@@ -7,7 +7,7 @@ type Backend = {
 const globalBackend: Backend = reactive({
   url: import.meta.env.DEV
     ? 'http://localhost:5108'
-    : 'https://pomodoro.fidb.app:5108',
+    : 'https://api.pomodoro.fidb.app',
 })
 
 export function useGlobalBackend() {
