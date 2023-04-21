@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { reactive, watch } from 'vue'
 import { useRouter } from 'vue-router'
+import Hyperlink from '../../components/Hyperlink.vue'
+import Lang from '../../components/Lang.vue'
 import { formSubmit, useForm } from '../../components/form'
 import FormButton from '../../components/form/FormButton.vue'
 import FormInput from '../../components/form/FormInput.vue'
-import Hyperlink from '../../components/Hyperlink.vue'
-import Lang from '../../components/Lang.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { login } from '../../reactives/login'
 import { register } from '../../reactives/register'

@@ -27,10 +27,10 @@ const auth = useGlobalAuth()
       leave-to-class="transform opacity-0 translate-x-6"
     >
       <MenuItems
-        class="fixed top-0 right-0 flex h-screen w-screen flex-col justify-center border-4 px-6 pb-20"
+        class="fixed right-0 top-0 flex h-screen w-screen flex-col justify-center border-4 px-6 pb-20"
         :class="[`bg-${theme.name}-400 border-${theme.name}-300`]"
       >
-        <div class="fixed top-4 right-4">
+        <div class="fixed right-4 top-4">
           <MenuItem v-slot="{ active }">
             <XMarkIcon
               class="h-10 w-10 text-right"

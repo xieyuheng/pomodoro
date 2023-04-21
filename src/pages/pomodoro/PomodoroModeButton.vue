@@ -15,7 +15,7 @@ const lang = useGlobalLang()
 <template>
   <button
     :disabled="state.mode.kind === kind"
-    class="border-2 py-1 px-2"
+    class="border-2 px-2 py-1"
     :class="[
       'transition-tender',
       state.mode.kind === kind

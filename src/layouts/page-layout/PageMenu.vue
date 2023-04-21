@@ -26,7 +26,7 @@ const auth = useGlobalAuth()
       leave-to-class="transform scale-95 opacity-0"
     >
       <MenuItems
-        class="absolute top-8 right-0 w-52 min-w-max border-2"
+        class="absolute right-0 top-8 w-52 min-w-max border-2"
         :class="[`bg-${theme.name}-400 border-${theme.name}-300`]"
       >
         <div v-if="auth.user">

@@ -11,7 +11,7 @@ const theme = useGlobalTheme()
 
 <template>
   <div
-    class="flex h-64 flex-col items-center justify-between border-4 py-2 px-2 md:h-80 md:px-6"
+    class="flex h-64 flex-col items-center justify-between border-4 px-2 py-2 md:h-80 md:px-6"
     :class="[
       'transition-tender',
       `border-${theme.name}-600 bg-${theme.name}-500 bg-${theme.name}-400`,

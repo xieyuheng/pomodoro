@@ -47,7 +47,7 @@ const { placeholder, onDelete, onCancel, onSave } = props.options
     <div class="flex justify-end space-x-2 pt-4">
       <button
         v-if="onDelete"
-        class="border-2 py-1 px-2 text-lg font-semibold md:text-xl"
+        class="border-2 px-2 py-1 text-lg font-semibold md:text-xl"
         :class="[
           'transition-tender',
           `border-${theme.name}-300 bg-${theme.name}-200 text-${theme.name}-600`,
@@ -59,7 +59,7 @@ const { placeholder, onDelete, onCancel, onSave } = props.options
 
       <button
         v-if="onCancel"
-        class="border-2 py-1 px-2 text-lg font-semibold md:text-xl"
+        class="border-2 px-2 py-1 text-lg font-semibold md:text-xl"
         :class="[
           'transition-tender',
           `border-${theme.name}-300 bg-${theme.name}-200 text-${theme.name}-600`,
@@ -71,7 +71,7 @@ const { placeholder, onDelete, onCancel, onSave } = props.options
 
       <button
         v-if="onSave"
-        class="border-2 py-1 px-2 text-lg font-semibold md:text-xl"
+        class="border-2 px-2 py-1 text-lg font-semibold md:text-xl"
         :class="[
           'transition-tender',
           `border-${theme.name}-300 bg-${theme.name}-200 text-${theme.name}-600`,
