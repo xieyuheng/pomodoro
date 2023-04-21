@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Lang from '../../components/Lang.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
-import { removeServiceWorker } from '../../utils/browser/removeServiceWorker'
+import { removeServiceWorker } from '../../utils/pwa/removeServiceWorker'
 </script>
 
 <template>
