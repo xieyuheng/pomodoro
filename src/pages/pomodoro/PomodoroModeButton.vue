@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useGlobalLang } from '../../reactives/useGlobalLang'
+import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import { callWithConfirm } from '../../utils/callWithConfirm'
 import { ModeKind, modeKindTranslate } from './mode'

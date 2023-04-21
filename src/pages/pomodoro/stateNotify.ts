@@ -1,7 +1,7 @@
+import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { useGlobalApp } from '../../reactives/useGlobalApp'
-import { useGlobalLang } from '../../reactives/useGlobalLang'
-import { modeKindTranslate } from './mode'
 import { State } from './State'
+import { modeKindTranslate } from './mode'
 
 export async function stateNotify(state: State): Promise<void> {
   console.log('[stateNotify]')

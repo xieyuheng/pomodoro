@@ -1,4 +1,4 @@
-import { useGlobalLang } from '../../../reactives/useGlobalLang'
+import { useGlobalLang } from '../../../components/lang/useGlobalLang'
 import { ModeKind } from './Mode'
 
 export function modeKindTranslate(kind: ModeKind): string {

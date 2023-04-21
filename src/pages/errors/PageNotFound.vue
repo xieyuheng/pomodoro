@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import Lang from '../../components/Lang.vue'
+import Lang from '../../components/lang/Lang.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 
 const route = useRoute()

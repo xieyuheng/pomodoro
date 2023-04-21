@@ -1,5 +1,5 @@
 import { reactive } from 'vue'
-import { useGlobalLang } from './useGlobalLang'
+import { useGlobalLang } from '../components/lang/useGlobalLang'
 
 type App = {
   name: string

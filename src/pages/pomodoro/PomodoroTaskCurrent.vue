@@ -2,8 +2,8 @@ Task
 <script setup lang="ts">
 import { EllipsisVerticalIcon } from '@heroicons/vue/24/outline'
 import { reactive } from 'vue'
+import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { Task } from '../../models/Task'
-import { useGlobalLang } from '../../reactives/useGlobalLang'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import PomodoroTaskForm from './PomodoroTaskForm.vue'
 import PomodoroTaskItemCount from './PomodoroTaskItemCount.vue'

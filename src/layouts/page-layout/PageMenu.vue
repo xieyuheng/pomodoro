@@ -2,7 +2,7 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Bars3Icon } from '@heroicons/vue/24/outline'
 import { basename } from 'path-browserify'
-import Lang from '../../components/Lang.vue'
+import Lang from '../../components/lang/Lang.vue'
 import { logout } from '../../reactives/logout'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'

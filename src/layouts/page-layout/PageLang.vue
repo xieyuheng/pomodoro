@@ -6,8 +6,8 @@ import {
   ListboxOptions,
 } from '@headlessui/vue'
 import { ArrowsUpDownIcon, CheckIcon } from '@heroicons/vue/24/outline'
-import Lang from '../../components/Lang.vue'
-import { langTagName, useGlobalLang } from '../../reactives/useGlobalLang'
+import Lang from '../../components/lang/Lang.vue'
+import { langTagName, useGlobalLang } from '../../components/lang/useGlobalLang'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 
 const theme = useGlobalTheme()

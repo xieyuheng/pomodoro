@@ -2,15 +2,15 @@
 import { reactive, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import Hyperlink from '../../components/Hyperlink.vue'
-import Lang from '../../components/Lang.vue'
 import { formSubmit, useForm } from '../../components/form'
 import FormButton from '../../components/form/FormButton.vue'
 import FormInput from '../../components/form/FormInput.vue'
+import Lang from '../../components/lang/Lang.vue'
+import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { loadAuthUser } from '../../reactives/loadAuthUser'
 import { login } from '../../reactives/login'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
-import { useGlobalLang } from '../../reactives/useGlobalLang'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 
 const router = useRouter()

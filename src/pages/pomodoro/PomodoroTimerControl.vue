@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useGlobalLang } from '../../reactives/useGlobalLang'
+import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { callWithConfirm } from '../../utils/callWithConfirm'
 import PomodoroTimerButton from './PomodoroTimerButton.vue'
 import { State } from './State'
