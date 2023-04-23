@@ -23,12 +23,12 @@ const auth = useGlobalAuth()
       `border-${theme.name}-500`,
     ]"
   >
-    <div class="mr-3 flex items-baseline space-x-2">
+    <div class="mr-3 flex items-baseline space-x-3">
       <PageLogo />
       <PageLang />
     </div>
 
-    <div class="flex items-center space-x-2">
+    <div class="flex items-center space-x-3">
       <div class="hidden md:block">
         <PageDesktopMenuUser v-if="auth.user" />
         <PageDesktopMenuGuest v-else />

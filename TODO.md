@@ -1,5 +1,3 @@
-[page-layout] distinguish auth vs guest on both mobile and desktop
-
 [page-layout] show `isLoadingUser`
 
 rename `loadAuthUser` to `loginByToken`

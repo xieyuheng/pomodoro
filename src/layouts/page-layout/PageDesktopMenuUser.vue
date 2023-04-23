@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-import { Bars3Icon } from '@heroicons/vue/24/outline'
+import { UserCircleIcon } from '@heroicons/vue/24/outline'
 import { basename } from 'path-browserify'
 import Lang from '../../components/lang/Lang.vue'
 import { logout } from '../../reactives/logout'
@@ -14,7 +14,7 @@ const auth = useGlobalAuth()
 <template>
   <Menu as="div" class="relative flex text-xl">
     <MenuButton>
-      <Bars3Icon class="h-5 w-5" />
+      <UserCircleIcon class="h-5 w-5" />
     </MenuButton>
 
     <Transition
