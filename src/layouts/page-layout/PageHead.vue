@@ -4,6 +4,7 @@ import Hyperlink from '../../components/Hyperlink.vue'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import PageDesktopMenuGuest from './PageDesktopMenuGuest.vue'
+import PageDesktopMenuLoading from './PageDesktopMenuLoading.vue'
 import PageDesktopMenuUser from './PageDesktopMenuUser.vue'
 import PageLang from './PageLang.vue'
 import PageLogo from './PageLogo.vue'
@@ -31,6 +32,7 @@ const auth = useGlobalAuth()
     <div class="flex items-center space-x-3">
       <div class="hidden md:block">
         <PageDesktopMenuUser v-if="auth.user" :user="auth.user" />
+        <PageDesktopMenuLoading v-else-if="auth.isLoadingUser" />
         <PageDesktopMenuGuest v-else />
       </div>
 

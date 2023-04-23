@@ -1,4 +1,3 @@
-`PageDesktopMenuLoading` -- by `auth.isLoadingUser`
 `PageMobileMenuLoading` -- by `auth.isLoadingUser`
 
 rename `loadAuthUser` to `loginByToken`
