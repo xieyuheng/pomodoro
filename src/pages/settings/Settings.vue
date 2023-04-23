@@ -1,7 +1,15 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
 import Lang from '../../components/lang/Lang.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import { hasServiceWorker } from '../../utils/pwa/hasServiceWorker'
 import { removeServiceWorker } from '../../utils/pwa/removeServiceWorker'
+
+const disabledRemoveServiceWorkerButton = ref(false)
+
+onMounted(async () => {
+  disabledRemoveServiceWorkerButton.value = !(await hasServiceWorker())
+})
 </script>
 
 <template>
@@ -14,8 +22,14 @@ import { removeServiceWorker } from '../../utils/pwa/removeServiceWorker'
         </Lang>
 
         <button
-          @click="removeServiceWorker()"
-          class="rounded-sm border-2 border-red-300 bg-red-500 p-3 text-xl"
+          @click="
+            () => {
+              removeServiceWorker()
+              disabledRemoveServiceWorkerButton = true
+            }
+          "
+          :disabled="disabledRemoveServiceWorkerButton"
+          class="rounded-sm border-2 border-red-300 bg-red-500 p-3 text-xl disabled:bg-red-400"
         >
           <Lang>
             <template #zh> 清除 Service Worker </template>
