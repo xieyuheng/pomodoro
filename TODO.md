@@ -1,1 +1,1 @@
-[refactor] clear auth process
+[diary] the auth process

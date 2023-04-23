@@ -23,11 +23,6 @@ onMounted(async () => {
       await loginByToken({ username: auth.username }, report)
     } catch (_error) {}
 
-    if (auth.user === undefined) {
-      auth.username = undefined
-      token.name = ''
-    }
-
     auth.isLoadingUser = false
   }
 })
