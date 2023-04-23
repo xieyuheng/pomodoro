@@ -3,10 +3,10 @@ import { WrenchScrewdriverIcon } from '@heroicons/vue/24/outline'
 import Hyperlink from '../../components/Hyperlink.vue'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
+import PageDesktopMenuGuest from './PageDesktopMenuGuest.vue'
+import PageDesktopMenuUser from './PageDesktopMenuUser.vue'
 import PageLang from './PageLang.vue'
 import PageLogo from './PageLogo.vue'
-import PageLure from './PageLure.vue'
-import PageMenu from './PageMenu.vue'
 import PageMobileMenuGuest from './PageMobileMenuGuest.vue'
 import PageMobileMenuUser from './PageMobileMenuUser.vue'
 
@@ -30,8 +30,8 @@ const auth = useGlobalAuth()
 
     <div class="flex items-center space-x-2">
       <div class="hidden md:block">
-        <PageMenu v-if="auth.user" />
-        <PageLure v-else />
+        <PageDesktopMenuUser v-if="auth.user" />
+        <PageDesktopMenuGuest v-else />
       </div>
 
       <div class="block md:hidden">
