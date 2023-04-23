@@ -9,6 +9,7 @@ import PageDesktopMenuUser from './PageDesktopMenuUser.vue'
 import PageLang from './PageLang.vue'
 import PageLogo from './PageLogo.vue'
 import PageMobileMenuGuest from './PageMobileMenuGuest.vue'
+import PageMobileMenuLoading from './PageMobileMenuLoading.vue'
 import PageMobileMenuUser from './PageMobileMenuUser.vue'
 
 const theme = useGlobalTheme()
@@ -38,6 +39,7 @@ const auth = useGlobalAuth()
 
       <div class="block md:hidden">
         <PageMobileMenuUser v-if="auth.user" :user="auth.user" />
+        <PageMobileMenuLoading v-else-if="auth.isLoadingUser" />
         <PageMobileMenuGuest v-else />
       </div>
 
