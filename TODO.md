@@ -1,6 +1,5 @@
-use `WrenchScrewdriverIcon`
-
-rename `PageMenu` to `PageDesktopMenu`
+rename `PageMenu` to `PageDesktopMenuUser`
+rename `PageLure` to `PageDesktopMenuGuest`
 
 [page-layout] distinguish auth vs guest on both mobile and desktop
 

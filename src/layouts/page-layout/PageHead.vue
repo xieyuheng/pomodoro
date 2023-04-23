@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { CogIcon } from '@heroicons/vue/24/outline'
+import { WrenchScrewdriverIcon } from '@heroicons/vue/24/outline'
 import Hyperlink from '../../components/Hyperlink.vue'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
@@ -23,13 +23,12 @@ const auth = useGlobalAuth()
       `border-${theme.name}-500`,
     ]"
   >
-    <div class="mr-3">
+    <div class="mr-3 flex items-baseline space-x-2">
       <PageLogo />
+      <PageLang />
     </div>
 
     <div class="flex items-center space-x-2">
-      <PageLang />
-
       <div class="hidden md:block">
         <PageMenu v-if="auth.user" />
         <PageLure v-else />
@@ -41,7 +40,9 @@ const auth = useGlobalAuth()
       </div>
 
       <Hyperlink href="/settings">
-        <button class="flex items-center"><CogIcon class="h-5 w-5" /></button>
+        <button class="flex items-center">
+          <WrenchScrewdriverIcon class="h-5 w-5" />
+        </button>
       </Hyperlink>
     </div>
   </div>
