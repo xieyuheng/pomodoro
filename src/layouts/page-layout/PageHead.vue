@@ -30,7 +30,7 @@ const auth = useGlobalAuth()
 
     <div class="flex items-center space-x-3">
       <div class="hidden md:block">
-        <PageDesktopMenuUser v-if="auth.user" />
+        <PageDesktopMenuUser v-if="auth.user" :user="auth.user" />
         <PageDesktopMenuGuest v-else />
       </div>
 

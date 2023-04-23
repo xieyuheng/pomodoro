@@ -5,13 +5,11 @@ import { basename } from 'path-browserify'
 import Lang from '../../components/lang/Lang.vue'
 import { User } from '../../models/User'
 import { logout } from '../../reactives/logout'
-import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 
 defineProps<{ user: User }>()
 
 const theme = useGlobalTheme()
-const auth = useGlobalAuth()
 </script>
 
 <template>
