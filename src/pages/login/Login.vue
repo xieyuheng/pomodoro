@@ -9,7 +9,6 @@ import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { loginByPassword } from '../../reactives/loginByPassword'
-import { loginByToken } from '../../reactives/loginByToken'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 
@@ -47,8 +46,6 @@ const report = reactive({
         @submit.prevent="
           formSubmit(form, $event, async () => {
             await loginByPassword(form.values, report)
-            if (report.errorMessage) return
-            await loginByToken(form.values, report)
             if (report.errorMessage) return
             $router.replace({ path: `/` })
           })

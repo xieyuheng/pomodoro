@@ -1,3 +1,4 @@
+import { loginByToken } from './loginByToken'
 import { useGlobalBackend } from './useGlobalBackend'
 import { useGlobalToken } from './useGlobalToken'
 
@@ -27,6 +28,8 @@ export async function loginByPassword(
   if (response.ok) {
     const token = useGlobalToken()
     token.name = await response.json()
+
+    await loginByToken(options, report)
   } else {
     report.errorMessage = response.statusText
   }
