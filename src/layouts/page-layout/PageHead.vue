@@ -27,10 +27,11 @@ const auth = useGlobalAuth()
   >
     <div class="mr-3 flex items-baseline space-x-3">
       <PageLogo />
-      <PageLang />
     </div>
 
     <div class="flex items-center space-x-3">
+      <PageLang />
+
       <div class="hidden md:block">
         <PageDesktopMenuUser v-if="auth.user" :user="auth.user" />
         <PageDesktopMenuLoading v-else-if="auth.isLoadingUser" />
