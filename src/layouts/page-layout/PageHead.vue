@@ -7,7 +7,8 @@ import PageLang from './PageLang.vue'
 import PageLogo from './PageLogo.vue'
 import PageLure from './PageLure.vue'
 import PageMenu from './PageMenu.vue'
-import PageMobileMenu from './PageMobileMenu.vue'
+import PageMobileMenuGuest from './PageMobileMenuGuest.vue'
+import PageMobileMenuUser from './PageMobileMenuUser.vue'
 
 const theme = useGlobalTheme()
 const auth = useGlobalAuth()
@@ -30,12 +31,13 @@ const auth = useGlobalAuth()
       <PageLang />
 
       <div class="hidden md:block">
-        <PageMenu v-show="auth.user" />
-        <PageLure v-show="!auth.user" />
+        <PageMenu v-if="auth.user" />
+        <PageLure v-else />
       </div>
 
       <div class="block md:hidden">
-        <PageMobileMenu />
+        <PageMobileMenuUser v-if="auth.user" :user="auth.user" />
+        <PageMobileMenuGuest v-else />
       </div>
 
       <Hyperlink href="/settings">

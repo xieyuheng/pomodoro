@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { UserCircleIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { basename } from 'path-browserify'
-import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/lang/Lang.vue'
+import { User } from '../../models/User'
 import { logout } from '../../reactives/logout'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
+
+defineProps<{ user: User }>()
 
 const theme = useGlobalTheme()
 const auth = useGlobalAuth()
@@ -15,7 +17,7 @@ const auth = useGlobalAuth()
 <template>
   <Menu as="div" class="relative flex text-3xl">
     <MenuButton>
-      <Bars3Icon class="h-5 w-5" />
+      <UserCircleIcon class="h-5 w-5" />
     </MenuButton>
 
     <Transition
@@ -42,15 +44,15 @@ const auth = useGlobalAuth()
           </MenuItem>
         </div>
 
-        <div v-if="auth.user" class="space-y-2">
+        <div class="space-y-2">
           <div class="space-y-1">
             <Lang>
               <template #zh>专注者</template>
               <template #en>Logged in as</template>
             </Lang>
-            <div class="font-semibold">{{ auth.user.name }}</div>
+            <div class="font-semibold">{{ user.name }}</div>
             <div class="text-xl font-semibold">
-              @{{ basename(auth.user['@path']) }}
+              @{{ basename(user['@path']) }}
             </div>
           </div>
 
@@ -72,40 +74,6 @@ const auth = useGlobalAuth()
                 <template #en> Logout </template>
               </Lang>
             </button>
-          </MenuItem>
-        </div>
-
-        <div v-else class="space-y-2">
-          <MenuItem as="div" v-slot="{ active }">
-            <Hyperlink
-              href="/register"
-              class="font-semibold"
-              :class="[
-                active && 'underline decoration-6',
-                active && `text-${theme.name}-200`,
-              ]"
-            >
-              <Lang>
-                <template #zh> 注册 </template>
-                <template #en> Register </template>
-              </Lang>
-            </Hyperlink>
-          </MenuItem>
-
-          <MenuItem as="div" v-slot="{ active }">
-            <Hyperlink
-              href="/login"
-              class="font-semibold"
-              :class="[
-                active && 'underline decoration-6',
-                active && `text-${theme.name}-200`,
-              ]"
-            >
-              <Lang>
-                <template #zh> 登录 </template>
-                <template #en> Login </template>
-              </Lang>
-            </Hyperlink>
           </MenuItem>
         </div>
       </MenuItems>
