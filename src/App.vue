@@ -5,12 +5,17 @@ import { useGlobalAuth } from './reactives/useGlobalAuth'
 import { useGlobalToken } from './reactives/useGlobalToken'
 
 const auth = useGlobalAuth()
+const token = useGlobalToken()
 
 const report = {
   errorMessage: '',
 }
 
 onMounted(async () => {
+  if (!token.name) {
+    return
+  }
+
   if (auth.username) {
     auth.isLoadingUser = true
 
@@ -20,8 +25,6 @@ onMounted(async () => {
 
     if (auth.user === undefined) {
       auth.username = undefined
-
-      const token = useGlobalToken()
       token.name = ''
     }
 
