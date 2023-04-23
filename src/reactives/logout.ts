@@ -6,5 +6,6 @@ export async function logout(): Promise<void> {
   token.name = ''
 
   const auth = useGlobalAuth()
+  auth.username = undefined
   auth.user = undefined
 }
