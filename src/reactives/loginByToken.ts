@@ -2,7 +2,7 @@ import { useGlobalAuth } from './useGlobalAuth'
 import { useGlobalBackend } from './useGlobalBackend'
 import { useGlobalToken } from './useGlobalToken'
 
-export async function loadAuthUser(
+export async function loginByToken(
   options: {
     username: string
   },

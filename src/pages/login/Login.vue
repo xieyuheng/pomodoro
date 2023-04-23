@@ -8,8 +8,8 @@ import FormInput from '../../components/form/FormInput.vue'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
-import { loadAuthUser } from '../../reactives/loadAuthUser'
 import { login } from '../../reactives/login'
+import { loginByToken } from '../../reactives/loginByToken'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 
@@ -48,7 +48,7 @@ const report = reactive({
           formSubmit(form, $event, async () => {
             await login(form.values, report)
             if (report.errorMessage) return
-            await loadAuthUser(form.values, report)
+            await loginByToken(form.values, report)
             if (report.errorMessage) return
             $router.replace({ path: `/` })
           })

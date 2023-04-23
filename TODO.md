@@ -1,4 +1,3 @@
-rename `loadAuthUser` to `loginByToken`
 rename `login` to `loginByPassword`
 `loginByPassword` call `loginByToken`
 
