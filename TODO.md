@@ -1,1 +1,0 @@
-[diary] the auth process
