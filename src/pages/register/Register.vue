@@ -7,7 +7,7 @@ import FormButton from '../../components/form/FormButton.vue'
 import FormInput from '../../components/form/FormInput.vue'
 import Lang from '../../components/lang/Lang.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
-import { login } from '../../reactives/login'
+import { loginByPassword } from '../../reactives/loginByPassword'
 import { register } from '../../reactives/register'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 
@@ -44,7 +44,7 @@ const report = reactive({
           formSubmit(form, $event, async () => {
             await register(form.values, report)
             if (report.errorMessage) return
-            await login(form.values, report)
+            await loginByPassword(form.values, report)
             if (report.errorMessage) return
             $router.replace({ path: `/` })
           })

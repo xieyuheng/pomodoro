@@ -8,7 +8,7 @@ import FormInput from '../../components/form/FormInput.vue'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
-import { login } from '../../reactives/login'
+import { loginByPassword } from '../../reactives/loginByPassword'
 import { loginByToken } from '../../reactives/loginByToken'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
@@ -46,7 +46,7 @@ const report = reactive({
       <form
         @submit.prevent="
           formSubmit(form, $event, async () => {
-            await login(form.values, report)
+            await loginByPassword(form.values, report)
             if (report.errorMessage) return
             await loginByToken(form.values, report)
             if (report.errorMessage) return

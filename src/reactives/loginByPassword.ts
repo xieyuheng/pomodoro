@@ -1,7 +1,7 @@
 import { useGlobalBackend } from './useGlobalBackend'
 import { useGlobalToken } from './useGlobalToken'
 
-export async function login(
+export async function loginByPassword(
   options: {
     username: string
     password: string
