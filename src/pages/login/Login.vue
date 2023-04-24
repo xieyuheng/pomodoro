@@ -13,19 +13,7 @@ import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 
 const router = useRouter()
-
 const auth = useGlobalAuth()
-
-watch(
-  () => auth.user,
-  (value) => {
-    if (value !== undefined) {
-      router.replace({ path: '/' })
-    }
-  },
-  { immediate: true },
-)
-
 const theme = useGlobalTheme()
 const lang = useGlobalLang()
 
@@ -37,6 +25,16 @@ const form = useForm({
 const report = reactive({
   errorMessage: '',
 })
+
+watch(
+  () => auth.user,
+  (value) => {
+    if (value !== undefined) {
+      router.replace({ path: '/' })
+    }
+  },
+  { immediate: true },
+)
 </script>
 
 <template>

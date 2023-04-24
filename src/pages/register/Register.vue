@@ -12,18 +12,7 @@ import { register } from '../../reactives/register'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 
 const router = useRouter()
-
 const auth = useGlobalAuth()
-
-watch(
-  () => auth.user,
-  (value) => {
-    if (value !== undefined) {
-      router.replace({ path: '/' })
-    }
-  },
-  { immediate: true },
-)
 
 const form = useForm({
   username: '',
@@ -34,6 +23,16 @@ const form = useForm({
 const report = reactive({
   errorMessage: '',
 })
+
+watch(
+  () => auth.user,
+  (value) => {
+    if (value !== undefined) {
+      router.replace({ path: '/' })
+    }
+  },
+  { immediate: true },
+)
 </script>
 
 <template>
@@ -44,8 +43,10 @@ const report = reactive({
           formSubmit(form, $event, async () => {
             await register(form.values, report)
             if (report.errorMessage) return
+
             await loginByPassword(form.values, report)
             if (report.errorMessage) return
+
             $router.replace({ path: `/` })
           })
         "
