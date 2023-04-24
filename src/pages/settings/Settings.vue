@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import Lang from '../../components/lang/Lang.vue'
+import Scope from '../../components/utils/Scope.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { hasServiceWorker } from '../../utils/pwa/hasServiceWorker'
 import { removeServiceWorker } from '../../utils/pwa/removeServiceWorker'
@@ -20,22 +21,23 @@ onMounted(async () => {
           <template #zh>设置</template>
           <template #en>Settings</template>
         </Lang>
-
-        <button
-          @click="
-            () => {
-              removeServiceWorker()
-              disabledRemoveServiceWorkerButton = true
-            }
-          "
-          :disabled="disabledRemoveServiceWorkerButton"
-          class="rounded-sm border-2 border-red-300 bg-red-500 p-3 text-xl disabled:bg-red-400"
-        >
-          <Lang>
-            <template #zh> 清除 Service Worker </template>
-            <template #en> Remove Service Worker </template>
-          </Lang>
-        </button>
+        <Scope :scope="{ disabled: false }" v-slot="{ scope }">
+          <button
+            @click="
+              () => {
+                removeServiceWorker()
+                disabledRemoveServiceWorkerButton = true
+              }
+            "
+            :disabled="disabledRemoveServiceWorkerButton"
+            class="rounded-sm border-2 border-red-300 bg-red-500 p-3 text-xl disabled:bg-red-400"
+          >
+            <Lang>
+              <template #zh> 清除 Service Worker </template>
+              <template #en> Remove Service Worker </template>
+            </Lang>
+          </button>
+        </Scope>
       </div>
     </div>
   </PageLayout>
