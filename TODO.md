@@ -1,3 +1,1 @@
-`v-init`
-
-`Settings` -- use `Scope` and `v-init` -- instead of `disabledRemoveServiceWorkerButton`
+`Settings` -- use `Scope` and `v-mounted` -- instead of `disabledRemoveServiceWorkerButton`

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 import Lang from '../../components/lang/Lang.vue'
 import Scope from '../../components/utils/Scope.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
@@ -7,10 +7,6 @@ import { hasServiceWorker } from '../../utils/pwa/hasServiceWorker'
 import { removeServiceWorker } from '../../utils/pwa/removeServiceWorker'
 
 const disabledRemoveServiceWorkerButton = ref(false)
-
-onMounted(async () => {
-  disabledRemoveServiceWorkerButton.value = !(await hasServiceWorker())
-})
 </script>
 
 <template>
@@ -23,6 +19,11 @@ onMounted(async () => {
         </Lang>
         <Scope :scope="{ disabled: false }" v-slot="{ scope }">
           <button
+            v-mounted="
+              async () => {
+                disabledRemoveServiceWorkerButton = !(await hasServiceWorker())
+              }
+            "
             @click="
               () => {
                 removeServiceWorker()

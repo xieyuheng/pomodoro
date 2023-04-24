@@ -14,6 +14,8 @@ app.use(head)
 
 app.directive('focus', Directives.focus)
 app.directive('blur', Directives.blur)
+app.directive('created', Directives.created)
+app.directive('mounted', Directives.mounted)
 app.directive('on-click-outside', Directives.onClickOutside)
 
 app.mount('#app')
