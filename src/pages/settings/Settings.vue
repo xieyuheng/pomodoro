@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import Lang from '../../components/lang/Lang.vue'
 import Scope from '../../components/utils/Scope.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { hasServiceWorker } from '../../utils/pwa/hasServiceWorker'
 import { removeServiceWorker } from '../../utils/pwa/removeServiceWorker'
-
-const disabledRemoveServiceWorkerButton = ref(false)
 </script>
 
 <template>
@@ -21,16 +18,16 @@ const disabledRemoveServiceWorkerButton = ref(false)
           <button
             v-mounted="
               async () => {
-                disabledRemoveServiceWorkerButton = !(await hasServiceWorker())
+                scope.disabled = !(await hasServiceWorker())
               }
             "
             @click="
               () => {
                 removeServiceWorker()
-                disabledRemoveServiceWorkerButton = true
+                scope.disabled = true
               }
             "
-            :disabled="disabledRemoveServiceWorkerButton"
+            :disabled="scope.disabled"
             class="rounded-sm border-2 border-red-300 bg-red-500 p-3 text-xl disabled:bg-red-400"
           >
             <Lang>
