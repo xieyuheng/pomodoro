@@ -39,6 +39,7 @@ watch(
   <PageLayout>
     <div class="mt-4 flex h-full flex-col items-center md:mt-10">
       <form
+        class="flex w-auto flex-col space-y-2 text-xl md:w-[24rem]"
         @submit.prevent="
           formSubmit(form, $event, async () => {
             await register(form.values, report)
@@ -50,7 +51,6 @@ watch(
             $router.replace({ path: `/` })
           })
         "
-        class="flex w-auto flex-col space-y-2 text-xl md:w-[24rem]"
       >
         <Lang class="font-logo text-3xl font-semibold">
           <template #zh>注册</template>
