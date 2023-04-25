@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/lang/Lang.vue'
+import Hyperlink from '../../components/utils/Hyperlink.vue'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 
 const auth = useGlobalAuth()

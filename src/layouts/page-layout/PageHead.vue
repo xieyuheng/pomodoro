@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { WrenchScrewdriverIcon } from '@heroicons/vue/24/outline'
-import Hyperlink from '../../components/Hyperlink.vue'
+import Hyperlink from '../../components/utils/Hyperlink.vue'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalTheme } from '../../reactives/useGlobalTheme'
 import PageDesktopMenuGuest from './PageDesktopMenuGuest.vue'
