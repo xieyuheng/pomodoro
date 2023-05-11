@@ -10,7 +10,7 @@ const app = useGlobalApp()
 
 <template>
   <div
-    class="min-h-screen-dynamic flex flex-col items-center"
+    class="h-screen-dynamic flex flex-col items-center"
     :class="[
       'transition-tender',
       `bg-${theme.name}-400 text-${theme.name}-100`,
