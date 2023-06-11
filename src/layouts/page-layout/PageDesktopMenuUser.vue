@@ -22,12 +22,12 @@ const auth = useGlobalAuth()
     </MenuButton>
 
     <Transition
-      enter-active-class="transition duration-100 ease-out"
-      enter-from-class="transform scale-95 opacity-0"
-      enter-to-class="transform scale-100 opacity-100"
-      leave-active-class="transition duration-75 ease-out"
-      leave-from-class="transform scale-100 opacity-100"
-      leave-to-class="transform scale-95 opacity-0"
+      enterActiveClass="transition duration-100 ease-out"
+      enterFromClass="transform scale-95 opacity-0"
+      enterToClass="transform scale-100 opacity-100"
+      leaveActiveClass="transition duration-75 ease-out"
+      leaveFromClass="transform scale-100 opacity-100"
+      leaveToClass="transform scale-95 opacity-0"
     >
       <MenuItems
         class="absolute right-0 top-8 w-52 min-w-max border-2"

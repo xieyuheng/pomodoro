@@ -19,12 +19,12 @@ const theme = useGlobalTheme()
     </MenuButton>
 
     <Transition
-      enter-active-class="transition duration-300"
-      enter-from-class="transform opacity-0 translate-x-6 rotate-45"
-      enter-to-class="transform opacity-100 rotate-0"
-      leave-active-class="transition duration-300"
-      leave-from-class="transform opacity-100"
-      leave-to-class="transform opacity-0 translate-x-6"
+      enterActiveClass="transition duration-300"
+      enterFromClass="transform opacity-0 translate-x-6 rotate-45"
+      enterToClass="transform opacity-100 rotate-0"
+      leaveActiveClass="transition duration-300"
+      leaveFromClass="transform opacity-100"
+      leaveToClass="transform opacity-0 translate-x-6"
     >
       <MenuItems
         class="h-screen-dynamic fixed right-0 top-0 flex w-screen flex-col justify-center border-4 px-6 pb-20"
