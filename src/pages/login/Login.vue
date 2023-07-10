@@ -39,9 +39,9 @@ watch(
 
 <template>
   <PageLayout>
-    <div class="mt-4 flex h-full flex-col items-center md:mt-10">
+    <div class="mt-4 flex h-full flex-col items-center sm:mt-10">
       <form
-        class="flex w-auto flex-col space-y-2 text-xl md:w-[24rem]"
+        class="flex w-auto flex-col space-y-2 text-xl sm:w-[24rem]"
         @submit.prevent="
           formSubmit(form, $event, async () => {
             await loginByPassword(form.values, report)

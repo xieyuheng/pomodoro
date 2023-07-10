@@ -8,7 +8,7 @@ const app = useGlobalApp()
 <template>
   <Hyperlink
     href="/"
-    class="font-logo text-2xl font-bold hover:underline md:text-3xl"
+    class="font-logo text-2xl font-bold hover:underline sm:text-3xl"
   >
     {{ app.name }}
   </Hyperlink>

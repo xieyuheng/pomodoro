@@ -16,7 +16,7 @@ const theme = useGlobalTheme()
   <div>
     <div
       v-if="state.editing"
-      class="flex w-full flex-col border-2 p-3 text-xl font-semibold md:py-4"
+      class="flex w-full flex-col border-2 p-3 text-xl font-semibold sm:py-4"
       :class="[
         'transition-tender',
         `border-${theme.name}-200 bg-${theme.name}-100 text-${theme.name}-900`,
@@ -49,7 +49,7 @@ const theme = useGlobalTheme()
           state.editing = true
         }
       "
-      class="flex w-full flex-col items-center justify-center border-2 border-dashed p-3 md:py-4"
+      class="flex w-full flex-col items-center justify-center border-2 border-dashed p-3 sm:py-4"
       :class="[
         'transition-tender',
         `border-${theme.name}-300 bg-${theme.name}-400 hover:bg-${theme.name}-500`,

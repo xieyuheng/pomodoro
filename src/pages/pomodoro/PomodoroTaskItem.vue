@@ -23,7 +23,7 @@ const alert = window.alert
 
 <template>
   <div
-    class="flex flex-col border-2 p-3 text-xl font-semibold hover:border-white md:py-4"
+    class="flex flex-col border-2 p-3 text-xl font-semibold hover:border-white sm:py-4"
     :class="[
       'transition-tender',
       `border-${theme.name}-200 bg-${theme.name}-100`,

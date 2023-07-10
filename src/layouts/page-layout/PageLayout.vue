@@ -23,7 +23,7 @@ const app = useGlobalApp()
 
     <PageHead />
 
-    <div class="mt-6 h-full w-full space-y-2 px-4 md:max-w-2xl">
+    <div class="mt-6 h-full w-full space-y-2 px-4 sm:max-w-2xl">
       <slot />
     </div>
   </div>

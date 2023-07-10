@@ -8,7 +8,7 @@ import { removeServiceWorker } from '../../utils/pwa/removeServiceWorker'
 
 <template>
   <PageLayout>
-    <div class="mt-4 flex h-full flex-col items-center md:mt-10">
+    <div class="mt-4 flex h-full flex-col items-center sm:mt-10">
       <div class="flex flex-col space-y-4">
         <Lang class="font-logo text-3xl font-semibold">
           <template #zh>设置</template>

@@ -18,7 +18,7 @@ const auth = useGlobalAuth()
 
 <template>
   <div
-    class="flex w-full items-center border-b px-4 pb-2 pt-3 md:py-4"
+    class="flex w-full items-center border-b px-4 pb-2 pt-3 sm:py-4"
     :class="[
       'justify-between',
       'transition-tender',
@@ -32,13 +32,13 @@ const auth = useGlobalAuth()
     <div class="flex items-center space-x-3">
       <PageLang />
 
-      <div class="hidden md:block">
+      <div class="hidden sm:block">
         <PageDesktopMenuUser v-if="auth.user" :user="auth.user" />
         <PageDesktopMenuLoading v-else-if="auth.isLoadingUser" />
         <PageDesktopMenuGuest v-else />
       </div>
 
-      <div class="block md:hidden">
+      <div class="block sm:hidden">
         <PageMobileMenuUser v-if="auth.user" :user="auth.user" />
         <PageMobileMenuLoading v-else-if="auth.isLoadingUser" />
         <PageMobileMenuGuest v-else />

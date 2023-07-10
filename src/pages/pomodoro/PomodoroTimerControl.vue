@@ -11,7 +11,7 @@ const lang = useGlobalLang()
 </script>
 
 <template>
-  <div class="flex justify-between px-2 py-2 font-semibold md:px-6 md:py-4">
+  <div class="flex justify-between px-2 py-2 font-semibold sm:px-6 sm:py-4">
     <div class="flex space-x-2">
       <PomodoroTimerButton
         v-if="!state.timer.isRunning && !state.timer.isFinished"
