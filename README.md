@@ -1,6 +1,6 @@
 # Pomodoro
 
-[ [Visit](https://pomodoro.fidb.app)
+[ [Visit](https://pomodoro.xieyuheng.com)
 | [Dictionary](https://en.wiktionary.org/wiki/pomodoro)
 | [Wikipedia](https://en.wikipedia.org/wiki/Pomodoro_Technique) ]
 
